@@ -114,7 +114,7 @@ echo import ${repo} : $import
 echo render webpages : $render
 
 #check if remote i18n repo exists
-root_dir=`git ls-remote https://github.com/${remote_user}/i18n.git | grep "ja" | wc -l`
+root_dir=`git ls-remote https://github.com/${remote_user}/i18n.git | grep "ja$" | wc -l`
 echo i18n repo: $root_dir
 if [ $root_dir -eq 1 ]; then
     echo "remote found:  https://github.com/${remote_user}/i18n.git"
@@ -128,7 +128,7 @@ else
 fi
 
 #check if remote repo exists
-root_dir=`git ls-remote https://github.com/${remote_user}/${repo}.git | grep "gh-pages" | wc -l`
+root_dir=`git ls-remote https://github.com/${remote_user}/${repo}.git | grep "gh-pages$" | wc -l`
 echo $repo repo: $root_dir
 if [ $root_dir -eq 1 ]; then
     echo "remote found:  https://github.com/${remote_user}/${repo}.git"
@@ -430,21 +430,21 @@ if [[ $render == true ]]; then
     echo "translated lessons from  po/${repo}.ja.po  exported to _locale/ja/$repo"
 
     #check if remote translated lesson exists 
-    lesson_dir=`git ls-remote https://github.com/${git_user}/${repo}-ja.git | grep "master" | wc -l`
+    lesson_dir=`git ls-remote https://github.com/${remote_user}/${repo}-ja.git | grep "master" | wc -l`
     echo ${repo}-ja repo: $lesson_dir
     if [ $lesson_dir -eq 1 ]; then
-        echo "remote found:  https://github.com/${git_user}/${repo}-ja.git"
+        echo "remote found:  https://github.com/${remote_user}/${repo}-ja.git"
     elif [ $root_dir -eq 0 ]; then
-        echo remote not found for user repo:  https://github.com/${git_user}/${repo}-ja.git please create a new empty repo
+        echo remote not found for user repo:  https://github.com/${remote_user}/${repo}-ja.git please create a new empty repo
         exit 1
     else
         echo ambiguous repo:
-        git ls-remote https://github.com/${git_user}/${repo}-ja.git
+        git ls-remote https://github.com/${remote_user}/${repo}-ja.git
         exit 1
     fi
    
     #create as submodule
-    #git submodule add https://github.com/${git_user}/${repo}-ja.git _locale/ja/$repo
+    #git submodule add https://github.com/${remote_user}/${repo}-ja.git _locale/ja/$repo
     ##git submodule absorbgitdirs <path>
 
     #create external ja repo
