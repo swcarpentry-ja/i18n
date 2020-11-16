@@ -21124,7 +21124,9 @@ msgid ""
 msgstr ""
 "---\n"
 "layout: lesson\n"
-"root: .\n"
+"title: \"再現可能な科学的解析のためにR\""
+"root: /ja/\n"
+"permalink: /ja/index.html\n"
 "---"
 
 #: r-novice-gapminder/index.md:6
