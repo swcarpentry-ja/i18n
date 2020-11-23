@@ -25,3 +25,9 @@
 [submodule "make-novice"]
 	path = make-novice
 	url = https://github.com/swcarpentry/make-novice.git
+[submodule "python-ecology-lesson"]
+	url = https://github.com/carpentries-i18n/python-ecology-lesson.git
+	path = python-ecology-lesson
+[submodule "instructor-training"]
+	path = instructor-training
+	url = git@github.com:carpentries-i18n/instructor-training.git
