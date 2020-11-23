@@ -12215,7 +12215,7 @@ msgstr ""
 "layout: lesson\n"
 "title: \"Unixシェル\""
 "root: /ja/\n"
-"permalink: /ja/index.html\n"
+"permalink: /ja/\n"
 "---"
 
 #: shell-novice/index.md:6

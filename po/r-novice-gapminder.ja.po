@@ -21126,7 +21126,7 @@ msgstr ""
 "layout: lesson\n"
 "title: \"再現可能な科学的解析のためにR\""
 "root: /ja/\n"
-"permalink: /ja/index.html\n"
+"permalink: /ja/\n"
 "---"
 
 #: r-novice-gapminder/index.md:6
