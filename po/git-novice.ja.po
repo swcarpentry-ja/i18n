@@ -5974,13 +5974,10 @@ msgid ""
 "will\n"
 "play Owner and Collaborator."
 msgstr ""
-"For the next step, get into pairs.  One person will be the \"Owner\" and the "
-"other\n"
-"will be the \"Collaborator\". The goal is that the Collaborator add changes "
-"into\n"
-"the Owner's repository. We will switch roles at the end, so both persons "
-"will\n"
-"play Owner and Collaborator."
+"次のステップから、ペアになります。1人が \"オーナー\" になり、 "
+"もう1人が \"コラボレーター\" になります。目標は、コラボレーターがオーナーのリポジトリに "
+"変更を追加することです。最後に役割をスイッチして、 "
+"両方の人がオーナーとコラボレーター役を演じます。"
 
 # blockquote, which can be cascaded
 #: git-novice/_episodes/08-collab.md:20
