@@ -1,0 +1,747 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/10-defensive.md:1
+# Front Matter
+msgid "---\n"
+"title: Defensive Programming\n"
+"teaching: 30\n"
+"exercises: 10\n"
+"questions:\n"
+"- \"How can I make my programs more reliable?\"\n"
+"objectives:\n"
+"- \"Explain what an assertion is.\"\n"
+"- \"Add assertions that check the program's state is correct.\"\n"
+"- \"Correctly add precondition and postcondition assertions to functions.\"\n"
+"- \"Explain what test-driven development is, and use it when creating new functions.\"\n"
+"- \"Explain why variables should be initialized using actual data values\n"
+"   rather than arbitrary constants.\"\n"
+"keypoints:\n"
+"- \"Program defensively, i.e., assume that errors are going to arise,\n"
+"   and write code to detect them when they do.\"\n"
+"- \"Put assertions in programs to check their state as they run,\n"
+"   and to help readers understand how those programs are supposed to work.\"\n"
+"- \"Use preconditions to check that the inputs to a function are safe to use.\"\n"
+"- \"Use postconditions to check that the output from a function is safe to use.\"\n"
+"- \"Write tests before writing code in order to help determine exactly\n"
+"   what that code is supposed to do.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:25
+msgid "Our previous lessons have introduced the basic tools of programming:\n"
+"variables and lists,\n"
+"file I/O,\n"
+"loops,\n"
+"conditionals,\n"
+"and functions.\n"
+"What they *haven't* done is show us how to tell\n"
+"whether a program is getting the right answer,\n"
+"and how to tell if it's *still* getting the right answer\n"
+"as we make changes to it."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:36
+msgid "To achieve that,\n"
+"we need to:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:39
+# unordered list
+msgid "*   Write programs that check their own operation."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:40
+# unordered list
+msgid "*   Write and run tests for widely-used functions."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:41
+# unordered list
+msgid "*   Make sure we know what \"correct\" actually means."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:43
+msgid "The good news is,\n"
+"doing these things will speed up our programming,\n"
+"not slow it down.\n"
+"As in real carpentry --- the kind done with lumber --- the time saved\n"
+"by measuring carefully before cutting a piece of wood\n"
+"is much greater than the time that measuring takes."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:50
+# header
+msgid "## Assertions"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:52
+msgid "The first step toward getting the right answers from our programs\n"
+"is to assume that mistakes *will* happen\n"
+"and to guard against them.\n"
+"This is called [defensive programming]({{ page.root }}/reference.html#defensive-programming),\n"
+"and the most common way to do it is to add\n"
+"[assertions]({{ page.root }}/reference.html#assertion) to our code\n"
+"so that it checks itself as it runs.\n"
+"An assertion is simply a statement that something must be true at a certain point in a program.\n"
+"When Python sees one,\n"
+"it evaluates the assertion's condition.\n"
+"If it's true,\n"
+"Python does nothing,\n"
+"but if it's false,\n"
+"Python halts the program immediately\n"
+"and prints the error message if one is provided.\n"
+"For example,\n"
+"this piece of code halts as soon as the loop encounters a value that isn't positive:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:70
+# code block
+msgid "~~~\n"
+"numbers = [1.5, 2.3, 0.7, -0.001, 4.4]\n"
+"total = 0.0\n"
+"for num in numbers:\n"
+"    assert num > 0.0, 'Data should only contain positive values'\n"
+"    total += num\n"
+"print('total is:', total)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:80
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"AssertionError                            Traceback (most recent call last)\n"
+"<ipython-input-19-33d87ea29ae4> in <module>()\n"
+"      2 total = 0.0\n"
+"      3 for num in numbers:\n"
+"----> 4     assert num > 0.0, 'Data should only contain positive values'\n"
+"      5     total += num\n"
+"      6 print('total is:', total)\n"
+"\n"
+"AssertionError: Data should only contain positive values\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:94
+msgid "Programs like the Firefox browser are full of assertions:\n"
+"10-20% of the code they contain\n"
+"are there to check that the other 80–90% are working correctly.\n"
+"Broadly speaking,\n"
+"assertions fall into three categories:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:100
+# unordered list
+msgid "*   A [precondition]({{ page.root }}/reference.html#precondition)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:101
+msgid "    is something that must be true at the start of a function in order for it to work correctly."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:103
+# unordered list
+msgid "*   A [postcondition]({{ page.root }}/reference.html#postcondition)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:104
+msgid "    is something that the function guarantees is true when it finishes."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:106
+# unordered list
+msgid "*   An [invariant]({{ page.root }}/reference.html#invariant)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:107
+msgid "    is something that is always true at a particular point inside a piece of code."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:109
+msgid "For example,\n"
+"suppose we are representing rectangles using a [tuple]({{ page.root }}/reference.html#tuple)\n"
+"of four coordinates `(x0, y0, x1, y1)`,\n"
+"representing the lower left and upper right corners of the rectangle.\n"
+"In order to do some calculations,\n"
+"we need to normalize the rectangle so that the lower left corner is at the origin\n"
+"and the longest side is 1.0 units long.\n"
+"This function does that,\n"
+"but checks that its input is correctly formatted and that its result makes sense:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:119
+# code block
+msgid "~~~\n"
+"def normalize_rectangle(rect):\n"
+"    \"\"\"Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.\n"
+"    Input should be of the format (x0, y0, x1, y1).\n"
+"    (x0, y0) and (x1, y1) define the lower left and upper right corners\n"
+"    of the rectangle, respectively.\"\"\"\n"
+"    assert len(rect) == 4, 'Rectangles must contain 4 coordinates'\n"
+"    x0, y0, x1, y1 = rect\n"
+"    assert x0 < x1, 'Invalid X coordinates'\n"
+"    assert y0 < y1, 'Invalid Y coordinates'\n"
+"\n"
+"    dx = x1 - x0\n"
+"    dy = y1 - y0\n"
+"    if dx > dy:\n"
+"        scaled = float(dx) / dy\n"
+"        upper_x, upper_y = 1.0, scaled\n"
+"    else:\n"
+"        scaled = float(dx) / dy\n"
+"        upper_x, upper_y = scaled, 1.0\n"
+"\n"
+"    assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'\n"
+"    assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'\n"
+"\n"
+"    return (0, 0, upper_x, upper_y)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:146
+msgid "The preconditions on lines 6, 8, and 9 catch invalid inputs:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:148
+# code block
+msgid "~~~\n"
+"print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:153
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"AssertionError                            Traceback (most recent call last)\n"
+"<ipython-input-2-1b9cd8e18a1f> in <module>\n"
+"----> 1 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate\n"
+"\n"
+"<ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)\n"
+"      4     (x0, y0) and (x1, y1) define the lower left and upper right corners\n"
+"      5     of the rectangle, respectively.\"\"\"\n"
+"----> 6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'\n"
+"      7     x0, y0, x1, y1 = rect\n"
+"      8     assert x0 < x1, 'Invalid X coordinates'\n"
+"\n"
+"AssertionError: Rectangles must contain 4 coordinates\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:170
+# code block
+msgid "~~~\n"
+"print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:175
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"AssertionError                            Traceback (most recent call last)\n"
+"<ipython-input-3-325036405532> in <module>\n"
+"----> 1 print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted\n"
+"\n"
+"<ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)\n"
+"      6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'\n"
+"      7     x0, y0, x1, y1 = rect\n"
+"----> 8     assert x0 < x1, 'Invalid X coordinates'\n"
+"      9     assert y0 < y1, 'Invalid Y coordinates'\n"
+"     10\n"
+"\n"
+"AssertionError: Invalid X coordinates\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:192
+msgid "The post-conditions on lines 20 and 21 help us catch bugs by telling us when our\n"
+"calculations might have been incorrect.\n"
+"For example,\n"
+"if we normalize a rectangle that is taller than it is wide everything seems OK:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:197
+# code block
+msgid "~~~\n"
+"print(normalize_rectangle( (0.0, 0.0, 1.0, 5.0) ))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:202
+# code block
+msgid "~~~\n"
+"(0, 0, 0.2, 1.0)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:207
+msgid "but if we normalize one that's wider than it is tall,\n"
+"the assertion is triggered:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:210
+# code block
+msgid "~~~\n"
+"print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:215
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"AssertionError                            Traceback (most recent call last)\n"
+"<ipython-input-5-8d4a48f1d068> in <module>\n"
+"----> 1 print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))\n"
+"\n"
+"<ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)\n"
+"     19\n"
+"     20     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'\n"
+"---> 21     assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'\n"
+"     22\n"
+"     23     return (0, 0, upper_x, upper_y)\n"
+"\n"
+"AssertionError: Calculated upper Y coordinate invalid\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:232
+msgid "Re-reading our function,\n"
+"we realize that line 14 should divide `dy` by `dx` rather than `dx` by `dy`.\n"
+"In a Jupyter notebook, you can display line numbers by typing <kbd>Ctrl</kbd>+<kbd>M</kbd>\n"
+"followed by <kbd>L</kbd>.\n"
+"If we had left out the assertion at the end of the function,\n"
+"we would have created and returned something that had the right shape as a valid answer,\n"
+"but wasn't.\n"
+"Detecting and debugging that would almost certainly have taken more time in the long run\n"
+"than writing the assertion."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:242
+msgid "But assertions aren't just about catching errors:\n"
+"they also help people understand programs.\n"
+"Each assertion gives the person reading the program\n"
+"a chance to check (consciously or otherwise)\n"
+"that their understanding matches what the code is doing."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:248
+msgid "Most good programmers follow two rules when adding assertions to their code.\n"
+"The first is, *fail early, fail often*.\n"
+"The greater the distance between when and where an error occurs and when it's noticed,\n"
+"the harder the error will be to debug,\n"
+"so good code catches mistakes as early as possible."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:254
+msgid "The second rule is, *turn bugs into assertions or tests*.\n"
+"Whenever you fix a bug, write an assertion that catches the mistake\n"
+"should you make it again.\n"
+"If you made a mistake in a piece of code,\n"
+"the odds are good that you have made other mistakes nearby,\n"
+"or will make the same mistake (or a related one)\n"
+"the next time you change it.\n"
+"Writing assertions to check that you haven't [regressed]({{ page.root }}/reference.html#regression)\n"
+"(i.e., haven't re-introduced an old problem)\n"
+"can save a lot of time in the long run,\n"
+"and helps to warn people who are reading the code\n"
+"(including your future self)\n"
+"that this bit is tricky."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:268
+# header
+msgid "## Test-Driven Development"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:270
+msgid "An assertion checks that something is true at a particular point in the program.\n"
+"The next step is to check the overall behavior of a piece of code,\n"
+"i.e.,\n"
+"to make sure that it produces the right output when it's given a particular input.\n"
+"For example,\n"
+"suppose we need to find where two or more time series overlap.\n"
+"The range of each time series is represented as a pair of numbers,\n"
+"which are the time the interval started and ended.\n"
+"The output is the largest range that they all include:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:280
+msgid "![Overlapping Ranges](../fig/python-overlapping-ranges.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:282
+msgid "Most novice programmers would solve this problem like this:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:284
+# ordered list
+msgid "1.  Write a function `range_overlap`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:285
+# ordered list
+msgid "2.  Call it interactively on two or three different inputs."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:286
+# ordered list
+msgid "3.  If it produces the wrong answer, fix the function and re-run that test."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:288
+msgid "This clearly works --- after all, thousands of scientists are doing it right now --- but\n"
+"there's a better way:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:291
+# ordered list
+msgid "1.  Write a short function for each test."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:292
+# ordered list
+msgid "2.  Write a `range_overlap` function that should pass those tests."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:293
+# ordered list
+msgid "3.  If `range_overlap` produces any wrong answers, fix it and re-run the test functions."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:295
+msgid "Writing the tests *before* writing the function they exercise\n"
+"is called [test-driven development]({{ page.root }}/reference.html#test-driven-development) (TDD).\n"
+"Its advocates believe it produces better code faster because:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:299
+# ordered list
+msgid "1.  If people write tests after writing the thing to be tested,"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:300
+msgid "    they are subject to confirmation bias,\n"
+"    i.e.,\n"
+"    they subconsciously write tests to show that their code is correct,\n"
+"    rather than to find errors.\n"
+"2.  Writing tests helps programmers figure out what the function is actually supposed to do."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:306
+msgid "Here are three test functions for `range_overlap`:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:308
+# code block
+msgid "~~~\n"
+"assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)\n"
+"assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)\n"
+"assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:315
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"AssertionError                            Traceback (most recent call last)\n"
+"<ipython-input-25-d8be150fbef6> in <module>()\n"
+"----> 1 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)\n"
+"      2 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)\n"
+"      3 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)\n"
+"\n"
+"AssertionError:\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:327
+msgid "The error is actually reassuring:\n"
+"we haven't written `range_overlap` yet,\n"
+"so if the tests passed,\n"
+"it would be a sign that someone else had\n"
+"and that we were accidentally using their function."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:333
+msgid "And as a bonus of writing these tests,\n"
+"we've implicitly defined what our input and output look like:\n"
+"we expect a list of pairs as input,\n"
+"and produce a single pair as output."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:338
+msgid "Something important is missing, though.\n"
+"We don't have any tests for the case where the ranges don't overlap at all:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:341
+# code block
+msgid "~~~\n"
+"assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == ???\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:346
+msgid "What should `range_overlap` do in this case:\n"
+"fail with an error message,\n"
+"produce a special value like `(0.0, 0.0)` to signal that there's no overlap,\n"
+"or something else?\n"
+"Any actual implementation of the function will do one of these things;\n"
+"writing the tests first helps us figure out which is best\n"
+"*before* we're emotionally invested in whatever we happened to write\n"
+"before we realized there was an issue."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:355
+msgid "And what about this case?"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:357
+# code block
+msgid "~~~\n"
+"assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == ???\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:362
+msgid "Do two segments that touch at their endpoints overlap or not?\n"
+"Mathematicians usually say \"yes\",\n"
+"but engineers usually say \"no\".\n"
+"The best answer is \"whatever is most useful in the rest of our program\",\n"
+"but again,\n"
+"any actual implementation of `range_overlap` is going to do *something*,\n"
+"and whatever it is ought to be consistent with what it does when there's no overlap at all."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:370
+msgid "Since we're planning to use the range this function returns\n"
+"as the X axis in a time series chart,\n"
+"we decide that:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:374
+# ordered list
+msgid "1.  every overlap has to have non-zero width, and"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:375
+# ordered list
+msgid "2.  we will return the special value `None` when there's no overlap."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:377
+msgid "`None` is built into Python,\n"
+"and means \"nothing here\".\n"
+"(Other languages often call the equivalent value `null` or `nil`).\n"
+"With that decision made,\n"
+"we can finish writing our last two tests:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:383
+# code block
+msgid "~~~\n"
+"assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None\n"
+"assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:389
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"AssertionError                            Traceback (most recent call last)\n"
+"<ipython-input-26-d877ef460ba2> in <module>()\n"
+"----> 1 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None\n"
+"      2 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None\n"
+"\n"
+"AssertionError:\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:400
+msgid "Again,\n"
+"we get an error because we haven't written our function,\n"
+"but we're now ready to do so:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:404
+# code block
+msgid "~~~\n"
+"def range_overlap(ranges):\n"
+"    \"\"\"Return common overlap among a set of [left, right] ranges.\"\"\"\n"
+"    max_left = 0.0\n"
+"    min_right = 1.0\n"
+"    for (left, right) in ranges:\n"
+"        max_left = max(max_left, left)\n"
+"        min_right = min(min_right, right)\n"
+"    return (max_left, min_right)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:416
+msgid "Take a moment to think about why we calculate the left endpoint of the overlap as\n"
+"the maximum of the input left endpoints, and the overlap right endpoint as the minimum\n"
+"of the input right endpoints.\n"
+"We'd now like to re-run our tests,\n"
+"but they're scattered across three different cells.\n"
+"To make running them easier,\n"
+"let's put them all in a function:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:424
+# code block
+msgid "~~~\n"
+"def test_range_overlap():\n"
+"    assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None\n"
+"    assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None\n"
+"    assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)\n"
+"    assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)\n"
+"    assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)\n"
+"    assert range_overlap([]) == None\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:435
+msgid "We can now test `range_overlap` with a single function call:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:437
+# code block
+msgid "~~~\n"
+"test_range_overlap()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:442
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"AssertionError                            Traceback (most recent call last)\n"
+"<ipython-input-29-cf9215c96457> in <module>()\n"
+"----> 1 test_range_overlap()\n"
+"\n"
+"<ipython-input-28-5d4cd6fd41d9> in test_range_overlap()\n"
+"      1 def test_range_overlap():\n"
+"----> 2     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None\n"
+"      3     assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None\n"
+"      4     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)\n"
+"      5     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)\n"
+"\n"
+"AssertionError:\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:459
+msgid "The first test that was supposed to produce `None` fails,\n"
+"so we know something is wrong with our function.\n"
+"We *don't* know whether the other tests passed or failed\n"
+"because Python halted the program as soon as it spotted the first error.\n"
+"Still,\n"
+"some information is better than none,\n"
+"and if we trace the behavior of the function with that input,\n"
+"we realize that we're initializing `max_left` and `min_right` to 0.0 and 1.0 respectively,\n"
+"regardless of the input values.\n"
+"This violates another important rule of programming:\n"
+"*always initialize from data*."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:471
+# blockquote, which can be cascaded
+msgid "> ## Pre- and Post-Conditions"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:472
+msgid ">\n"
+"> Suppose you are writing a function called `average` that calculates\n"
+"> the average of the numbers in a list.\n"
+"> What pre-conditions and post-conditions would you write for it?\n"
+"> Compare your answer to your neighbor's:\n"
+"> can you think of a function that will pass your tests but not his/hers or vice versa?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > # a possible pre-condition:\n"
+"> > assert len(input_list) > 0, 'List length must be non-zero'\n"
+"> > # a possible post-condition:\n"
+"> > assert numpy.min(input_list) <= average <= numpy.max(input_list),\n"
+"> > 'Average should be between min and max of input values (inclusive)'\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:491
+# blockquote, which can be cascaded
+msgid "> ## Testing Assertions"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:492
+msgid ">\n"
+"> Given a sequence of a number of cars, the function `get_total_cars` returns\n"
+"> the total number of cars.\n"
+">\n"
+"> ~~~\n"
+"> get_total_cars([1, 2, 3, 4])\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> 10\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:505
+msgid ">\n"
+"> ~~~\n"
+"> get_total_cars(['a', 'b', 'c'])\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> ValueError: invalid literal for int() with base 10: 'a'\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/10-defensive.md:515
+msgid ">\n"
+"> Explain in words what the assertions in this function check,\n"
+"> and for each one,\n"
+"> give an example of input that will make that assertion fail.\n"
+">\n"
+"> ~~~\n"
+"> def get_total(values):\n"
+">     assert len(values) > 0\n"
+">     for element in values:\n"
+">         assert int(element)\n"
+">     values = [int(element) for element in values]\n"
+">     total = sum(values)\n"
+">     assert total > 0\n"
+">     return total\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > *   The first assertion checks that the input sequence `values` is not empty.\n"
+"> >     An empty sequence such as `[]` will make it fail.\n"
+"> > *   The second assertion checks that each value in the list can be turned into an integer.\n"
+"> >     Input such as `[1, 2,'c', 3]` will make it fail.\n"
+"> > *   The third assertion checks that the total of the list is greater than 0.\n"
+"> >     Input such as `[-10, 2, 3]` will make it fail."
+msgstr ""
+

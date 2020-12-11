@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_includes/aio-script.md:1
+#: python-novice-inflammation/aio.md:5
+msgid "{% comment %}\n"
+"As a maintainer, you don't need to edit this file.\n"
+"If you notice that something doesn't work, please\n"
+"open an issue: https://github.com/carpentries/styles/issues/new\n"
+"{% endcomment %}"
+msgstr ""
+
+#: python-novice-inflammation/_includes/aio-script.md:7
+msgid "{% include manual_episode_order.html %}"
+msgstr ""
+
+#: python-novice-inflammation/_includes/aio-script.md:9
+msgid "{% for lesson_episode in lesson_episodes %}"
+msgstr ""
+
+#: python-novice-inflammation/_includes/aio-script.md:11
+msgid "{% if site.episode_order %}\n"
+"  {% assign e = site.episodes | where: \"slug\", lesson_episode | first %}\n"
+"{% else %}\n"
+"  {% assign e = lesson_episode %}\n"
+"{% endif %}"
+msgstr ""
+
+#: python-novice-inflammation/_includes/aio-script.md:17
+msgid "<h1 id=\"{{ e.title | slugify }}\" class=\"maintitle\">{{ e.title }}</h1>"
+msgstr ""
+
+#: python-novice-inflammation/_includes/aio-script.md:19
+msgid "{% include episode_overview.html teaching_time=e.teaching exercise_time=e.exercises episode_questions=e.questions episode_objectives=e.objectives %}"
+msgstr ""
+
+#: python-novice-inflammation/_includes/aio-script.md:21
+msgid "{{ e.content }}"
+msgstr ""
+
+#: python-novice-inflammation/_includes/aio-script.md:23
+msgid "{% include episode_keypoints.html episode_keypoints=e.keypoints %}\n"
+"<hr />\n"
+"{% endfor %}"
+msgstr ""
+

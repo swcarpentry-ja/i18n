@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/bin/boilerplate/setup.md:1
+#: python-novice-inflammation/setup.md:1
+# Front Matter
+msgid "---\n"
+"title: Setup\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:5
+# header
+msgid "## Overview"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:7
+msgid "This lesson is designed to be run on a personal computer.\n"
+"All of the software and data used in this lesson are freely available online,\n"
+"and instructions on how to obtain them are provided below."
+msgstr ""
+
+#: python-novice-inflammation/setup.md:11
+# header
+msgid "## Install Python"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:13
+msgid "In this lesson, we will be using Python 3 with some of its most popular scientific libraries.\n"
+"Although one can install a plain-vanilla Python and all required libraries by hand,\n"
+"we recommend installing [Anaconda][anaconda-website],\n"
+"a Python distribution that comes with everything we need for the lesson.\n"
+"Detailed installation instructions for various operating systems can be found\n"
+"on The Carpentries [template website for workshops][anaconda-instructions]\n"
+"and in [Anaconda documentation][anaconda-install]."
+msgstr ""
+
+#: python-novice-inflammation/setup.md:21
+# header
+msgid "## Obtain lesson materials"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:23
+# ordered list
+msgid "1. Download [python-novice-inflammation-data.zip][zipfile1]"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:24
+msgid "        and [python-novice-inflammation-code.zip][zipfile2].\n"
+"2. Create a folder called `swc-python` on your Desktop.\n"
+"3. Move downloaded files to `swc-python`.\n"
+"4. Unzip the files."
+msgstr ""
+
+#: python-novice-inflammation/setup.md:29
+msgid "You should see two folders called `data` and `code` in the `swc-python` directory on your\n"
+"Desktop."
+msgstr ""
+
+#: python-novice-inflammation/setup.md:32
+# header
+msgid "## Launch Python interface"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:34
+msgid "To start working with Python, we need to launch a program that will interpret and execute our Python\n"
+"commands. Below we list several options. If you don't have a preference, proceed with the top\n"
+"option in the list that is available on your machine. Otherwise, you may use any interface you like."
+msgstr ""
+
+#: python-novice-inflammation/setup.md:38
+# header
+msgid "## Option A: Jupyter Notebook"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:40
+msgid "A Jupyter Notebook provides a browser-based interface for working with Python.\n"
+"If you installed Anaconda, you can launch a notebook in two ways:"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:43
+# blockquote, which can be cascaded
+msgid "> ## Anaconda Navigator"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:44
+msgid ">\n"
+"> 1. Launch Anaconda Navigator.\n"
+"> It might ask you if you'd like to send anonymized usage information to Anaconda developers:\n"
+"> ![Anaconda Navigator first launch]({{ page.root }}{% link fig/anaconda-navigator-first-launch.png %})\n"
+"> Make your choice and click \"Ok, and don't show again\" button.\n"
+"> 2. Find the \"Notebook\" tab and click on the \"Launch\" button:\n"
+"> ![Anaconda Navigator Notebook launch]({{ page.root }}{% link fig/anaconda-navigator-notebook-launch.png %})\n"
+"> Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the\n"
+"> contents of your Home (or User) folder.\n"
+"> 3. Navigate to the `data` directory by clicking on the directory names leading to it:\n"
+"> `Desktop`, `swc-python`, then `data`:\n"
+"> ![Anaconda Navigator Notebook directory]({{ page.root }}{% link fig/jupyter-notebook-data-directory.png %})\n"
+"> 4. Launch the notebook by clicking on the \"New\" button and then selecting \"Python 3\":\n"
+"> ![Anaconda Navigator Notebook directory]({{ page.root }}{% link fig/jupyter-notebook-launch-notebook.png %})"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:58
+#: python-novice-inflammation/setup.md:103
+# SC/DC Template label
+msgid "{: .solution}"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:60
+# blockquote, which can be cascaded
+msgid "> ## Command line (Terminal)"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:61
+msgid ">\n"
+"> 1\\. Navigate to the `data` directory:\n"
+">\n"
+"> > ## Unix shell\n"
+"> > If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal\n"
+"> > in Linux, or [Git Bash][gitbash] on Windows, execute the following command:\n"
+"> > ~~~\n"
+"> > cd ~/Desktop/swc-python/data\n"
+"> > ~~~\n"
+"> > {: .language-bash}"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:72
+msgid ">\n"
+"> > ## Command Prompt (Windows)\n"
+"> > On Windows, you can use its native Command Prompt program.  The easiest way to start it up is\n"
+"> > pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting\n"
+"> > <kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to\n"
+"> > the `data` folder:\n"
+"> > ~~~\n"
+"> > cd /D %userprofile%\\Desktop\\swc-python\\data\n"
+"> > ~~~\n"
+"> > {: .source}"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:83
+msgid ">\n"
+"> 2\\. Start Jupyter server\n"
+">\n"
+"> > ## Unix shell\n"
+"> > ~~~\n"
+"> > jupyter notebook\n"
+"> > ~~~\n"
+"> > {: .language-bash}"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:92
+msgid ">\n"
+"> > ## Command Prompt (Windows)\n"
+"> > ~~~\n"
+"> > python -m notebook\n"
+"> > ~~~\n"
+"> > {: .source}"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:99
+msgid ">\n"
+"> 3\\. Launch the notebook by clicking on the \"New\" button on the right and selecting \"Python 3\"\n"
+"> from the drop-down menu:\n"
+"> ![Anaconda Navigator Notebook directory]({{ page.root }}{% link fig/jupyter-notebook-launch-notebook2.png %})"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:105
+#: python-novice-inflammation/setup.md:120
+msgid "&nbsp; <!-- vertical spacer -->"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:107
+# header
+msgid "## Option B: IPython interpreter"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:109
+msgid "IPython is an alternative solution situated somewhere in between the plain-vanilla Python\n"
+"interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with\n"
+"various convenience features and commands.  You should have IPython on your system if you installed\n"
+"[Anaconda][anaconda-instructions]."
+msgstr ""
+
+#: python-novice-inflammation/setup.md:114
+msgid "To start using IPython, execute:\n"
+"~~~\n"
+"ipython\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:122
+# header
+msgid "## Option C: plain-vanilla Python interpreter"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:124
+msgid "To launch a plain-vanilla Python interpreter, execute:\n"
+"~~~\n"
+"python\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:130
+msgid "If you are using [Git Bash on Windows][gitbash], you have to call Python _via_ `winpty`:\n"
+"~~~\n"
+"winpty python\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/setup.md:136
+msgid "[anaconda-install]: https://docs.anaconda.com/anaconda/install\n"
+"[anaconda-instructions]: https://carpentries.github.io/workshop-template/#python\n"
+"[anaconda-website]: https://www.anaconda.com/\n"
+"[gitbash]: https://gitforwindows.org\n"
+"[zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip\n"
+"[zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip"
+msgstr ""
+

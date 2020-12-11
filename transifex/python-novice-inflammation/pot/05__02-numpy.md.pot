@@ -1,0 +1,1037 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/02-numpy.md:1
+# Front Matter
+msgid "---\n"
+"title: Analyzing Patient Data\n"
+"teaching: 40\n"
+"exercises: 20\n"
+"questions:\n"
+"- \"How can I process tabular data files in Python?\"\n"
+"objectives:\n"
+"- \"Explain what a library is and what libraries are used for.\"\n"
+"- \"Import a Python library and use the functions it contains.\"\n"
+"- \"Read tabular data from a file into a program.\"\n"
+"- \"Select individual values and subsections from data.\"\n"
+"- \"Perform operations on arrays of data.\"\n"
+"keypoints:\n"
+"- \"Import a library into a program using `import libraryname`.\"\n"
+"- \"Use the `numpy` library to work with arrays in Python.\"\n"
+"- \"The expression `array.shape` gives the shape of an array.\"\n"
+"- \"Use `array[x, y]` to select a single element from a 2D array.\"\n"
+"- \"Array indices start at 0, not 1.\"\n"
+"- \"Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`.\"\n"
+"- \"Use `# some kind of explanation` to add comments to programs.\"\n"
+"- \"Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics.\"\n"
+"- \"Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:25
+msgid "Words are useful, but what's more useful are the sentences and stories we build with them.\n"
+"Similarly, while a lot of powerful, general tools are built into Python,\n"
+"specialized tools built up from these basic units live in\n"
+"[libraries]({{ page.root }}/reference.html#library)\n"
+"that can be called upon when needed."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:31
+# header
+msgid "## Loading data into Python"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:33
+msgid "To begin processing inflammation data, we need to load it into Python.\n"
+"We can do that using a library called\n"
+"[NumPy](http://docs.scipy.org/doc/numpy/ \"NumPy Documentation\"), which stands for Numerical Python.\n"
+"In general, you should use this library when you want to do fancy things with lots of numbers,\n"
+"especially if you have matrices or arrays. To tell Python that we'd like to start using NumPy,\n"
+"we need to [import]({{ page.root }}/reference.html#import) it:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:40
+#: python-novice-inflammation/_episodes/07-cond.md:157
+# code block
+msgid "~~~\n"
+"import numpy\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:45
+msgid "Importing a library is like getting a piece of lab equipment out of a storage locker and setting it\n"
+"up on the bench. Libraries provide additional functionality to the basic Python package, much like\n"
+"a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too\n"
+"many libraries can sometimes complicate and slow down your programs - so we only import what we\n"
+"need for each program."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:51
+msgid "Once we've imported the library, we can ask the library to read our data file for us:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:53
+# code block
+msgid "~~~\n"
+"numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:58
+#: python-novice-inflammation/_episodes/08-func.md:416
+# code block
+msgid "~~~\n"
+"array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],\n"
+"       [ 0.,  1.,  2., ...,  1.,  0.,  1.],\n"
+"       [ 0.,  1.,  1., ...,  2.,  1.,  1.],\n"
+"       ...,\n"
+"       [ 0.,  1.,  1., ...,  1.,  1.,  1.],\n"
+"       [ 0.,  0.,  0., ...,  0.,  2.,  0.],\n"
+"       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:69
+msgid "The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference.html#function-call)\n"
+"that asks Python to run the [function]({{ page.root }}/reference.html#function) `loadtxt` which\n"
+"belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference.html#dotted-notation)\n"
+"is used everywhere in Python: the thing that appears before the dot contains the thing that\n"
+"appears after."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:75
+msgid "As an example, John Smith is the John that belongs to the Smith family.\n"
+"We could use the dot notation to write his name `smith.john`,\n"
+"just as `loadtxt` is a function that belongs to the `numpy` library."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:79
+msgid "`numpy.loadtxt` has two [parameters]({{ page.root }}/reference.html#parameter): the name of the file\n"
+"we want to read and the [delimiter]({{ page.root }}/reference.html#delimiter) that separates values on\n"
+"a line. These both need to be character strings (or [strings]({{ page.root }}/reference.html#string)\n"
+"for short), so we put them in quotes."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:84
+msgid "Since we haven't told it to do anything else with the function's output,\n"
+"the [notebook]({{ page.root }}/reference.html#notebook) displays it.\n"
+"In this case,\n"
+"that output is the data we just loaded.\n"
+"By default,\n"
+"only a few rows and columns are shown\n"
+"(with `...` to omit elements when displaying big arrays).\n"
+"Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so `1.0` becomes `1.`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:93
+# blockquote, which can be cascaded
+msgid "> ## Importing libraries with shortcuts"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:94
+msgid ">\n"
+"> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference.html#syntax) to import NumPy.\n"
+"> However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the\n"
+"> inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some\n"
+"> people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries\n"
+"> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's\n"
+"> because they've used this shortcut. It makes no difference which approach you choose to take, but you must be\n"
+"> consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`\n"
+"> instead. Because of this, when working with other people it is important you agree on how libraries are imported."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:105
+msgid "Our call to `numpy.loadtxt` read our file\n"
+"but didn't save the data in memory.\n"
+"To do that,\n"
+"we need to assign the array to a variable. In a similar manner to how we assign a single\n"
+"value to a variable, we can also assign an array of values to a variable using the same syntax.\n"
+"Let's re-run `numpy.loadtxt` and save the returned data:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:112
+# code block
+msgid "~~~\n"
+"data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:117
+msgid "This statement doesn't produce any output because we've assigned the output to the variable `data`.\n"
+"If we want to check that the data have been loaded,\n"
+"we can print the variable's value:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:121
+# code block
+msgid "~~~\n"
+"print(data)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:126
+# code block
+msgid "~~~\n"
+"[[ 0.  0.  1. ...,  3.  0.  0.]\n"
+" [ 0.  1.  2. ...,  1.  0.  1.]\n"
+" [ 0.  1.  1. ...,  2.  1.  1.]\n"
+" ...,\n"
+" [ 0.  1.  1. ...,  1.  1.  1.]\n"
+" [ 0.  0.  0. ...,  0.  2.  0.]\n"
+" [ 0.  0.  1. ...,  1.  1.  0.]]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:137
+msgid "Now that the data are in memory,\n"
+"we can manipulate them.\n"
+"First,\n"
+"let's ask what [type]({{ page.root }}/reference.html#type) of thing `data` refers to:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:142
+# code block
+msgid "~~~\n"
+"print(type(data))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:147
+# code block
+msgid "~~~\n"
+"<class 'numpy.ndarray'>\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:152
+msgid "The output tells us that `data` currently refers to\n"
+"an N-dimensional array, the functionality for which is provided by the NumPy library.\n"
+"These data correspond to arthritis patients' inflammation.\n"
+"The rows are the individual patients, and the columns\n"
+"are their daily inflammation measurements."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:158
+# blockquote, which can be cascaded
+msgid "> ## Data Type"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:159
+msgid ">\n"
+"> A Numpy array contains one or more elements\n"
+"> of the same type. The `type` function will only tell you that\n"
+"> a variable is a NumPy array but won't tell you the type of\n"
+"> thing inside the array.\n"
+"> We can find out the type\n"
+"> of the data contained in the NumPy array.\n"
+">\n"
+"> ~~~\n"
+"> print(data.dtype)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> float64\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:176
+msgid ">\n"
+"> This tells us that the NumPy array's elements are\n"
+"> [floating-point numbers]({{ page.root }}/reference.html#floating-point number)."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:181
+msgid "With the following command, we can see the array's [shape]({{ page.root }}/reference.html#shape):"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:183
+# code block
+msgid "~~~\n"
+"print(data.shape)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:188
+# code block
+msgid "~~~\n"
+"(60, 40)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:193
+msgid "The output tells us that the `data` array variable contains 60 rows and 40 columns. When we\n"
+"created the variable `data` to store our arthritis data, we did not only create the array; we also\n"
+"created information about the array, called [members]({{ page.root }}/reference.html#member) or\n"
+"attributes. This extra information describes `data` in the same way an adjective describes a noun.\n"
+"`data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same\n"
+"dotted notation for the attributes of variables that we use for the functions in libraries because\n"
+"they have the same part-and-whole relationship."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:201
+msgid "If we want to get a single number from the array, we must provide an\n"
+"[index]({{ page.root }}/reference.html#index) in square brackets after the variable name, just as we\n"
+"do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so\n"
+"we will need to use two indices to refer to one specific value:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:206
+# code block
+msgid "~~~\n"
+"print('first value in data:', data[0, 0])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:211
+# code block
+msgid "~~~\n"
+"first value in data: 0.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:216
+# code block
+msgid "~~~\n"
+"print('middle value in data:', data[30, 20])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:221
+# code block
+msgid "~~~\n"
+"middle value in data: 13.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:226
+msgid "The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may\n"
+"not surprise you,\n"
+" `data[0, 0]` might.\n"
+"Programming languages like Fortran, MATLAB and R start counting at 1\n"
+"because that's what human beings have done for thousands of years.\n"
+"Languages in the C family (including C++, Java, Perl, and Python) count from 0\n"
+"because it represents an offset from the first value in the array (the second\n"
+"value is offset by one index from the first value). This is closer to the way\n"
+"that computers represent arrays (if you are interested in the historical\n"
+"reasons behind counting indices from zero, you can read\n"
+"[Mike Hoye's blog post](http://exple.tive.org/blarg/2013/10/22/citation-needed/)).\n"
+"As a result,\n"
+"if we have an M×N array in Python,\n"
+"its indices go from 0 to M-1 on the first axis\n"
+"and 0 to N-1 on the second.\n"
+"It takes a bit of getting used to,\n"
+"but one way to remember the rule is that\n"
+"the index is how many steps we have to take from the start to get the item we want."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:245
+msgid "![Zero Index](../fig/python-zero-index.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:247
+# blockquote, which can be cascaded
+msgid "> ## In the Corner"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:248
+msgid ">\n"
+"> What may also surprise you is that when Python displays an array,\n"
+"> it shows the element with index `[0, 0]` in the upper left corner\n"
+"> rather than the lower left.\n"
+"> This is consistent with the way mathematicians draw matrices\n"
+"> but different from the Cartesian coordinates.\n"
+"> The indices are (row, column) instead of (column, row) for the same reason,\n"
+"> which can be confusing when plotting data."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:258
+# header
+msgid "## Slicing data"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:259
+msgid "An index like `[30, 20]` selects a single element of an array,\n"
+"but we can select whole sections as well.\n"
+"For example,\n"
+"we can select the first ten days (columns) of values\n"
+"for the first four patients (rows) like this:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:265
+# code block
+msgid "~~~\n"
+"print(data[0:4, 0:10])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:270
+# code block
+msgid "~~~\n"
+"[[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]\n"
+" [ 0.  1.  2.  1.  2.  1.  3.  2.  2.  6.]\n"
+" [ 0.  1.  1.  3.  3.  2.  6.  2.  5.  9.]\n"
+" [ 0.  0.  2.  0.  4.  2.  2.  1.  6.  7.]]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:278
+msgid "The [slice]({{ page.root }}/reference.html#slice) `0:4` means, \"Start at index 0 and go up to, but not\n"
+"including, index 4\". Again, the up-to-but-not-including takes a bit of getting used to, but the\n"
+"rule is that the difference between the upper and lower bounds is the number of values in the slice."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:282
+msgid "We don't have to start slices at 0:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:284
+# code block
+msgid "~~~\n"
+"print(data[5:10, 0:10])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:289
+# code block
+msgid "~~~\n"
+"[[ 0.  0.  1.  2.  2.  4.  2.  1.  6.  4.]\n"
+" [ 0.  0.  2.  2.  4.  2.  2.  5.  5.  8.]\n"
+" [ 0.  0.  1.  2.  3.  1.  2.  3.  5.  3.]\n"
+" [ 0.  0.  0.  3.  1.  5.  6.  5.  5.  8.]\n"
+" [ 0.  1.  1.  2.  1.  3.  5.  3.  5.  8.]]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:298
+msgid "We also don't have to include the upper and lower bound on the slice.  If we don't include the lower\n"
+"bound, Python uses 0 by default; if we don't include the upper, the slice runs to the end of the\n"
+"axis, and if we don't include either (i.e., if we use ':' on its own), the slice includes\n"
+"everything:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:303
+# code block
+msgid "~~~\n"
+"small = data[:3, 36:]\n"
+"print('small is:')\n"
+"print(small)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:308
+msgid "{: .language-python}\n"
+"The above example selects rows 0 through 2 and columns 36 through to the end of the array."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:311
+# code block
+msgid "~~~\n"
+"small is:\n"
+"[[ 2.  3.  0.  0.]\n"
+" [ 1.  1.  0.  1.]\n"
+" [ 2.  2.  1.  1.]]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:319
+# header
+msgid "## Analyzing data"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:321
+msgid "NumPy has several useful functions that take an array as input to perform operations on its values.\n"
+"If we want to find the average inflammation for all patients on\n"
+"all days, for example, we can ask NumPy to compute `data`'s mean value:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:325
+# code block
+msgid "~~~\n"
+"print(numpy.mean(data))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:330
+# code block
+msgid "~~~\n"
+"6.14875\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:335
+msgid "`mean` is a [function]({{ page.root }}/reference.html#function) that takes\n"
+"an array as an [argument]({{ page.root }}/reference.html#argument)."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:338
+# blockquote, which can be cascaded
+msgid "> ## Not All Functions Have Input"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:339
+msgid ">\n"
+"> Generally, a function uses inputs to produce outputs.\n"
+"> However, some functions produce outputs without\n"
+"> needing any input. For example, checking the current time\n"
+"> doesn't require any input.\n"
+">\n"
+"> ~~~\n"
+"> import time\n"
+"> print(time.ctime())\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> Sat Mar 26 13:07:33 2016\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:355
+msgid ">\n"
+"> For functions that don't take in any arguments,\n"
+"> we still need parentheses (`()`)\n"
+"> to tell Python to go and do something for us."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:361
+msgid "Let's use three other NumPy functions to get some descriptive values about the dataset.\n"
+"We'll also use multiple assignment,\n"
+"a convenient Python feature that will enable us to do this all in one line."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:365
+# code block
+msgid "~~~\n"
+"maxval, minval, stdval = numpy.max(data), numpy.min(data), numpy.std(data)\n"
+"\n"
+"print('maximum inflammation:', maxval)\n"
+"print('minimum inflammation:', minval)\n"
+"print('standard deviation:', stdval)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:374
+msgid "Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value\n"
+"from `numpy.min(data)` to `minval`, and so on."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:377
+# code block
+msgid "~~~\n"
+"maximum inflammation: 20.0\n"
+"minimum inflammation: 0.0\n"
+"standard deviation: 4.61383319712\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:384
+# blockquote, which can be cascaded
+msgid "> ## Mystery Functions in IPython"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:385
+msgid ">\n"
+"> How did we know what functions NumPy has and how to use them?\n"
+"> If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out.\n"
+"> If you type the name of something followed by a dot, then you can use tab completion\n"
+"> (e.g. type `numpy.` and then press <kbd>Tab</kbd>)\n"
+"> to see a list of all functions and attributes that you can use. After selecting one, you\n"
+"> can also add a question mark (e.g. `numpy.cumprod?`), and IPython will return an\n"
+"> explanation of the method! This is the same as doing `help(numpy.cumprod)`.\n"
+"> Similarly, if you are using the \"plain vanilla\" Python interpreter, you can type `numpy.`\n"
+"> and press the <kbd>Tab</kbd> key twice for a listing of what is available. You can then use the\n"
+"> `help()` function to see an explanation of the function you're interested in,\n"
+"> for example: `help(numpy.cumprod)`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:399
+msgid "When analyzing data, though,\n"
+"we often want to look at variations in statistical values,\n"
+"such as the maximum inflammation per patient\n"
+"or the average inflammation per day.\n"
+"One way to do this is to create a new temporary array of the data we want,\n"
+"then ask it to do the calculation:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:406
+# code block
+msgid "~~~\n"
+"patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)\n"
+"print('maximum inflammation for patient 0:', numpy.max(patient_0))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:412
+# code block
+msgid "~~~\n"
+"maximum inflammation for patient 0: 18.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:417
+msgid "Everything in a line of code following the '#' symbol is a\n"
+"[comment]({{ page.root }}/reference.html#comment) that is ignored by Python.\n"
+"Comments allow programmers to leave explanatory notes for other\n"
+"programmers or their future selves."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:422
+msgid "We don't actually need to store the row in a variable of its own.\n"
+"Instead, we can combine the selection and the function call:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:425
+# code block
+msgid "~~~\n"
+"print('maximum inflammation for patient 2:', numpy.max(data[2, :]))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:430
+# code block
+msgid "~~~\n"
+"maximum inflammation for patient 2: 19.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:435
+msgid "What if we need the maximum inflammation for each patient over all days (as in the\n"
+"next diagram on the left) or the average for each day (as in the\n"
+"diagram on the right)? As the diagram below shows, we want to perform the\n"
+"operation across an axis:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:440
+msgid "![Per-patient maximum inflammation is computed row-wise across all columns using numpy.max(data, axis=1).\n"
+"Per-day average inflammation is computed column-wise across all rows using numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:443
+msgid "To support this functionality,\n"
+"most array functions allow us to specify the axis we want to work on.\n"
+"If we ask for the average across axis 0 (rows in our 2D example),\n"
+"we get:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:448
+# code block
+msgid "~~~\n"
+"print(numpy.mean(data, axis=0))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:453
+# code block
+msgid "~~~\n"
+"[  0.           0.45         1.11666667   1.75         2.43333333   3.15\n"
+"   3.8          3.88333333   5.23333333   5.51666667   5.95         5.9\n"
+"   8.35         7.73333333   8.36666667   9.5          9.58333333\n"
+"  10.63333333  11.56666667  12.35        13.25        11.96666667\n"
+"  11.03333333  10.16666667  10.           8.66666667   9.15         7.25\n"
+"   7.33333333   6.58333333   6.06666667   5.95         5.11666667   3.6\n"
+"   3.3          3.56666667   2.48333333   1.5          1.13333333\n"
+"   0.56666667]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:465
+msgid "As a quick check,\n"
+"we can ask this array what its shape is:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:468
+# code block
+msgid "~~~\n"
+"print(numpy.mean(data, axis=0).shape)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:473
+# code block
+msgid "~~~\n"
+"(40,)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:478
+msgid "The expression `(40,)` tells us we have an N×1 vector,\n"
+"so this is the average inflammation per day for all patients.\n"
+"If we average across axis 1 (columns in our 2D example), we get:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:482
+# code block
+msgid "~~~\n"
+"print(numpy.mean(data, axis=1))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:487
+# code block
+msgid "~~~\n"
+"[ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525\n"
+"  6.775  5.8    6.225  5.75   5.225  6.3    6.55   5.7    5.85   6.55\n"
+"  5.775  5.825  6.175  6.1    5.8    6.425  6.05   6.025  6.175  6.55\n"
+"  6.175  6.35   6.725  6.125  7.075  5.725  5.925  6.15   6.075  5.75\n"
+"  5.975  5.725  6.3    5.9    6.75   5.925  7.225  6.15   5.95   6.275  5.7\n"
+"  6.1    6.825  5.975  6.725  5.7    6.25   6.4    7.05   5.9  ]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:497
+msgid "which is the average inflammation per patient across all days."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:500
+# blockquote, which can be cascaded
+msgid "> ## Slicing Strings"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:501
+msgid ">\n"
+"> A section of an array is called a [slice]({{ page.root }}/reference.html#slice).\n"
+"> We can take slices of character strings as well:\n"
+">\n"
+"> ~~~\n"
+"> element = 'oxygen'\n"
+"> print('first three characters:', element[0:3])\n"
+"> print('last three characters:', element[3:6])\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> first three characters: oxy\n"
+"> last three characters: gen\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:517
+msgid ">\n"
+"> What is the value of `element[:4]`?\n"
+"> What about `element[4:]`?\n"
+"> Or `element[:]`?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > oxyg\n"
+"> > en\n"
+"> > oxygen\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:530
+msgid ">\n"
+"> What is `element[-1]`?\n"
+"> What is `element[-2]`?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > n\n"
+"> > e\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:541
+msgid ">\n"
+"> Given those answers,\n"
+"> explain what `element[1:-1]` does.\n"
+">\n"
+"> > ## Solution\n"
+"> > Creates a substring from index 1 up to (not including) the final index,\n"
+"> > effectively removing the first and last letters from 'oxygen'"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:549
+msgid ">\n"
+"> How can we rewrite the slice for getting the last three characters of `element`,\n"
+"> so that it works even if we assign a different string to `element`?\n"
+"> Test your solution with the following strings: `carpentry`, `clone`, `hi`.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > element = 'oxygen'\n"
+"> > print('last three characters:', element[-3:])\n"
+"> > element = 'carpentry'\n"
+"> > print('last three characters:', element[-3:])\n"
+"> > element = 'clone'\n"
+"> > print('last three characters:', element[-3:])\n"
+"> > element = 'hi'\n"
+"> > print('last three characters:', element[-3:])\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> > ~~~\n"
+"> > last three characters: gen\n"
+"> > last three characters: try\n"
+"> > last three characters: one\n"
+"> > last three characters: hi\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:576
+# blockquote, which can be cascaded
+msgid "> ## Thin Slices"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:577
+msgid ">\n"
+"> The expression `element[3:3]` produces an [empty string]({{ page.root }}/reference.html#empty-string),\n"
+"> i.e., a string that contains no characters.\n"
+"> If `data` holds our array of patient data,\n"
+"> what does `data[3:3, 4:4]` produce?\n"
+"> What about `data[3:3, :]`?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > array([], shape=(0, 0), dtype=float64)\n"
+"> > array([], shape=(0, 40), dtype=float64)\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:593
+# blockquote, which can be cascaded
+msgid "> ## Stacking Arrays"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:594
+msgid ">\n"
+"> Arrays can be concatenated and stacked on top of one another,\n"
+"> using NumPy's `vstack` and `hstack` functions for vertical and horizontal stacking, respectively.\n"
+">\n"
+"> ~~~\n"
+"> import numpy\n"
+">\n"
+"> A = numpy.array([[1,2,3], [4,5,6], [7, 8, 9]])\n"
+"> print('A = ')\n"
+"> print(A)\n"
+">\n"
+"> B = numpy.hstack([A, A])\n"
+"> print('B = ')\n"
+"> print(B)\n"
+">\n"
+"> C = numpy.vstack([A, A])\n"
+"> print('C = ')\n"
+"> print(C)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> A =\n"
+"> [[1 2 3]\n"
+">  [4 5 6]\n"
+">  [7 8 9]]\n"
+"> B =\n"
+"> [[1 2 3 1 2 3]\n"
+">  [4 5 6 4 5 6]\n"
+">  [7 8 9 7 8 9]]\n"
+"> C =\n"
+"> [[1 2 3]\n"
+">  [4 5 6]\n"
+">  [7 8 9]\n"
+">  [1 2 3]\n"
+">  [4 5 6]\n"
+">  [7 8 9]]\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:633
+msgid ">\n"
+"> Write some additional code that slices the first and last columns of `A`,\n"
+"> and stacks them into a 3x2 array.\n"
+"> Make sure to `print` the results to verify your solution.\n"
+">\n"
+"> > ## Solution\n"
+"> >\n"
+"> > A 'gotcha' with array indexing is that singleton dimensions\n"
+"> > are dropped by default. That means `A[:, 0]` is a one dimensional\n"
+"> > array, which won't stack as desired. To preserve singleton dimensions,\n"
+"> > the index itself can be a slice or array. For example, `A[:, :1]` returns\n"
+"> > a two dimensional array with one singleton dimension (i.e. a column\n"
+"> > vector).\n"
+"> >\n"
+"> > ~~~\n"
+"> > D = numpy.hstack((A[:, :1], A[:, -1:]))\n"
+"> > print('D = ')\n"
+"> > print(D)\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > ~~~\n"
+"> > D =\n"
+"> > [[1 3]\n"
+"> >  [4 6]\n"
+"> >  [7 9]]\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:662
+msgid ">\n"
+"> > ## Solution\n"
+"> >\n"
+"> > An alternative way to achieve the same result is to use Numpy's\n"
+"> > delete function to remove the second column of A.\n"
+"> >\n"
+"> > ~~~\n"
+"> > D = numpy.delete(A, 1, 1)\n"
+"> > print('D = ')\n"
+"> > print(D)\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > ~~~\n"
+"> > D =\n"
+"> > [[1 3]\n"
+"> >  [4 6]\n"
+"> >  [7 9]]\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:685
+# blockquote, which can be cascaded
+msgid "> ## Change In Inflammation"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:686
+msgid ">\n"
+"> The patient data is _longitudinal_ in the sense that each row represents a\n"
+"> series of observations relating to one individual.  This means that\n"
+"> the change in inflammation over time is a meaningful concept.\n"
+"> Let's find out how to calculate changes in the data contained in an array\n"
+"> with NumPy.\n"
+">\n"
+"> The `numpy.diff()` function takes an array and returns the differences\n"
+"> between two successive values. Let's use it to examine the changes\n"
+"> each day across the first week of patient 3 from our inflammation dataset.\n"
+">\n"
+"> ~~~\n"
+"> patient3_week1 = data[3, :7]\n"
+"> print(patient3_week1)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+">  [0. 0. 2. 0. 4. 2. 2.]\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:707
+msgid ">\n"
+"> Calling `numpy.diff(patient3_week1)` would do the following calculations\n"
+">\n"
+"> ~~~\n"
+"> [ 0 - 0, 2 - 0, 0 - 2, 4 - 0, 2 - 4, 2 - 2 ]\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> and return the 6 difference values in a new array.\n"
+">\n"
+"> ~~~\n"
+"> numpy.diff(patient3_week1)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> array([ 0.,  2., -2.,  4., -2.,  0.])\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:726
+msgid ">\n"
+"> Note that the array of differences is shorter by one element (length 6).\n"
+">\n"
+"> When calling `numpy.diff` with a multi-dimensional array, an `axis` argument may\n"
+"> be passed to the function to specify which axis to process. When applying\n"
+"> `numpy.diff` to our 2D inflammation array `data`, which axis would we specify?\n"
+">\n"
+"> > ## Solution\n"
+"> > Since the row axis (0) is patients, it does not make sense to get the\n"
+"> > difference between two arbitrary patients. The column axis (1) is in\n"
+"> > days, so the difference is the change in inflammation -- a meaningful\n"
+"> > concept.\n"
+"> >\n"
+"> > ~~~\n"
+"> > numpy.diff(data, axis=1)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:744
+msgid ">\n"
+"> If the shape of an individual data file is `(60, 40)` (60 rows and 40\n"
+"> columns), what would the shape of the array be after you run the `diff()`\n"
+"> function and why?\n"
+">\n"
+"> > ## Solution\n"
+"> > The shape will be `(60, 39)` because there is one fewer difference between\n"
+"> > columns than there are columns in the data."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/02-numpy.md:753
+msgid ">\n"
+"> How would you find the largest change in inflammation for each patient? Does\n"
+"> it matter if the change in inflammation is an increase or a decrease?\n"
+">\n"
+"> > ## Solution\n"
+"> > By using the `numpy.max()` function after you apply the `numpy.diff()`\n"
+"> > function, you will get the largest difference between days.\n"
+"> >\n"
+"> > ~~~\n"
+"> > numpy.max(numpy.diff(data, axis=1), axis=1)\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > ~~~\n"
+"> > array([  7.,  12.,  11.,  10.,  11.,  13.,  10.,   8.,  10.,  10.,   7.,\n"
+"> >          7.,  13.,   7.,  10.,  10.,   8.,  10.,   9.,  10.,  13.,   7.,\n"
+"> >         12.,   9.,  12.,  11.,  10.,  10.,   7.,  10.,  11.,  10.,   8.,\n"
+"> >         11.,  12.,  10.,   9.,  10.,  13.,  10.,   7.,   7.,  10.,  13.,\n"
+"> >         12.,   8.,   8.,  10.,  10.,   9.,   8.,  13.,  10.,   7.,  10.,\n"
+"> >          8.,  12.,  10.,   7.,  12.])\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > If inflammation values *decrease* along an axis, then the difference from\n"
+"> > one element to the next will be negative. If\n"
+"> > you are interested in the **magnitude** of the change and not the\n"
+"> > direction, the `numpy.absolute()` function will provide that.\n"
+"> >\n"
+"> > Notice the difference if you get the largest _absolute_ difference\n"
+"> > between readings.\n"
+"> >\n"
+"> > ~~~\n"
+"> > numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > ~~~\n"
+"> > array([ 12.,  14.,  11.,  13.,  11.,  13.,  10.,  12.,  10.,  10.,  10.,\n"
+"> >         12.,  13.,  10.,  11.,  10.,  12.,  13.,   9.,  10.,  13.,   9.,\n"
+"> >         12.,   9.,  12.,  11.,  10.,  13.,   9.,  13.,  11.,  11.,   8.,\n"
+"> >         11.,  12.,  13.,   9.,  10.,  13.,  11.,  11.,  13.,  11.,  13.,\n"
+"> >         13.,  10.,   9.,  10.,  10.,   9.,   9.,  13.,  10.,   9.,  10.,\n"
+"> >         11.,  13.,  10.,  10.,  12.])\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >"
+msgstr ""
+

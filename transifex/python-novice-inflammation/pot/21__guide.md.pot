@@ -1,0 +1,238 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_extras/guide.md:1
+#: python-novice-inflammation/bin/boilerplate/_extras/guide.md:1
+# Front Matter
+msgid "---\n"
+"title: \"Instructor Notes\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:5
+# header
+msgid "## About the lesson"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:7
+msgid "Our real goal isn't to teach workshop attendees Python as a programming language,\n"
+"but to teach them the basic concepts that all programming depends on.\n"
+"We use Python in our lessons because:"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:11
+# ordered list
+msgid "1.  It is free and open-source software."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:12
+# ordered list
+msgid "2.  It is well-documented and runs on all platforms."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:13
+# ordered list
+msgid "3.  It has a large and constantly growing user-base which includes scientists."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:14
+# ordered list
+msgid "4.  It is easier for novices to pick up than most other languages."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:16
+# header
+msgid "## Legend"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:18
+msgid "We are using a dataset with records on inflammation from patients following an\n"
+"arthritis treatment."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:21
+msgid "We make reference in the lesson that this data is somehow strange. It is strange\n"
+"because it is fabricated! The script used to generate the inflammation data\n"
+"is included as [`code/gen_inflammation.py`](../code/gen_inflammation.py)."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:25
+# header
+msgid "## Overall"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:27
+msgid "This lesson is written as an introduction to Python,\n"
+"but its real purpose is to introduce the single most important idea in programming:\n"
+"how to solve problems by building functions,\n"
+"each of which can fit in a programmer's working memory.\n"
+"In order to teach that,\n"
+"we must teach people a little about\n"
+"the mechanics of manipulating data with lists and file I/O\n"
+"so that their functions can do things they actually care about.\n"
+"Our teaching order tries to show practical uses of every idea as soon as it is introduced;\n"
+"instructors should resist the temptation to explain\n"
+"the \"other 90%\" of the language\n"
+"as well."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:40
+msgid "The final example asks them to build a command-line tool\n"
+"that works with the Unix pipe-and-filter model.\n"
+"We do this because it is a useful skill\n"
+"and because it helps learners see that the software they use isn't magical.\n"
+"Tools like `grep` might be more sophisticated than\n"
+"the programs our learners can write at this point in their careers,\n"
+"but it's crucial they realize this is a difference of scale rather than kind."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:48
+msgid "Explain that we use Python because:"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:50
+# unordered list
+msgid "*   It's free."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:51
+# unordered list
+msgid "*   It has a lot of scientific libraries, and more are constantly being added."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:52
+# unordered list
+msgid "*   It has a large scientific user community."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:53
+# unordered list
+msgid "*   It's easier for novices to learn than most of the mature alternatives."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:54
+msgid "    (Software Carpentry originally used Perl;\n"
+"    when we switched,\n"
+"    we found that we could cover as much material in two days in Python\n"
+"    as we'd covered in three days in Perl,\n"
+"    and that retention was higher.)"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:60
+msgid "We do *not* include instructions on running the Jupyter Notebook in the tutorial\n"
+"because we want to focus on the language rather than the tools.\n"
+"Instructors should, however, walk learners through some basic operations:"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:64
+# unordered list
+msgid "*   Launch from the command line with `jupyter notebook`."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:65
+# unordered list
+msgid "*   Create a new notebook."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:66
+# unordered list
+msgid "*   Enter code or data in a cell and execute it."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:67
+# unordered list
+msgid "*   Explain the difference between `In[#]` and `Out[#]`."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:69
+msgid "Watching the instructor grow programs step by step\n"
+"is as helpful to learners as anything to do with Python.\n"
+"Resist the urge to update a single cell repeatedly\n"
+"(which is what you'd probably do in real life).\n"
+"Instead,\n"
+"clone the previous cell and write the update in the new copy\n"
+"so that learners have a complete record of how the program grew.\n"
+"Once you've done this,\n"
+"you can say,\n"
+"\"Now why don't we just break things into small functions right from the start?\""
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:80
+msgid "The discussion of command-line scripts\n"
+"assumes that students understand standard I/O and building filters,\n"
+"which are covered in the lesson on the shell."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:84
+# header
+msgid "## Frequently Argued Issues (FAI)"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:86
+# unordered list
+msgid "*   `import ... as ...` syntax."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:88
+msgid "    This syntax is commonly used in the scientific Python community;\n"
+"    it is explicitly recommended in documentation to `import numpy as np`\n"
+"    and `import matplotlib.pyplot as plt`. Despite that, we have decided\n"
+"    not to introduce aliasing imports in this novice lesson due to the\n"
+"    additional cognitive load it puts on students, despite the typing that\n"
+"    it saves. A good summary of arguments for and against can be found in\n"
+"    [PR #61](https://github.com/swcarpentry/python-novice-inflammation/pull/61)."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:96
+msgid "    It is up to you as an individual instructor whether you want to introduce\n"
+"    these aliases when you teach this lesson, but we encourage you to please\n"
+"    read those arguments thoroughly before deciding one way or the other."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:100
+# unordered list
+msgid "*   NumPy methods."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:102
+msgid "    We used to use NumPy array methods in the first [NumPy topic]({{ page.root }}/01-numpy/).\n"
+"    We switched these methods to the equivalent functions because a majority\n"
+"    of instructors supported the change; see\n"
+"    [PR #244](https://github.com/swcarpentry/python-novice-inflammation/pull/244)\n"
+"    for detailed arguments for and against the change."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:108
+# unordered list
+msgid "*   Underscores vs. hyphens in filenames"
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:110
+msgid "    We used to use hyphens in filenames in order to signify that these Python\n"
+"    files should only be run as scripts and never imported. However, after some\n"
+"    [discussion](https://github.com/swcarpentry/python-novice-inflammation/pull/254),\n"
+"    including an informal Twitter poll, we switched over to underscores because\n"
+"    many files that start off as Python scripts end up being imported eventually.\n"
+"    For that reason, we also added `if __name__ == '__main__'` guards around\n"
+"    `main()` calls, which is how real-world Python scripts ensure that imports\n"
+"    do not result in side-effects."
+msgstr ""
+
+#: python-novice-inflammation/_extras/guide.md:119
+msgid "After discussing the challenges is a good time to introduce the `b *= 2` syntax."
+msgstr ""
+
