@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_extras/figures.md:1
+#: python-novice-inflammation/bin/boilerplate/_extras/figures.md:1
+# Front Matter
+msgid "---\n"
+"title: Figures\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_extras/figures.md:5
+#: python-novice-inflammation/bin/boilerplate/_extras/figures.md:5
+msgid "{% include base_path.html %}\n"
+"{% include manual_episode_order.html %}"
+msgstr ""
+
+#: python-novice-inflammation/_extras/figures.md:8
+#: python-novice-inflammation/bin/boilerplate/_extras/figures.md:8
+# inline html
+msgid "<script>\n"
+"  window.onload = function() {\n"
+"    var lesson_episodes = [\n"
+"    {% for lesson_episode in lesson_episodes %}\n"
+"      {% if site.episode_order %}\n"
+"        {% assign episode = site.episodes | where: \"slug\", lesson_episode | first %}\n"
+"      {% else %}\n"
+"        {% assign episode = lesson_episode %}\n"
+"      {% endif %}\n"
+"    \"{{ episode.url }}\"{% unless forloop.last %},{% endunless %}\n"
+"    {% endfor %}\n"
+"    ];\n"
+"\n"
+"    var xmlHttp = [];  /* Required since we are going to query every episode. */\n"
+"    for (i=0; i < lesson_episodes.length; i++) {\n"
+"\n"
+"      xmlHttp[i] = new XMLHttpRequest();\n"
+"      xmlHttp[i].episode = lesson_episodes[i];  /* To enable use this later. */\n"
+"      xmlHttp[i].onreadystatechange = function() {\n"
+"\n"
+"        if (this.readyState == 4 && this.status == 200) {\n"
+"          var parser = new DOMParser();\n"
+"          var htmlDoc = parser.parseFromString(this.responseText,\"text/html\");\n"
+"          var htmlDocArticle = htmlDoc.getElementsByTagName(\"article\")[0];\n"
+"\n"
+"          var article_here = document.getElementById(this.episode);\n"
+"          var images = htmlDocArticle.getElementsByTagName(\"img\");\n"
+"\n"
+"          if (images.length > 0) {\n"
+"            var h1text = htmlDocArticle.getElementsByTagName(\"h1\")[0].innerHTML;\n"
+"\n"
+"            var htitle = document.createElement('h2');\n"
+"            htitle.innerHTML = h1text;\n"
+"            article_here.appendChild(htitle);\n"
+"\n"
+"            var image_num = 0;\n"
+"            for (let image of images) {\n"
+"              image_num++;\n"
+"\n"
+"              var title = document.createElement('p');\n"
+"              title.innerHTML = \"<strong>Figure \" + image_num + \".</strong> \" + image.alt;\n"
+"              article_here.appendChild(title);\n"
+"\n"
+"              article_here.appendChild(image.cloneNode(false));\n"
+"\n"
+"              if (image_num < images.length) {\n"
+"                var hr = document.createElement('hr');\n"
+"                article_here.appendChild(hr);\n"
+"              }\n"
+"            }\n"
+"          }\n"
+"        }\n"
+"      }\n"
+"      episode_url = \"{{ relative_root_path }}\" + lesson_episodes[i];\n"
+"      xmlHttp[i].open(\"GET\", episode_url);\n"
+"      xmlHttp[i].send(null);\n"
+"    }\n"
+"  }\n"
+"</script>"
+msgstr ""
+
+#: python-novice-inflammation/_extras/figures.md:68
+#: python-novice-inflammation/bin/boilerplate/_extras/figures.md:68
+msgid "{% comment %} Create anchor for each one of the episodes.  {% endcomment %}"
+msgstr ""
+
+#: python-novice-inflammation/_extras/figures.md:70
+#: python-novice-inflammation/bin/boilerplate/_extras/figures.md:70
+msgid "{% for lesson_episode in lesson_episodes %}\n"
+"  {% if site.episode_order %}\n"
+"    {% assign episode = site.episodes | where: \"slug\", lesson_episode | first %}\n"
+"  {% else %}\n"
+"    {% assign episode = lesson_episode %}\n"
+"  {% endif %}\n"
+"<article id=\"{{ episode.url }}\" class=\"figures\"></article>\n"
+"{% endfor %}"
+msgstr ""
+

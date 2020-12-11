@@ -1,0 +1,40 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/bin/boilerplate/_episodes/01-introduction.md:1
+# Front Matter
+msgid "---\n"
+"title: \"Introduction\"\n"
+"teaching: 0\n"
+"exercises: 0\n"
+"questions:\n"
+"- \"Key question (FIXME)\"\n"
+"objectives:\n"
+"- \"First learning objective. (FIXME)\"\n"
+"keypoints:\n"
+"- \"First key point. Brief Answer to questions. (FIXME)\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/_episodes/01-introduction.md:12
+#: python-novice-inflammation/bin/boilerplate/_extras/discuss.md:4
+#: python-novice-inflammation/bin/boilerplate/_extras/guide.md:4
+#: python-novice-inflammation/bin/boilerplate/reference.md:7
+#: python-novice-inflammation/bin/boilerplate/setup.md:4
+msgid "FIXME"
+msgstr ""
+

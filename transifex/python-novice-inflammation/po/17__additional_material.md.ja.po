@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_extras/additional_material.md:1
+# Front Matter
+msgid "---\n"
+"title: \"Additional material\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:4
+msgid "A collection of facts about Python that do not fit into the main lesson\n"
+"either due to the scope or time constraints of the main lesson."
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:8
+# header
+msgid "## Jupyter Notebook/IPython: Who's Who in Memory"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:10
+msgid "You can use the `%whos` command at any time to see what\n"
+"variables you have created and what modules you have loaded into the computer's memory.\n"
+"As this is an IPython command, it will only work if you are in an IPython terminal or the\n"
+"Jupyter Notebook."
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:15
+# code block
+msgid "~~~\n"
+"%whos\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:20
+# code block
+msgid "~~~\n"
+"Variable    Type       Data/Info\n"
+"--------------------------------\n"
+"weight_kg   float      100.0\n"
+"weight_lb   float      143.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:29
+msgid "<br />\n"
+"## Integer Division"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:32
+msgid "We are using Python 3, where division always returns a floating point number:"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:34
+# code block
+msgid "~~~\n"
+"5/9\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:37
+msgid "{: .language-python}\n"
+"~~~\n"
+"0.5555555555555556\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:43
+msgid "Unfortunately, this wasn't the case in Python 2:\n"
+"~~~\n"
+"5/9\n"
+"~~~\n"
+"{: .language-python}\n"
+"~~~\n"
+"0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:53
+msgid "If you are using Python 2 and want to keep the fractional part of division\n"
+"you need to convert one or the other number to floating point:"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:56
+# code block
+msgid "~~~\n"
+"float(5)/9\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:61
+#: python-novice-inflammation/_extras/additional_material.md:71
+#: python-novice-inflammation/_extras/additional_material.md:81
+#: python-novice-inflammation/_extras/additional_material.md:90
+# code block
+msgid "~~~\n"
+"0.555555555556\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:66
+# code block
+msgid "~~~\n"
+"5/float(9)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:76
+# code block
+msgid "~~~\n"
+"5.0/9\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:85
+# code block
+msgid "~~~\n"
+"5/9.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:95
+msgid "And if you want an integer result from division in Python 3,\n"
+"use a double-slash:"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:98
+# code block
+msgid "~~~\n"
+"4//2\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:103
+# code block
+msgid "~~~\n"
+"2\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:108
+# code block
+msgid "~~~\n"
+"3//2\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_extras/additional_material.md:113
+# code block
+msgid "~~~\n"
+"1\n"
+"~~~"
+msgstr ""
+

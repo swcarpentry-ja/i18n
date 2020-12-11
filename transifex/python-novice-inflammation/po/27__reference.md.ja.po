@@ -1,0 +1,441 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/bin/boilerplate/reference.md:1
+#: python-novice-inflammation/reference.md:1
+# Front Matter
+msgid "---\n"
+"layout: reference\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/reference.md:5
+#: python-novice-inflammation/reference.md:5
+# header
+msgid "## Glossary"
+msgstr ""
+
+#: python-novice-inflammation/reference.md:7
+msgid "{:auto_ids}\n"
+"additive color model\n"
+":   A way to represent colors as the sum of contributions from primary colors\n"
+"    such as [red, green, and blue](#rgb)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:12
+msgid "argument\n"
+":   A value given to a function or program when it runs.\n"
+"    The term is often used interchangeably (and inconsistently) with [parameter](#parameter)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:16
+msgid "assertion\n"
+":   An expression which is supposed to be true at a particular point in a program.\n"
+"    Programmers typically put assertions in their code to check for errors;\n"
+"    if the assertion fails (i.e., if the expression evaluates as false),\n"
+"    the program halts and produces an error message.\n"
+"    See also: [invariant](#invariant), [precondition](#precondition),\n"
+"    [postcondition](#postcondition)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:24
+msgid "assign\n"
+":   To give a value a name by associating a variable with it."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:27
+msgid "body\n"
+":   (of a function): the statements that are executed when a function runs."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:30
+msgid "call stack\n"
+":   A data structure inside a running program that keeps track of active function calls."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:33
+msgid "case-insensitive\n"
+":   Treating text as if upper and lower case characters of the same letter were the same.\n"
+"    See also: [case-sensitive](#case-sensitive)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:37
+msgid "case-sensitive\n"
+":   Treating text as if upper and lower case characters of the same letter are different.\n"
+"    See also: [case-insensitive](#case-insensitive)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:41
+msgid "comment\n"
+":   A remark in a program that is intended to help human readers understand what is going on,\n"
+"    but is ignored by the computer.\n"
+"    Comments in Python, R, and the Unix shell start with a `#` character and\n"
+"    run to the end of the line;\n"
+"    comments in SQL start with `--`,\n"
+"    and other languages have other conventions."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:49
+msgid "compose\n"
+":   To apply one function to the result of another, such as `f(g(x))`."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:52
+msgid "conditional statement\n"
+":   A statement in a program that might or might not be executed\n"
+"    depending on whether a test is true or false."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:56
+msgid "comma-separated values\n"
+":   (CSV) A common textual representation for tables\n"
+"    in which the values in each row are separated by commas."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:60
+msgid "default value\n"
+":   A value to use for a [parameter](#parameter) if nothing is specified explicitly."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:63
+msgid "defensive programming\n"
+":   The practice of writing programs that check their own operation\n"
+"    to catch errors as early as possible."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:67
+msgid "delimiter\n"
+":   A character or characters used to separate individual values,\n"
+"    such as the commas between columns in a [CSV](#comma-separated-values) file."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:71
+msgid "docstring\n"
+":   Short for \"documentation string\",\n"
+"    this refers to textual documentation embedded in Python programs.\n"
+"    Unlike comments, docstrings are preserved in the running program\n"
+"    and can be examined in interactive sessions."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:77
+msgid "documentation\n"
+":   Human-language text written to explain what software does,\n"
+"    how it works, or how to use it."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:81
+msgid "dotted notation\n"
+":   A two-part notation used in many programming languages\n"
+"    in which `thing.component` refers to the `component` belonging to `thing`."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:85
+msgid "empty string\n"
+":   A character string containing no characters,\n"
+"    often thought of as the \"zero\" of text."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:89
+msgid "encapsulation\n"
+":   The practice of hiding something's implementation details\n"
+"    so that the rest of a program can worry about *what* it does\n"
+"    rather than *how* it does it."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:94
+msgid "floating-point number\n"
+":   A number containing a fractional part and an exponent.\n"
+"    See also: [integer](#integer)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:98
+msgid "for loop\n"
+":   A loop that is executed once for each value in some kind of set, list, or range.\n"
+"    See also: [while loop](#while-loop)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:102
+msgid "function\n"
+":   A named group of instructions that is executed when the function's name is used in\n"
+"    the code. Occurrence of a function name in the code is a [function call](#function-call).\n"
+"    Functions may process input [arguments](#argument) and return the result back. Functions\n"
+"    may also be used for logically grouping together pieces of code. In such cases, they don't\n"
+"    need to return any meaningful value and can be written without the\n"
+"    [`return` statement](#return-statement) completely.\n"
+"    Such functions return a special value `None`, which is a way of saying \"nothing\" in Python."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:111
+msgid "function call\n"
+":   A use of a function in another piece of software."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:114
+msgid "heat map\n"
+":   A graphical representation of two-dimensional data in which colors,\n"
+"    ranging on a scale of hue or intensity, represent the data values."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:118
+msgid "immutable\n"
+":   Unchangeable.\n"
+"    The value of immutable data cannot be altered after it has been created.\n"
+"    See also: [mutable](#mutable)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:123
+msgid "import\n"
+":   To load a [library](#library) into a program."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:126
+msgid "in-place operators\n"
+":   An operator such as `+=` that provides a shorthand notation for\n"
+"    the common case in which the variable being assigned to\n"
+"    is also an operand on the right hand side of the assignment.\n"
+"    For example, the statement `x += 3` means the same thing as `x = x + 3`."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:132
+msgid "index\n"
+":   A subscript that specifies the location of a single value in a collection,\n"
+"    such as a single pixel in an image."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:136
+msgid "inner loop\n"
+":   A loop that is inside another loop. See also: [outer loop](#outer-loop)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:139
+msgid "integer\n"
+":   A whole number, such as -12343. See also: [floating-point number](#floating-point-number)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:142
+msgid "invariant\n"
+":   An expression whose value doesn't change during the execution of a program,\n"
+"    typically used in an [assertion](#assertion).\n"
+"    See also: [precondition](#precondition), [postcondition](#postcondition)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:147
+msgid "library\n"
+":   A family of code units (functions, classes, variables) that implement a set of\n"
+"    related tasks."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:151
+msgid "loop variable\n"
+":   The variable that keeps track of the progress of the loop."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:154
+msgid "member\n"
+":   A variable contained within an [object](#object)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:157
+msgid "method\n"
+":   A function which is tied to a particular [object](#object).\n"
+"    Each of an object's methods typically implements one of the things it can do,\n"
+"    or one of the questions it can answer."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:162
+msgid "mutable\n"
+":   Changeable. The value of mutable data can be altered after it has been\n"
+"    created. See [immutable](#immutable).\""
+msgstr ""
+
+#: python-novice-inflammation/reference.md:166
+msgid "notebook\n"
+":   Interactive computational environment accessed via your web browser, in which you can write\n"
+"    and execute Python code and combine it with explanatory text, mathematics and visualizations.\n"
+"    Examples are IPython or Jupyter notebooks."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:171
+msgid "object\n"
+":   A collection of conceptually related variables ([members](#member)) and\n"
+"    functions using those variables ([methods](#method))."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:175
+msgid "outer loop\n"
+":   A loop that contains another loop.\n"
+"    See also: [inner loop](#inner-loop)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:179
+msgid "parameter\n"
+":   A variable named in the function's declaration that is used to\n"
+"    hold a value passed into the call.\n"
+"    The term is often used interchangeably (and inconsistently) with [argument](#argument)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:184
+msgid "pipe\n"
+":   A connection from the output of one program to the input of another.\n"
+"    When two or more programs are connected in this way, they are called a \"pipeline\"."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:188
+msgid "postcondition\n"
+":   A condition that a function (or other block of code) guarantees is true\n"
+"    once it has finished running.\n"
+"    Postconditions are often represented using [assertions](#assertion)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:193
+msgid "precondition\n"
+":   A condition that must be true in order for a function (or other block of code)\n"
+"    to run correctly."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:197
+msgid "regression\n"
+":   To re-introduce a bug that was once fixed."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:200
+msgid "return statement\n"
+":   A statement that causes a function to stop executing and return a value\n"
+"    to its caller immediately."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:204
+msgid "RGB\n"
+":   An [additive model](#additive-color-model)\n"
+"    that represents colors as combinations of red, green, and blue.\n"
+"    Each color's value is typically in the range 0..255\n"
+"    (i.e., a one-byte integer)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:210
+msgid "sequence\n"
+":   A collection of information that is presented in a specific order.\n"
+"    For example, in Python, a [string](#string) is a sequence of characters,\n"
+"    while a list is a sequence of any variable."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:215
+msgid "shape\n"
+":   An array's dimensions, represented as a vector.\n"
+"    For example, a 5×3 array's shape is `(5,3)`."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:219
+msgid "silent failure\n"
+":   Failing without producing any warning messages.\n"
+"    Silent failures are hard to detect and debug."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:223
+msgid "slice\n"
+":   A regular subsequence of a larger sequence,\n"
+"    such as the first five elements or every second element."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:227
+msgid "stack frame\n"
+":   A data structure that provides storage for a function's local variables.\n"
+"    Each time a function is called, a new stack frame is created\n"
+"    and put on the top of the [call stack](#call-stack). When the function returns,\n"
+"    the stack frame is discarded."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:233
+msgid "standard input\n"
+":   A process's default input stream.\n"
+"    In interactive command-line applications,\n"
+"    it is typically connected to the keyboard; in a [pipe](#pipe),\n"
+"    it receives data from the [standard output](#standard-output) of the preceding process."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:239
+msgid "standard output\n"
+":   A process's default output stream.\n"
+"    In interactive command-line applications,\n"
+"    data sent to standard output is displayed on the screen;\n"
+"    in a [pipe](#pipe),\n"
+"    it is passed to the [standard input](#standard-input) of the next process."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:246
+msgid "string\n"
+":   Short for \"character string\",\n"
+"    a [sequence](#sequence) of zero or more characters."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:250
+msgid "syntax\n"
+":   The rules that define how code must be written for a computer to understand."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:253
+msgid "syntax error\n"
+":   A programming error that occurs when statements are in an order or contain characters\n"
+"    not expected by the programming language."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:257
+msgid "test oracle\n"
+":   A program, device, data set, or human being\n"
+"    against which the results of a test can be compared."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:261
+msgid "test-driven development\n"
+":   The practice of writing unit tests *before* writing the code they test."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:264
+msgid "traceback\n"
+":   The sequence of function calls that led to an error."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:267
+msgid "tuple\n"
+":   An [immutable](#immutable) [sequence](#sequence) of values."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:270
+msgid "type\n"
+":   The classification of something in a program (for example, the contents of a variable)\n"
+"    as a kind of number (e.g. [floating-point](#float), [integer](#integer)),\n"
+"    [string](#string), or something else."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:275
+msgid "type of error\n"
+":   Indicates the nature of an error in a program. For example, in Python,\n"
+"    an `IOError` to problems with file input/output.\n"
+"    See also: [syntax error](#syntax-error)."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:280
+msgid "variable\n"
+":   A value that has a name associated with it."
+msgstr ""
+
+#: python-novice-inflammation/reference.md:283
+msgid "while loop\n"
+":   A loop that keeps executing as long as some condition is true.\n"
+"    See also: [for loop](#for-loop)."
+msgstr ""
+

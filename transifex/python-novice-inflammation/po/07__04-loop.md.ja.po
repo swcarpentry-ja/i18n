@@ -1,0 +1,565 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/04-loop.md:1
+# Front Matter
+msgid "---\n"
+"title: Repeating Actions with Loops\n"
+"teaching: 30\n"
+"exercises: 0\n"
+"questions:\n"
+"- \"How can I do the same operations on many different values?\"\n"
+"objectives:\n"
+"- \"Explain what a `for` loop does.\"\n"
+"- \"Correctly write `for` loops to repeat simple calculations.\"\n"
+"- \"Trace changes to a loop variable as the loop runs.\"\n"
+"- \"Trace changes to other variables as they are updated by a `for` loop.\"\n"
+"keypoints:\n"
+"- \"Use `for variable in sequence` to process the elements of a sequence one at a time.\"\n"
+"- \"The body of a `for` loop must be indented.\"\n"
+"- \"Use `len(thing)` to determine the length of something that contains other values.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:18
+msgid "In the last episode, we wrote Python code that plots values of interest from our first\n"
+"inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:21
+msgid "![Analysis of inflammation-01.csv](../fig/03-loop_2_0.png)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:23
+msgid "We have a dozen data sets right now, though, and more on the way.\n"
+"We want to create plots for all of our data sets with a single statement.\n"
+"To do that, we'll have to teach the computer how to repeat things."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:27
+msgid "An example task that we might want to repeat is printing each character in a\n"
+"word on a line of its own."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:30
+# code block
+msgid "~~~\n"
+"word = 'lead'\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:35
+msgid "In Python, a string is basically an ordered collection of characters, and every\n"
+"character has a unique number associated with it -- its index. This means that\n"
+"we can access characters in a string using their indices.\n"
+"For example, we can get the first character of the word `'lead'`, by using\n"
+"`word[0]`. One way to print each character is to use four `print` statements:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:41
+# code block
+msgid "~~~\n"
+"print(word[0])\n"
+"print(word[1])\n"
+"print(word[2])\n"
+"print(word[3])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:49
+#: python-novice-inflammation/_episodes/04-loop.md:110
+# code block
+msgid "~~~\n"
+"l\n"
+"e\n"
+"a\n"
+"d\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:57
+msgid "This is a bad approach for three reasons:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:59
+# ordered list
+msgid "1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:60
+msgid "    of letters long.  It might be easier to type them in manually."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:62
+# ordered list
+msgid "2.  **Difficult to maintain**. If we want to decorate each printed character with an"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:63
+msgid "    asterisk or any other character, we would have to change four lines of code. While\n"
+"    this might not be a problem for short strings, it would definitely be a problem for\n"
+"    longer ones."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:67
+# ordered list
+msgid "3.  **Fragile**. If we use it with a word that has more characters than what we initially"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:68
+msgid "    envisioned, it will only display part of the word's characters. A shorter string, on\n"
+"    the other hand, will cause an error because it will be trying to display part of the\n"
+"    string that doesn't exist."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:72
+# code block
+msgid "~~~\n"
+"word = 'tin'\n"
+"print(word[0])\n"
+"print(word[1])\n"
+"print(word[2])\n"
+"print(word[3])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:81
+# code block
+msgid "~~~\n"
+"t\n"
+"i\n"
+"n\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:88
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"IndexError                                Traceback (most recent call last)\n"
+"<ipython-input-3-7974b6cdaf14> in <module>()\n"
+"      3 print(word[1])\n"
+"      4 print(word[2])\n"
+"----> 5 print(word[3])\n"
+"\n"
+"IndexError: string index out of range\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:98
+#: python-novice-inflammation/_episodes/05-lists.md:113
+#: python-novice-inflammation/_episodes/08-func.md:448
+#: python-novice-inflammation/_episodes/09-errors.md:76
+#: python-novice-inflammation/_episodes/09-errors.md:164
+#: python-novice-inflammation/_episodes/09-errors.md:189
+#: python-novice-inflammation/_episodes/09-errors.md:245
+#: python-novice-inflammation/_episodes/09-errors.md:271
+#: python-novice-inflammation/_episodes/09-errors.md:294
+#: python-novice-inflammation/_episodes/09-errors.md:322
+#: python-novice-inflammation/_episodes/09-errors.md:361
+#: python-novice-inflammation/_episodes/09-errors.md:391
+#: python-novice-inflammation/_episodes/09-errors.md:427
+#: python-novice-inflammation/_episodes/10-defensive.md:92
+#: python-novice-inflammation/_episodes/10-defensive.md:168
+#: python-novice-inflammation/_episodes/10-defensive.md:190
+#: python-novice-inflammation/_episodes/10-defensive.md:230
+#: python-novice-inflammation/_episodes/10-defensive.md:325
+#: python-novice-inflammation/_episodes/10-defensive.md:398
+#: python-novice-inflammation/_episodes/10-defensive.md:457
+#: python-novice-inflammation/_extras/discuss.md:104
+#: python-novice-inflammation/_extras/discuss.md:287
+# SC/DC Template label
+msgid "{: .error}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:100
+msgid "Here's a better approach:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:102
+# code block
+msgid "~~~\n"
+"word = 'lead'\n"
+"for char in word:\n"
+"    print(char)\n"
+"\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:118
+msgid "This is shorter --- certainly shorter than something that prints every character in a\n"
+"hundred-letter string --- and more robust as well:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:121
+# code block
+msgid "~~~\n"
+"word = 'oxygen'\n"
+"for char in word:\n"
+"    print(char)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:128
+# code block
+msgid "~~~\n"
+"o\n"
+"x\n"
+"y\n"
+"g\n"
+"e\n"
+"n\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:138
+msgid "The improved version uses a [for loop]({{ page.root }}/reference.html#for-loop)\n"
+"to repeat an operation --- in this case, printing --- once for each thing in a sequence.\n"
+"The general form of a loop is:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:142
+# code block
+msgid "~~~\n"
+"for variable in collection:\n"
+"    # do things using variable, such as print\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:148
+msgid "Using the oxygen example above, the loop might look like this:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:150
+msgid "![loop_image](../fig/loops_image.png)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:152
+msgid "where each character (`char`) in the variable `word` is looped through and printed one character\n"
+"after another. The numbers in the diagram denote which loop cycle the character was printed in (1\n"
+"being the first loop, and 6 being the final loop)."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:156
+msgid "We can call the [loop variable]({{ page.root }}/reference.html#loop-variable) anything we like, but\n"
+"there must be a colon at the end of the line starting the loop, and we must indent anything we\n"
+"want to run inside the loop. Unlike many other languages, there is no command to signify the end\n"
+"of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:162
+# blockquote, which can be cascaded
+msgid "> ## What's in a name?"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:163
+msgid ">\n"
+">\n"
+"> In the example above, the loop variable was given the name `char` as a mnemonic;\n"
+"> it is short for 'character'.  We can choose any name we want for variables.\n"
+"> We can even call our loop variable `banana`, as long as we use this name consistently:\n"
+">\n"
+"> ~~~\n"
+"> word = 'oxygen'\n"
+"> for banana in word:\n"
+">     print(banana)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> o\n"
+"> x\n"
+"> y\n"
+"> g\n"
+"> e\n"
+"> n\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:185
+msgid ">\n"
+"> It is a good idea to choose variable names that are meaningful, otherwise it would be more\n"
+"> difficult to understand what the loop is doing."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:190
+msgid "Here's another loop that repeatedly updates a variable:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:192
+# code block
+msgid "~~~\n"
+"length = 0\n"
+"for vowel in 'aeiou':\n"
+"    length = length + 1\n"
+"print('There are', length, 'vowels')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:200
+# code block
+msgid "~~~\n"
+"There are 5 vowels\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:205
+msgid "It's worth tracing the execution of this little program step by step.\n"
+"Since there are five characters in `'aeiou'`,\n"
+"the statement on line 3 will be executed five times.\n"
+"The first time around,\n"
+"`length` is zero (the value assigned to it on line 1)\n"
+"and `vowel` is `'a'`.\n"
+"The statement adds 1 to the old value of `length`,\n"
+"producing 1,\n"
+"and updates `length` to refer to that new value.\n"
+"The next time around,\n"
+"`vowel` is `'e'` and `length` is 1,\n"
+"so `length` is updated to be 2.\n"
+"After three more updates,\n"
+"`length` is 5;\n"
+"since there is nothing left in `'aeiou'` for Python to process,\n"
+"the loop finishes\n"
+"and the `print` statement on line 4 tells us our final answer."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:223
+msgid "Note that a loop variable is a variable that's being used to record progress in a loop.\n"
+"It still exists after the loop is over,\n"
+"and we can re-use variables previously defined as loop variables as well:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:227
+# code block
+msgid "~~~\n"
+"letter = 'z'\n"
+"for letter in 'abc':\n"
+"    print(letter)\n"
+"print('after the loop, letter is', letter)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:235
+# code block
+msgid "~~~\n"
+"a\n"
+"b\n"
+"c\n"
+"after the loop, letter is c\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:243
+msgid "Note also that finding the length of a string is such a common operation\n"
+"that Python actually has a built-in function to do it called `len`:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:246
+# code block
+msgid "~~~\n"
+"print(len('aeiou'))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:251
+# code block
+msgid "~~~\n"
+"5\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:256
+msgid "`len` is much faster than any function we could write ourselves,\n"
+"and much easier to read than a two-line loop;\n"
+"it will also give us the length of many other things that we haven't met yet,\n"
+"so we should always use it when we can."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:261
+# blockquote, which can be cascaded
+msgid "> ## From 1 to N"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:262
+msgid ">\n"
+"> Python has a built-in function called `range` that generates a sequence of numbers. `range` can\n"
+"> accept 1, 2, or 3 parameters.\n"
+">\n"
+"> * If one parameter is given, `range` generates a sequence of that length,\n"
+">   starting at zero and incrementing by 1.\n"
+">   For example, `range(3)` produces the numbers `0, 1, 2`.\n"
+"> * If two parameters are given, `range` starts at\n"
+">   the first and ends just before the second, incrementing by one.\n"
+">   For example, `range(2, 5)` produces `2, 3, 4`.\n"
+"> * If `range` is given 3 parameters,\n"
+">   it starts at the first one, ends just before the second one, and increments by the third one.\n"
+">   For example, `range(3, 10, 2)` produces `3, 5, 7, 9`.\n"
+">\n"
+"> Using `range`,\n"
+"> write a loop that uses `range` to print the first 3 natural numbers:\n"
+">\n"
+"> ~~~\n"
+"> 1\n"
+"> 2\n"
+"> 3\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > for number in range(1, 4):\n"
+"> >     print(number)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:298
+# blockquote, which can be cascaded
+msgid "> ## Understanding the loops"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:299
+msgid ">\n"
+"> Given the following loop:\n"
+"> ~~~\n"
+"> word = 'oxygen'\n"
+"> for char in word:\n"
+">     print(char)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> How many times is the body of the loop executed?\n"
+">\n"
+"> * 3 times\n"
+"> * 4 times\n"
+"> * 5 times\n"
+"> * 6 times\n"
+">\n"
+"> > ## Solution\n"
+"> >\n"
+"> > The body of the loop is executed 6 times.\n"
+"> >"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:324
+# blockquote, which can be cascaded
+msgid "> ## Computing Powers With Loops"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:325
+msgid ">\n"
+"> Exponentiation is built into Python:\n"
+">\n"
+"> ~~~\n"
+"> print(5 ** 3)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> 125\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:337
+msgid ">\n"
+"> Write a loop that calculates the same result as `5 ** 3` using\n"
+"> multiplication (and without exponentiation).\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > result = 1\n"
+"> > for number in range(0, 3):\n"
+"> >     result = result * 5\n"
+"> > print(result)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:352
+# blockquote, which can be cascaded
+msgid "> ## Reverse a String"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:353
+msgid ">\n"
+"> Knowing that two strings can be concatenated using the `+` operator,\n"
+"> write a loop that takes a string\n"
+"> and produces a new string with the characters in reverse order,\n"
+"> so `'Newton'` becomes `'notweN'`.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > newstring = ''\n"
+"> > oldstring = 'Newton'\n"
+"> > for char in oldstring:\n"
+"> >     newstring = char + newstring\n"
+"> > print(newstring)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:371
+# blockquote, which can be cascaded
+msgid "> ## Computing the Value of a Polynomial"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:372
+msgid ">\n"
+"> The built-in function `enumerate` takes a sequence (e.g. a [list]({{ page.root }}/05-lists/)) and generates a\n"
+"> new sequence of the same length. Each element of the new sequence is a pair composed of the index\n"
+"> (0, 1, 2,...) and the value from the original sequence:\n"
+">\n"
+"> ~~~\n"
+"> for idx, val in enumerate(a_list):\n"
+">     # Do something using idx and val\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> The code above loops through `a_list`, assigning the index to `idx` and the value to `val`.\n"
+">\n"
+"> Suppose you have encoded a polynomial as a list of coefficients in\n"
+"> the following way: the first element is the constant term, the\n"
+"> second element is the coefficient of the linear term, the third is the\n"
+"> coefficient of the quadratic term, etc.\n"
+">\n"
+"> ~~~\n"
+"> x = 5\n"
+"> coefs = [2, 4, 3]\n"
+"> y = coefs[0] * x**0 + coefs[1] * x**1 + coefs[2] * x**2\n"
+"> print(y)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> 97\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/04-loop.md:402
+msgid ">\n"
+"> Write a loop using `enumerate(coefs)` which computes the value `y` of any\n"
+"> polynomial, given `x` and `coefs`.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > y = 0\n"
+"> > for idx, coef in enumerate(coefs):\n"
+"> >     y = y + coef * x**idx\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+

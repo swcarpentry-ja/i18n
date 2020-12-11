@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/CONTRIBUTING.md:1
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:1
+# header
+msgid "# Contributing"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:3
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:3
+msgid "[The Carpentries][c-site] ([Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry][lc-site]) are open source projects,\n"
+"and we welcome contributions of all kinds:\n"
+"new lessons,\n"
+"fixes to existing material,\n"
+"bug reports,\n"
+"and reviews of proposed changes are all welcome."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:10
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:10
+# header
+msgid "## Contributor Agreement"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:12
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:12
+msgid "By contributing,\n"
+"you agree that we may redistribute your work under [our license](LICENSE.md).\n"
+"In exchange,\n"
+"we will address your issues and/or assess your change proposal as promptly as we can,\n"
+"and help you become a member of our community.\n"
+"Everyone involved in [The Carpentries][c-site]\n"
+"agrees to abide by our [code of conduct](CODE_OF_CONDUCT.md)."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:20
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:20
+# header
+msgid "## How to Contribute"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:22
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:22
+msgid "The easiest way to get started is to file an issue\n"
+"to tell us about a spelling mistake,\n"
+"some awkward wording,\n"
+"or a factual error.\n"
+"This is a good way to introduce yourself\n"
+"and to meet some of our community members."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:29
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:29
+# ordered list
+msgid "1.  If you do not have a [GitHub][github] account,"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:30
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:30
+msgid "    you can [send us comments by email][email].\n"
+"    However,\n"
+"    we will be able to respond more quickly if you use one of the other methods described below."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:34
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:34
+# ordered list
+msgid "2.  If you have a [GitHub][github] account,"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:35
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:35
+msgid "    or are willing to [create one][github-join],\n"
+"    but do not know how to use Git,\n"
+"    you can report problems or suggest improvements by [creating an issue][issues].\n"
+"    This allows us to assign the item to someone\n"
+"    and to respond to it in a threaded discussion."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:41
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:41
+# ordered list
+msgid "3.  If you are comfortable with Git,"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:42
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:42
+msgid "    and would like to add or change material,\n"
+"    you can submit a pull request (PR).\n"
+"    Instructions for doing this are [included below](#using-github)."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:46
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:46
+# header
+msgid "## Where to Contribute"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:48
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:48
+# ordered list
+msgid "1.  If you wish to change this lesson,"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:49
+msgid "    please work in <https://github.com/swcarpentry/python-novice-inflammation>,\n"
+"    which can be viewed at <https://swcarpentry.github.io/python-novice-inflammation>."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:52
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:52
+# ordered list
+msgid "2.  If you wish to change the example lesson,"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:53
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:53
+msgid "    please work in <https://github.com/carpentries/lesson-example>,\n"
+"    which documents the format of our lessons\n"
+"    and can be viewed at <https://carpentries.github.io/lesson-example>."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:57
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:57
+# ordered list
+msgid "3.  If you wish to change the template used for workshop websites,"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:58
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:58
+msgid "    please work in <https://github.com/carpentries/workshop-template>.\n"
+"    The home page of that repository explains how to set up workshop websites,\n"
+"    while the extra pages in <https://carpentries.github.io/workshop-template>\n"
+"    provide more background on our design choices."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:63
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:63
+# ordered list
+msgid "4.  If you wish to change CSS style files, tools,"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:64
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:64
+msgid "    or HTML boilerplate for lessons or workshops stored in `_includes` or `_layouts`,\n"
+"    please work in <https://github.com/carpentries/styles>."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:67
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:67
+# header
+msgid "## What to Contribute"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:69
+msgid "There are many ways to contribute,\n"
+"from writing new exercises and improving existing ones\n"
+"to updating or filling in the documentation\n"
+"and submitting [bug reports][issues]\n"
+"about things that don't work, aren't clear, or are missing.\n"
+"If you are looking for ideas, please see the 'Issues' tab for\n"
+"a list of issues associated with this repository,\n"
+"or you may also look at the issues for [Data Carpentry][dc-issues],\n"
+"[Software Carpentry][swc-issues], and [Library Carpentry][lc-issues] projects."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:79
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:79
+msgid "Comments on issues and reviews of pull requests are just as welcome:\n"
+"we are smarter together than we are on our own.\n"
+"Reviews from novices and newcomers are particularly valuable:\n"
+"it's easy for people who have been using these lessons for a while\n"
+"to forget how impenetrable some of this material can be,\n"
+"so fresh eyes are always welcome."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:86
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:86
+# header
+msgid "## What *Not* to Contribute"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:88
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:88
+msgid "Our lessons already contain more material than we can cover in a typical workshop,\n"
+"so we are usually *not* looking for more concepts or tools to add to them.\n"
+"As a rule,\n"
+"if you want to introduce a new idea,\n"
+"you must (a) estimate how long it will take to teach\n"
+"and (b) explain what you would take out to make room for it.\n"
+"The first encourages contributors to be honest about requirements;\n"
+"the second, to think hard about priorities."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:97
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:97
+msgid "We are also not looking for exercises or other material that only run on one platform.\n"
+"Our workshops typically contain a mixture of Windows, macOS, and Linux users;\n"
+"in order to be usable,\n"
+"our lessons must run equally well on all three."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:102
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:102
+# header
+msgid "## Using GitHub"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:104
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:104
+msgid "If you choose to contribute via GitHub, you may want to look at\n"
+"[How to Contribute to an Open Source Project on GitHub][how-contribute].\n"
+"To manage changes, we follow [GitHub flow][github-flow].\n"
+"Each lesson has two maintainers who review issues and pull requests or encourage others to do so.\n"
+"The maintainers are community volunteers and have final say over what gets merged into the lesson.\n"
+"To use the web interface for contributing to a lesson:"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:111
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:111
+# ordered list
+msgid "1.  Fork the originating repository to your GitHub profile."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:112
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:112
+# ordered list
+msgid "2.  Within your version of the forked repository, move to the `gh-pages` branch and"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:113
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:113
+msgid "create a new branch for each significant change being made.\n"
+"3.  Navigate to the file(s) you wish to change within the new branches and make revisions as required.\n"
+"4.  Commit all changed files within the appropriate branches.\n"
+"5.  Create individual pull requests from each of your changed branches\n"
+"to the `gh-pages` branch within the originating repository.\n"
+"6.  If you receive feedback, make changes using your issue-specific branches of the forked\n"
+"repository and the pull requests will update automatically.\n"
+"7.  Repeat as needed until all feedback has been addressed."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:122
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:122
+msgid "When starting work, please make sure your clone of the originating `gh-pages` branch is up-to-date\n"
+"before creating your own revision-specific branch(es) from there.\n"
+"Additionally, please only work from your newly-created branch(es) and *not*\n"
+"your clone of the originating `gh-pages` branch.\n"
+"Lastly, published copies of all the lessons are available in the `gh-pages` branch of the originating\n"
+"repository for reference while revising."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:129
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:129
+# header
+msgid "## Other Resources"
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:131
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:131
+msgid "General discussion of [Software Carpentry][swc-site] and [Data Carpentry][dc-site]\n"
+"happens on the [discussion mailing list][discuss-list],\n"
+"which everyone is welcome to join.\n"
+"You can also [reach us by email][email]."
+msgstr ""
+
+#: python-novice-inflammation/CONTRIBUTING.md:136
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:136
+msgid "[email]: mailto:admin@software-carpentry.org\n"
+"[dc-issues]: https://github.com/issues?q=user%3Adatacarpentry\n"
+"[dc-lessons]: http://datacarpentry.org/lessons/\n"
+"[dc-site]: http://datacarpentry.org/\n"
+"[discuss-list]: https://carpentries.topicbox.com/groups/discuss\n"
+"[github]: https://github.com\n"
+"[github-flow]: https://guides.github.com/introduction/flow/\n"
+"[github-join]: https://github.com/join\n"
+"[how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github\n"
+"[issues]: https://guides.github.com/features/issues/\n"
+"[swc-issues]: https://github.com/issues?q=user%3Aswcarpentry\n"
+"[swc-lessons]: https://software-carpentry.org/lessons/\n"
+"[swc-site]: https://software-carpentry.org/\n"
+"[c-site]: https://carpentries.org/\n"
+"[lc-site]: https://librarycarpentry.org/\n"
+"[lc-issues]: https://github.com/issues?q=user%3Alibrarycarpentry"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:49
+msgid "    please work in <https://github.com/swcarpentry/FIXME>,\n"
+"    which can be viewed at <https://swcarpentry.github.io/FIXME>."
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/CONTRIBUTING.md:69
+msgid "There are many ways to contribute,\n"
+"from writing new exercises and improving existing ones\n"
+"to updating or filling in the documentation\n"
+"and submitting [bug reports][issues]\n"
+"about things that don't work, aren't clear, or are missing.\n"
+"If you are looking for ideas, please see the 'Issues' tab for\n"
+"a list of issues associated with this repository,\n"
+"or you may also look at the issues for [Data Carpentry][dc-issues], \n"
+"[Software Carpentry][swc-issues], and [Library Carpentry][lc-issues] projects."
+msgstr ""
+

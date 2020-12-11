@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/LICENSE.md:1
+# Front Matter
+msgid "---\n"
+"layout: page\n"
+"title: \"Licenses\"\n"
+"root: .\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:6
+# header
+msgid "## Instructional Material"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:8
+msgid "All Software Carpentry, Data Carpentry, and Library Carpentry instructional material is\n"
+"made available under the [Creative Commons Attribution\n"
+"license][cc-by-human]. The following is a human-readable summary of\n"
+"(and not a substitute for) the [full legal text of the CC BY 4.0\n"
+"license][cc-by-legal]."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:14
+msgid "You are free:"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:16
+# unordered list
+msgid "* to **Share**---copy and redistribute the material in any medium or format"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:17
+# unordered list
+msgid "* to **Adapt**---remix, transform, and build upon the material"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:19
+msgid "for any purpose, even commercially."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:21
+msgid "The licensor cannot revoke these freedoms as long as you follow the\n"
+"license terms."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:24
+msgid "Under the following terms:"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:26
+# unordered list
+msgid "* **Attribution**---You must give appropriate credit (mentioning that"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:27
+msgid "  your work is derived from work that is Copyright © Software\n"
+"  Carpentry and, where practical, linking to\n"
+"  http://software-carpentry.org/), provide a [link to the\n"
+"  license][cc-by-human], and indicate if changes were made. You may do\n"
+"  so in any reasonable manner, but not in any way that suggests the\n"
+"  licensor endorses you or your use."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:34
+msgid "**No additional restrictions**---You may not apply legal terms or\n"
+"technological measures that legally restrict others from doing\n"
+"anything the license permits.  With the understanding that:"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:38
+msgid "Notices:"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:40
+# unordered list
+msgid "* You do not have to comply with the license for elements of the"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:41
+msgid "  material in the public domain or where your use is permitted by an\n"
+"  applicable exception or limitation.\n"
+"* No warranties are given. The license may not give you all of the\n"
+"  permissions necessary for your intended use. For example, other\n"
+"  rights such as publicity, privacy, or moral rights may limit how you\n"
+"  use the material."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:48
+# header
+msgid "## Software"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:50
+msgid "Except where otherwise noted, the example programs and other software\n"
+"provided by Software Carpentry and Data Carpentry are made available under the\n"
+"[OSI][osi]-approved\n"
+"[MIT license][mit-license]."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:55
+msgid "Permission is hereby granted, free of charge, to any person obtaining\n"
+"a copy of this software and associated documentation files (the\n"
+"\"Software\"), to deal in the Software without restriction, including\n"
+"without limitation the rights to use, copy, modify, merge, publish,\n"
+"distribute, sublicense, and/or sell copies of the Software, and to\n"
+"permit persons to whom the Software is furnished to do so, subject to\n"
+"the following conditions:"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:63
+msgid "The above copyright notice and this permission notice shall be\n"
+"included in all copies or substantial portions of the Software."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:66
+msgid "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n"
+"EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n"
+"MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n"
+"NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\n"
+"LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\n"
+"OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\n"
+"WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:74
+# header
+msgid "## Trademark"
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:76
+msgid "\"Software Carpentry\" and \"Data Carpentry\" and their respective logos\n"
+"are registered trademarks of [Community Initiatives][CI]."
+msgstr ""
+
+#: python-novice-inflammation/LICENSE.md:79
+msgid "[cc-by-human]: https://creativecommons.org/licenses/by/4.0/\n"
+"[cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode\n"
+"[mit-license]: https://opensource.org/licenses/mit-license.html\n"
+"[ci]: http://communityin.org/\n"
+"[osi]: https://opensource.org"
+msgstr ""
+
