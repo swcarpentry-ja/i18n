@@ -1,0 +1,736 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/05-lists.md:1
+# Front Matter
+msgid "---\n"
+"title: Storing Multiple Values in Lists\n"
+"teaching: 30\n"
+"exercises: 15\n"
+"questions:\n"
+"- \"How can I store many values together?\"\n"
+"objectives:\n"
+"- \"Explain what a list is.\"\n"
+"- \"Create and index lists of simple values.\"\n"
+"- \"Change the values of individual elements\"\n"
+"- \"Append values to an existing list\"\n"
+"- \"Reorder and slice list elements\"\n"
+"- \"Create and manipulate nested lists\"\n"
+"keypoints:\n"
+"- \"`[value1, value2, value3, ...]` creates a list.\"\n"
+"- \"Lists can contain any Python object, including lists (i.e., list of lists).\"\n"
+"- \"Lists are indexed and sliced with square brackets (e.g., list[0] and\n"
+"list[2:9]), in the same way as strings and arrays.\"\n"
+"- \"Lists are mutable (i.e., their values can be changed in place).\"\n"
+"- \"Strings are immutable (i.e., the characters in them cannot be changed).\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:23
+msgid "Similar to a string that can contain many characters, a list is a container that can store many values.\n"
+"Unlike NumPy arrays,\n"
+"lists are built into the language (so we don't have to load a library\n"
+"to use them).\n"
+"We create a list by putting values inside square brackets and separating the values with commas:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:29
+# code block
+msgid "~~~\n"
+"odds = [1, 3, 5, 7]\n"
+"print('odds are:', odds)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:35
+# code block
+msgid "~~~\n"
+"odds are: [1, 3, 5, 7]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:40
+msgid "We can access elements of a list using indices -- numbered positions of elements in the list.\n"
+"These positions are numbered starting at 0, so the first element has an index of 0."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:43
+# code block
+msgid "~~~\n"
+"print('first element:', odds[0])\n"
+"print('last element:', odds[3])\n"
+"print('\"-1\" element:', odds[-1])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:50
+# code block
+msgid "~~~\n"
+"first element: 1\n"
+"last element: 7\n"
+"\"-1\" element: 7\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:57
+msgid "Yes, we can use negative numbers as indices in Python. When we do so, the index `-1` gives us the\n"
+"last element in the list, `-2` the second to last, and so on.\n"
+"Because of this, `odds[3]` and `odds[-1]` point to the same element here."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:61
+msgid "If we loop over a list, the loop variable is assigned to its elements one at a time:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:63
+# code block
+msgid "~~~\n"
+"for number in odds:\n"
+"    print(number)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:69
+# code block
+msgid "~~~\n"
+"1\n"
+"3\n"
+"5\n"
+"7\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:77
+msgid "There is one important difference between lists and strings:\n"
+"we can change the values in a list,\n"
+"but we cannot change individual characters in a string.\n"
+"For example:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:82
+# code block
+msgid "~~~\n"
+"names = ['Curie', 'Darwing', 'Turing']  # typo in Darwin's name\n"
+"print('names is originally:', names)\n"
+"names[1] = 'Darwin'  # correct the name\n"
+"print('final value of names:', names)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:90
+# code block
+msgid "~~~\n"
+"names is originally: ['Curie', 'Darwing', 'Turing']\n"
+"final value of names: ['Curie', 'Darwin', 'Turing']\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:96
+msgid "works, but:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:98
+# code block
+msgid "~~~\n"
+"name = 'Darwin'\n"
+"name[0] = 'd'\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:104
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"TypeError                                 Traceback (most recent call last)\n"
+"<ipython-input-8-220df48aeb2e> in <module>()\n"
+"      1 name = 'Darwin'\n"
+"----> 2 name[0] = 'd'\n"
+"\n"
+"TypeError: 'str' object does not support item assignment\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:115
+msgid "does not."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:117
+# blockquote, which can be cascaded
+msgid "> ## Ch-Ch-Ch-Ch-Changes"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:118
+msgid ">\n"
+"> Data which can be modified in place is called [mutable]({{ page.root }}/reference.html#mutable),\n"
+"> while data which cannot be modified is called [immutable]({{ page.root }}/reference.html#immutable).\n"
+"> Strings and numbers are immutable. This does not mean that variables with string or number values\n"
+"> are constants, but when we want to change the value of a string or number variable, we can only\n"
+"> replace the old value with a completely new value.\n"
+">\n"
+"> Lists and arrays, on the other hand, are mutable: we can modify them after they have been\n"
+"> created. We can change individual elements, append new elements, or reorder the whole list. For\n"
+"> some operations, like sorting, we can choose whether to use a function that modifies the data\n"
+"> in-place or a function that returns a modified copy and leaves the original unchanged.\n"
+">\n"
+"> Be careful when modifying data in-place. If two variables refer to the same list, and you modify\n"
+"> the list value, it will change for both variables!\n"
+">\n"
+"> ~~~\n"
+"> salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']\n"
+"> my_salsa = salsa        # <-- my_salsa and salsa point to the *same* list data in memory\n"
+"> salsa[0] = 'hot peppers'\n"
+"> print('Ingredients in my salsa:', my_salsa)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> Ingredients in my salsa: ['hot peppers', 'onions', 'cilantro', 'tomatoes']\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:145
+msgid ">\n"
+"> If you want variables with mutable values to be independent, you\n"
+"> must make a copy of the value when you assign it.\n"
+">\n"
+"> ~~~\n"
+"> salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']\n"
+"> my_salsa = list(salsa)        # <-- makes a *copy* of the list\n"
+"> salsa[0] = 'hot peppers'\n"
+"> print('Ingredients in my salsa:', my_salsa)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> Ingredients in my salsa: ['peppers', 'onions', 'cilantro', 'tomatoes']\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:161
+msgid ">\n"
+"> Because of pitfalls like this, code which modifies data in place can be more difficult to\n"
+"> understand. However, it is often far more efficient to modify a large data structure in place\n"
+"> than to create a modified copy for every small change. You should consider both of these aspects\n"
+"> when writing your code."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:168
+# blockquote, which can be cascaded
+msgid "> ## Nested Lists"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:169
+# blockquote, which can be cascaded
+msgid "> Since a list can contain any Python variables, it can even contain other lists."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:170
+msgid ">\n"
+"> For example, we could represent the products in the shelves of a small grocery shop:\n"
+">\n"
+"> ~~~\n"
+"> x = [['pepper', 'zucchini', 'onion'],\n"
+">      ['cabbage', 'lettuce', 'garlic'],\n"
+">      ['apple', 'pear', 'banana']]\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Here is a visual example of how indexing a list of lists `x` works:\n"
+">\n"
+"> [![x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented\n"
+"> as a pepper shaker containing a single packet of pepper. x[0] is represented as a single packet of\n"
+"> pepper. x[0][0] is represented as single grain of pepper.  Adapted\n"
+"> from @hadleywickham.](../fig/indexing_lists_python.png)][hadleywickham-tweet]\n"
+">\n"
+"> Using the previously declared list `x`, these would be the results of the\n"
+"> index operations shown in the image:\n"
+">\n"
+"> ~~~\n"
+"> print([x[0]])\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> [['pepper', 'zucchini', 'onion']]\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:199
+msgid ">\n"
+"> ~~~\n"
+"> print(x[0])\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> ['pepper', 'zucchini', 'onion']\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:209
+msgid ">\n"
+"> ~~~\n"
+"> print(x[0][0])\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> 'pepper'\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:219
+msgid ">\n"
+"> Thanks to [Hadley Wickham][hadleywickham-tweet]\n"
+"> for the image above."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:224
+# blockquote, which can be cascaded
+msgid "> ## Heterogeneous Lists"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:225
+# blockquote, which can be cascaded
+msgid "> Lists in Python can contain elements of different types. Example:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:226
+#: python-novice-inflammation/_episodes/05-lists.md:228
+#: python-novice-inflammation/_episodes/07-cond.md:429
+#: python-novice-inflammation/_episodes/07-cond.md:431
+#: python-novice-inflammation/_episodes/07-cond.md:433
+#: python-novice-inflammation/_episodes/07-cond.md:435
+# blockquote, which can be cascaded
+msgid "> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:227
+# blockquote, which can be cascaded
+msgid "> sample_ages = [10, 12.5, 'Unknown']"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:229
+#: python-novice-inflammation/_episodes/07-cond.md:432
+# blockquote, which can be cascaded
+msgid "> {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:232
+msgid "There are many ways to change the contents of lists besides assigning new values to\n"
+"individual elements:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:235
+# code block
+msgid "~~~\n"
+"odds.append(11)\n"
+"print('odds after adding a value:', odds)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:241
+# code block
+msgid "~~~\n"
+"odds after adding a value: [1, 3, 5, 7, 11]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:246
+# code block
+msgid "~~~\n"
+"removed_element = odds.pop(0)\n"
+"print('odds after removing the first element:', odds)\n"
+"print('removed_element:', removed_element)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:253
+# code block
+msgid "~~~\n"
+"odds after removing the first element: [3, 5, 7, 11]\n"
+"removed_element: 1\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:259
+# code block
+msgid "~~~\n"
+"odds.reverse()\n"
+"print('odds after reversing:', odds)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:265
+# code block
+msgid "~~~\n"
+"odds after reversing: [11, 7, 5, 3]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:270
+msgid "While modifying in place, it is useful to remember that Python treats lists in a slightly\n"
+"counter-intuitive way."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:273
+msgid "As we saw earlier, when we modified the `salsa` list item in-place, if we make a list, (attempt to) copy it and then modify this list, we can cause all sorts of trouble. This also applies to modifying the list using the above functions:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:275
+# code block
+msgid "~~~\n"
+"odds = [1, 3, 5, 7]\n"
+"primes = odds\n"
+"primes.append(2)\n"
+"print('primes:', primes)\n"
+"print('odds:', odds)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:284
+# code block
+msgid "~~~\n"
+"primes: [1, 3, 5, 7, 2]\n"
+"odds: [1, 3, 5, 7, 2]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:290
+msgid "This is because Python stores a list in memory, and then can use multiple names to refer to the\n"
+"same list. If all we want to do is copy a (simple) list, we can again use the `list` function, so we do\n"
+"not modify a list we did not mean to:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:294
+# code block
+msgid "~~~\n"
+"odds = [1, 3, 5, 7]\n"
+"primes = list(odds)\n"
+"primes.append(2)\n"
+"print('primes:', primes)\n"
+"print('odds:', odds)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:303
+# code block
+msgid "~~~\n"
+"primes: [1, 3, 5, 7, 2]\n"
+"odds: [1, 3, 5, 7]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:309
+# blockquote, which can be cascaded
+msgid "> ## Turn a String Into a List"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:310
+msgid ">\n"
+"> Use a for-loop to convert the string \"hello\" into a list of letters:\n"
+">\n"
+"> ~~~\n"
+"> ['h', 'e', 'l', 'l', 'o']\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Hint: You can create an empty list like this:\n"
+">\n"
+"> ~~~\n"
+"> my_list = []\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > my_list = []\n"
+"> > for char in 'hello':\n"
+"> >     my_list.append(char)\n"
+"> > print(my_list)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:336
+msgid "Subsets of lists and strings can be accessed by specifying ranges of values in brackets,\n"
+"similar to how we accessed ranges of positions in a NumPy array.\n"
+"This is commonly referred to as \"slicing\" the list/string."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:340
+# code block
+msgid "~~~\n"
+"binomial_name = 'Drosophila melanogaster'\n"
+"group = binomial_name[0:10]\n"
+"print('group:', group)\n"
+"\n"
+"species = binomial_name[11:23]\n"
+"print('species:', species)\n"
+"\n"
+"chromosomes = ['X', 'Y', '2', '3', '4']\n"
+"autosomes = chromosomes[2:5]\n"
+"print('autosomes:', autosomes)\n"
+"\n"
+"last = chromosomes[-1]\n"
+"print('last:', last)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:357
+# code block
+msgid "~~~\n"
+"group: Drosophila\n"
+"species: melanogaster\n"
+"autosomes: ['2', '3', '4']\n"
+"last: 4\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:365
+# blockquote, which can be cascaded
+msgid "> ## Slicing From the End"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:366
+msgid ">\n"
+"> Use slicing to access only the last four characters of a string or entries of a list.\n"
+">\n"
+"> ~~~\n"
+"> string_for_slicing = 'Observation date: 02-Feb-2013'\n"
+"> list_for_slicing = [['fluorine', 'F'],\n"
+">                     ['chlorine', 'Cl'],\n"
+">                     ['bromine', 'Br'],\n"
+">                     ['iodine', 'I'],\n"
+">                     ['astatine', 'At']]\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> '2013'\n"
+"> [['chlorine', 'Cl'], ['bromine', 'Br'], ['iodine', 'I'], ['astatine', 'At']]\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:384
+msgid ">\n"
+"> Would your solution work regardless of whether you knew beforehand\n"
+"> the length of the string or list\n"
+"> (e.g. if you wanted to apply the solution to a set of lists of different lengths)?\n"
+"> If not, try to change your approach to make it more robust.\n"
+">\n"
+"> Hint: Remember that indices can be negative as well as positive\n"
+">\n"
+"> > ## Solution\n"
+"> > Use negative indices to count elements from the end of a container (such as list or string):\n"
+"> >\n"
+"> > ~~~\n"
+"> > string_for_slicing[-4:]\n"
+"> > list_for_slicing[-4:]\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:403
+# blockquote, which can be cascaded
+msgid "> ## Non-Continuous Slices"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:404
+msgid ">\n"
+"> So far we've seen how to use slicing to take single blocks\n"
+"> of successive entries from a sequence.\n"
+"> But what if we want to take a subset of entries\n"
+"> that aren't next to each other in the sequence?\n"
+">\n"
+"> You can achieve this by providing a third argument\n"
+"> to the range within the brackets, called the _step size_.\n"
+"> The example below shows how you can take every third entry in a list:\n"
+">\n"
+"> ~~~\n"
+"> primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]\n"
+"> subset = primes[0:12:3]\n"
+"> print('subset', subset)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> subset [2, 7, 17, 29]\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:425
+msgid ">\n"
+"> Notice that the slice taken begins with the first entry in the range,\n"
+"> followed by entries taken at equally-spaced intervals (the steps) thereafter.\n"
+"> If you wanted to begin the subset with the third entry,\n"
+"> you would need to specify that as the starting point of the sliced range:\n"
+">\n"
+"> ~~~\n"
+"> primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]\n"
+"> subset = primes[2:12:3]\n"
+"> print('subset', subset)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> subset [5, 13, 23, 37]\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:442
+msgid ">\n"
+"> Use the step size argument to create a new string\n"
+"> that contains only every other character in the string\n"
+"> \"In an octopus's garden in the shade\". Start with\n"
+"> creating a variable to hold the string:\n"
+">\n"
+"> ~~~\n"
+"> beatles = \"In an octopus's garden in the shade\"\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> What slice of `beatles` will produce the\n"
+"> following output (i.e., the first character, third\n"
+"> character, and every other character through the end\n"
+"> of the string)?\n"
+"> ~~~\n"
+"> I notpssgre ntesae\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:461
+msgid ">\n"
+"> > ## Solution\n"
+"> > To obtain every other character you need to provide a slice with the step\n"
+"> > size of 2:\n"
+"> >\n"
+"> > ~~~\n"
+"> > beatles[0:35:2]\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > You can also leave out the beginning and end of the slice to take the whole string\n"
+"> > and provide only the step argument to go every second\n"
+"> > element:\n"
+"> >\n"
+"> > ~~~\n"
+"> > beatles[::2]\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:482
+msgid "If you want to take a slice from the beginning of a sequence, you can omit the first index in the\n"
+"range:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:485
+# code block
+msgid "~~~\n"
+"date = 'Monday 4 January 2016'\n"
+"day = date[0:6]\n"
+"print('Using 0 to begin range:', day)\n"
+"day = date[:6]\n"
+"print('Omitting beginning index:', day)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:494
+# code block
+msgid "~~~\n"
+"Using 0 to begin range: Monday\n"
+"Omitting beginning index: Monday\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:500
+msgid "And similarly, you can omit the ending index in the range to take a slice to the very end of the\n"
+"sequence:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:503
+# code block
+msgid "~~~\n"
+"months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']\n"
+"sond = months[8:12]\n"
+"print('With known last position:', sond)\n"
+"sond = months[8:len(months)]\n"
+"print('Using len() to get last entry:', sond)\n"
+"sond = months[8:]\n"
+"print('Omitting ending index:', sond)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:514
+# code block
+msgid "~~~\n"
+"With known last position: ['sep', 'oct', 'nov', 'dec']\n"
+"Using len() to get last entry: ['sep', 'oct', 'nov', 'dec']\n"
+"Omitting ending index: ['sep', 'oct', 'nov', 'dec']\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:521
+# blockquote, which can be cascaded
+msgid "> ## Overloading"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:522
+msgid ">\n"
+"> `+` usually means addition, but when used on strings or lists, it means \"concatenate\".\n"
+"> Given that, what do you think the multiplication operator `*` does on lists?\n"
+"> In particular, what will be the output of the following code?\n"
+">\n"
+"> ~~~\n"
+"> counts = [2, 4, 6, 8, 10]\n"
+"> repeats = counts * 2\n"
+"> print(repeats)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> 1.  `[2, 4, 6, 8, 10, 2, 4, 6, 8, 10]`\n"
+"> 2.  `[4, 8, 12, 16, 20]`\n"
+"> 3.  `[[2, 4, 6, 8, 10],[2, 4, 6, 8, 10]]`\n"
+"> 4.  `[2, 4, 6, 8, 10, 4, 8, 12, 16, 20]`\n"
+">\n"
+"> The technical term for this is *operator overloading*:\n"
+"> a single operator, like `+` or `*`,\n"
+"> can do different things depending on what it's applied to.\n"
+">\n"
+"> > ## Solution\n"
+"> >\n"
+"> > The multiplication operator `*` used on a list replicates elements of the list and concatenates\n"
+"> > them together:\n"
+"> >\n"
+"> > ~~~\n"
+"> > [2, 4, 6, 8, 10, 2, 4, 6, 8, 10]\n"
+"> > ~~~\n"
+"> > {: .output}\n"
+"> >\n"
+"> > It's equivalent to:\n"
+"> >\n"
+"> > ~~~\n"
+"> > counts + counts\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/05-lists.md:562
+msgid "[hadleywickham-tweet]: https://twitter.com/hadleywickham/status/643381054758363136"
+msgstr ""
+

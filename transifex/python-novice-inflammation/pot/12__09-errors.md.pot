@@ -1,0 +1,762 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/09-errors.md:1
+# Front Matter
+msgid "---\n"
+"title: Errors and Exceptions\n"
+"teaching: 30\n"
+"exercises: 0\n"
+"questions:\n"
+"- \"How does Python report errors?\"\n"
+"- \"How can I handle errors in Python programs?\"\n"
+"objectives:\n"
+"- \"To be able to read a traceback, and determine where the error took place and what type it is.\"\n"
+"- \"To be able to describe the types of situations in which syntax errors,\n"
+"   indentation errors, name errors, index errors, and missing file errors occur.\"\n"
+"keypoints:\n"
+"- \"Tracebacks can look intimidating, but they give us a lot of useful information about\n"
+"   what went wrong in our program, including where the error occurred and\n"
+"   what type of error it was.\"\n"
+"- \"An error having to do with the 'grammar' or syntax of the program is called a `SyntaxError`.\n"
+"   If the issue has to do with how the code is indented,\n"
+"   then it will be called an `IndentationError`.\"\n"
+"- \"A `NameError` will occur when trying to use a variable that does not exist. Possible causes are\n"
+"  that a variable definition is missing, a variable reference differs from its definition\n"
+"  in spelling or capitalization, or the code contains a string that is missing quotes around it.\"\n"
+"- \"Containers like lists and strings will generate errors if you try to access items\n"
+"   in them that do not exist. This type of error is called an `IndexError`.\"\n"
+"- \"Trying to read a file that does not exist will give you an `FileNotFoundError`.\n"
+"   Trying to read a file that is open for writing, or writing to a file that is open for reading,\n"
+"   will give you an `IOError`.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:29
+msgid "Every programmer encounters errors,\n"
+"both those who are just beginning,\n"
+"and those who have been programming for years.\n"
+"Encountering errors and exceptions can be very frustrating at times,\n"
+"and can make coding feel like a hopeless endeavour.\n"
+"However,\n"
+"understanding what the different types of errors are\n"
+"and when you are likely to encounter them can help a lot.\n"
+"Once you know *why* you get certain types of errors,\n"
+"they become much easier to fix."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:40
+msgid "Errors in Python have a very specific form,\n"
+"called a [traceback]({{ page.root }}/reference.html#traceback).\n"
+"Let's examine one:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:44
+# code block
+msgid "~~~\n"
+"# This code has an intentional error. You can type it directly or\n"
+"# use it for reference to understand the error message below.\n"
+"def favorite_ice_cream():\n"
+"    ice_creams = [\n"
+"        'chocolate',\n"
+"        'vanilla',\n"
+"        'strawberry'\n"
+"    ]\n"
+"    print(ice_creams[3])\n"
+"\n"
+"favorite_ice_cream()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:59
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"IndexError                                Traceback (most recent call last)\n"
+"<ipython-input-1-70bd89baa4df> in <module>()\n"
+"      9     print(ice_creams[3])\n"
+"      10\n"
+"----> 11 favorite_ice_cream()\n"
+"\n"
+"<ipython-input-1-70bd89baa4df> in favorite_ice_cream()\n"
+"      7         'strawberry'\n"
+"      8     ]\n"
+"----> 9     print(ice_creams[3])\n"
+"      10\n"
+"      11 favorite_ice_cream()\n"
+"\n"
+"IndexError: list index out of range\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:78
+msgid "This particular traceback has two levels.\n"
+"You can determine the number of levels by looking for the number of arrows on the left hand side.\n"
+"In this case:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:82
+# ordered list
+msgid "1.  The first shows code from the cell above,"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:83
+msgid "    with an arrow pointing to Line 11 (which is `favorite_ice_cream()`)."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:85
+# ordered list
+msgid "2.  The second shows some code in the function `favorite_ice_cream`,"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:86
+msgid "    with an arrow pointing to Line 9 (which is `print(ice_creams[3])`)."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:88
+msgid "The last level is the actual place where the error occurred.\n"
+"The other level(s) show what function the program executed to get to the next level down.\n"
+"So, in this case, the program first performed a\n"
+"[function call]({{ page.root }}/reference.html#function-call) to the function `favorite_ice_cream`.\n"
+"Inside this function,\n"
+"the program encountered an error on Line 6, when it tried to run the code `print(ice_creams[3])`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:95
+# blockquote, which can be cascaded
+msgid "> ## Long Tracebacks"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:96
+msgid ">\n"
+"> Sometimes, you might see a traceback that is very long\n"
+"> -- sometimes they might even be 20 levels deep!\n"
+"> This can make it seem like something horrible happened,\n"
+"> but the length of the error message does not reflect severity, rather,\n"
+"> it indicates that your program called many functions before it encountered the error.\n"
+"> Most of the time, the actual place where the error occurred is at the bottom-most level,\n"
+"> so you can skip down the traceback to the bottom."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:106
+msgid "So what error did the program actually encounter?\n"
+"In the last line of the traceback,\n"
+"Python helpfully tells us the category or type of error (in this case, it is an `IndexError`)\n"
+"and a more detailed error message (in this case, it says \"list index out of range\")."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:111
+msgid "If you encounter an error and don't know what it means,\n"
+"it is still important to read the traceback closely.\n"
+"That way,\n"
+"if you fix the error,\n"
+"but encounter a new one,\n"
+"you can tell that the error changed.\n"
+"Additionally,\n"
+"sometimes knowing *where* the error occurred is enough to fix it,\n"
+"even if you don't entirely understand the message."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:121
+msgid "If you do encounter an error you don't recognize,\n"
+"try looking at the\n"
+"[official documentation on errors](http://docs.python.org/3/library/exceptions.html).\n"
+"However,\n"
+"note that you may not always be able to find the error there,\n"
+"as it is possible to create custom errors.\n"
+"In that case,\n"
+"hopefully the custom error message is informative enough to help you figure out what went wrong."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:130
+# header
+msgid "## Syntax Errors"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:132
+msgid "When you forget a colon at the end of a line,\n"
+"accidentally add one space too many when indenting under an `if` statement,\n"
+"or forget a parenthesis,\n"
+"you will encounter a [syntax error]({{ page.root }}/reference.html#syntax-error).\n"
+"This means that Python couldn't figure out how to read your program.\n"
+"This is similar to forgetting punctuation in English:\n"
+"for example,\n"
+"this text is difficult to read there is no punctuation there is also no capitalization\n"
+"why is this hard because you have to figure out where each sentence ends\n"
+"you also have to figure out where each sentence begins\n"
+"to some extent it might be ambiguous if there should be a sentence break or not"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:144
+msgid "People can typically figure out what is meant by text with no punctuation,\n"
+"but people are much smarter than computers.\n"
+"If Python doesn't know how to read the program,\n"
+"it will give up and inform you with an error.\n"
+"For example:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:150
+# code block
+msgid "~~~\n"
+"def some_function()\n"
+"    msg = 'hello, world!'\n"
+"    print(msg)\n"
+"     return msg\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:158
+# code block
+msgid "~~~\n"
+"  File \"<ipython-input-3-6bb841ea1423>\", line 1\n"
+"    def some_function()\n"
+"                       ^\n"
+"SyntaxError: invalid syntax\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:166
+msgid "Here, Python tells us that there is a `SyntaxError` on line 1,\n"
+"and even puts a little arrow in the place where there is an issue.\n"
+"In this case the problem is that the function definition is missing a colon at the end."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:170
+msgid "Actually, the function above has *two* issues with syntax.\n"
+"If we fix the problem with the colon,\n"
+"we see that there is *also* an `IndentationError`,\n"
+"which means that the lines in the function definition do not all have the same indentation:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:175
+# code block
+msgid "~~~\n"
+"def some_function():\n"
+"    msg = 'hello, world!'\n"
+"    print(msg)\n"
+"     return msg\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:183
+# code block
+msgid "~~~\n"
+"  File \"<ipython-input-4-ae290e7659cb>\", line 4\n"
+"    return msg\n"
+"    ^\n"
+"IndentationError: unexpected indent\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:191
+msgid "Both `SyntaxError` and `IndentationError` indicate a problem with the syntax of your program,\n"
+"but an `IndentationError` is more specific:\n"
+"it *always* means that there is a problem with how your code is indented."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:195
+# blockquote, which can be cascaded
+msgid "> ## Tabs and Spaces"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:196
+msgid ">\n"
+"> Some indentation errors are harder to spot than others.\n"
+"> In particular, mixing spaces and tabs can be difficult to spot\n"
+"> because they are both [whitespace]({{ page.root }}/reference.html#whitespace).\n"
+"> In the example below, the first two lines in the body of the function\n"
+"> `some_function` are indented with tabs, while the third line &mdash; with spaces.\n"
+"> If you're working in a Jupyter notebook, be sure to copy and paste this example\n"
+"> rather than trying to type it in manually because Jupyter automatically replaces\n"
+"> tabs with spaces.\n"
+">\n"
+"> ~~~\n"
+"> def some_function():\n"
+"> 	msg = 'hello, world!'\n"
+"> 	print(msg)\n"
+">         return msg\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Visually it is impossible to spot the error.\n"
+"> Fortunately, Python does not allow you to mix tabs and spaces.\n"
+">\n"
+"> ~~~\n"
+">   File \"<ipython-input-5-653b36fbcd41>\", line 4\n"
+">     return msg\n"
+">               ^\n"
+"> TabError: inconsistent use of tabs and spaces in indentation\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:223
+#: python-novice-inflammation/_episodes/09-errors.md:491
+# SC/DC Template label
+msgid "> {: .error}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:226
+# header
+msgid "## Variable Name Errors"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:228
+msgid "Another very common type of error is called a `NameError`,\n"
+"and occurs when you try to use a variable that does not exist.\n"
+"For example:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:232
+# code block
+msgid "~~~\n"
+"print(a)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:237
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"NameError                                 Traceback (most recent call last)\n"
+"<ipython-input-7-9d7b17ad5387> in <module>()\n"
+"----> 1 print(a)\n"
+"\n"
+"NameError: name 'a' is not defined\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:247
+msgid "Variable name errors come with some of the most informative error messages,\n"
+"which are usually of the form \"name 'the_variable_name' is not defined\"."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:250
+msgid "Why does this error message occur?\n"
+"That's a harder question to answer,\n"
+"because it depends on what your code is supposed to do.\n"
+"However,\n"
+"there are a few very common reasons why you might have an undefined variable.\n"
+"The first is that you meant to use a\n"
+"[string]({{ page.root }}/reference.html#string), but forgot to put quotes around it:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:258
+# code block
+msgid "~~~\n"
+"print(hello)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:263
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"NameError                                 Traceback (most recent call last)\n"
+"<ipython-input-8-9553ee03b645> in <module>()\n"
+"----> 1 print(hello)\n"
+"\n"
+"NameError: name 'hello' is not defined\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:273
+msgid "The second reason is that you might be trying to use a variable that does not yet exist.\n"
+"In the following example,\n"
+"`count` should have been defined (e.g., with `count = 0`) before the for loop:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:277
+# code block
+msgid "~~~\n"
+"for number in range(10):\n"
+"    count = count + number\n"
+"print('The count is:', count)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:284
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"NameError                                 Traceback (most recent call last)\n"
+"<ipython-input-9-dd6a12d7ca5c> in <module>()\n"
+"      1 for number in range(10):\n"
+"----> 2     count = count + number\n"
+"      3 print('The count is:', count)\n"
+"\n"
+"NameError: name 'count' is not defined\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:296
+msgid "Finally, the third possibility is that you made a typo when you were writing your code.\n"
+"Let's say we fixed the error above by adding the line `Count = 0` before the for loop.\n"
+"Frustratingly, this actually does not fix the error.\n"
+"Remember that variables are [case-sensitive]({{ page.root }}/reference.html#case-sensitive),\n"
+"so the variable `count` is different from `Count`. We still get the same error,\n"
+"because we still have not defined `count`:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:303
+# code block
+msgid "~~~\n"
+"Count = 0\n"
+"for number in range(10):\n"
+"    count = count + number\n"
+"print('The count is:', count)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:311
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"NameError                                 Traceback (most recent call last)\n"
+"<ipython-input-10-d77d40059aea> in <module>()\n"
+"      1 Count = 0\n"
+"      2 for number in range(10):\n"
+"----> 3     count = count + number\n"
+"      4 print('The count is:', count)\n"
+"\n"
+"NameError: name 'count' is not defined\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:324
+# header
+msgid "## Index Errors"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:326
+msgid "Next up are errors having to do with containers (like lists and strings) and the items within them.\n"
+"If you try to access an item in a list or a string that does not exist,\n"
+"then you will get an error.\n"
+"This makes sense:\n"
+"if you asked someone what day they would like to get coffee,\n"
+"and they answered \"caturday\",\n"
+"you might be a bit annoyed.\n"
+"Python gets similarly annoyed if you try to ask it for an item that doesn't exist:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:335
+# code block
+msgid "~~~\n"
+"letters = ['a', 'b', 'c']\n"
+"print('Letter #1 is', letters[0])\n"
+"print('Letter #2 is', letters[1])\n"
+"print('Letter #3 is', letters[2])\n"
+"print('Letter #4 is', letters[3])\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:344
+# code block
+msgid "~~~\n"
+"Letter #1 is a\n"
+"Letter #2 is b\n"
+"Letter #3 is c\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:351
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"IndexError                                Traceback (most recent call last)\n"
+"<ipython-input-11-d817f55b7d6c> in <module>()\n"
+"      3 print('Letter #2 is', letters[1])\n"
+"      4 print('Letter #3 is', letters[2])\n"
+"----> 5 print('Letter #4 is', letters[3])\n"
+"\n"
+"IndexError: list index out of range\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:363
+msgid "Here,\n"
+"Python is telling us that there is an `IndexError` in our code,\n"
+"meaning we tried to access a list index that did not exist."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:367
+# header
+msgid "## File Errors"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:369
+msgid "The last type of error we'll cover today\n"
+"are those associated with reading and writing files: `FileNotFoundError`.\n"
+"If you try to read a file that does not exist,\n"
+"you will receive a `FileNotFoundError` telling you so.\n"
+"If you attempt to write to a file that was opened read-only, Python 3\n"
+"returns an `UnsupportedOperationError`.\n"
+"More generally, problems with input and output manifest as\n"
+"`IOError`s or `OSError`s, depending on the version of Python you use."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:378
+# code block
+msgid "~~~\n"
+"file_handle = open('myfile.txt', 'r')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:383
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"FileNotFoundError                         Traceback (most recent call last)\n"
+"<ipython-input-14-f6e1ac4aee96> in <module>()\n"
+"----> 1 file_handle = open('myfile.txt', 'r')\n"
+"\n"
+"FileNotFoundError: [Errno 2] No such file or directory: 'myfile.txt'\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:393
+msgid "One reason for receiving this error is that you specified an incorrect path to the file.\n"
+"For example,\n"
+"if I am currently in a folder called `myproject`,\n"
+"and I have a file in `myproject/writing/myfile.txt`,\n"
+"but I try to open `myfile.txt`,\n"
+"this will fail.\n"
+"The correct path would be `writing/myfile.txt`.\n"
+"It is also possible that the file name or its path contains a typo."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:402
+msgid "A related issue can occur if you use the \"read\" flag instead of the \"write\" flag.\n"
+"Python will not give you an error if you try to open a file for writing\n"
+"when the file does not exist.\n"
+"However,\n"
+"if you meant to open a file for reading,\n"
+"but accidentally opened it for writing,\n"
+"and then try to read from it,\n"
+"you will get an `UnsupportedOperation` error\n"
+"telling you that the file was not opened for reading:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:412
+# code block
+msgid "~~~\n"
+"file_handle = open('myfile.txt', 'w')\n"
+"file_handle.read()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:418
+# code block
+msgid "~~~\n"
+"---------------------------------------------------------------------------\n"
+"UnsupportedOperation                      Traceback (most recent call last)\n"
+"<ipython-input-15-b846479bc61f> in <module>()\n"
+"      1 file_handle = open('myfile.txt', 'w')\n"
+"----> 2 file_handle.read()\n"
+"\n"
+"UnsupportedOperation: not readable\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:429
+msgid "These are the most common errors with files,\n"
+"though many others exist.\n"
+"If you get an error that you've never seen before,\n"
+"searching the Internet for that error type\n"
+"often reveals common reasons why you might get that error."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:435
+# blockquote, which can be cascaded
+msgid "> ## Reading Error Messages"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:436
+msgid ">\n"
+"> Read the Python code and the resulting traceback below, and answer the following questions:\n"
+">\n"
+"> 1.  How many levels does the traceback have?\n"
+"> 2.  What is the function name where the error occurred?\n"
+"> 3.  On which line number in this function did the error occur?\n"
+"> 4.  What is the type of error?\n"
+"> 5.  What is the error message?\n"
+">\n"
+"> ~~~\n"
+"> # This code has an intentional error. Do not type it directly;\n"
+"> # use it for reference to understand the error message below.\n"
+"> def print_message(day):\n"
+">     messages = {\n"
+">         'monday': 'Hello, world!',\n"
+">         'tuesday': 'Today is Tuesday!',\n"
+">         'wednesday': 'It is the middle of the week.',\n"
+">         'thursday': 'Today is Donnerstag in German!',\n"
+">         'friday': 'Last day of the week!',\n"
+">         'saturday': 'Hooray for the weekend!',\n"
+">         'sunday': 'Aw, the weekend is almost over.'\n"
+">     }\n"
+">     print(messages[day])\n"
+">\n"
+"> def print_friday_message():\n"
+">     print_message('Friday')\n"
+">\n"
+"> print_friday_message()\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> ---------------------------------------------------------------------------\n"
+"> KeyError                                  Traceback (most recent call last)\n"
+"> <ipython-input-1-4be1945adbe2> in <module>()\n"
+">      14     print_message('Friday')\n"
+">      15\n"
+"> ---> 16 print_friday_message()\n"
+">\n"
+"> <ipython-input-1-4be1945adbe2> in print_friday_message()\n"
+">      12\n"
+">      13 def print_friday_message():\n"
+"> ---> 14     print_message('Friday')\n"
+">      15\n"
+">      16 print_friday_message()\n"
+">\n"
+"> <ipython-input-1-4be1945adbe2> in print_message(day)\n"
+">       9         'sunday': 'Aw, the weekend is almost over.'\n"
+">      10     }\n"
+"> ---> 11     print(messages[day])\n"
+">      12\n"
+">      13 def print_friday_message():\n"
+">\n"
+"> KeyError: 'Friday'\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:492
+msgid ">\n"
+"> > ## Solution\n"
+"> > 1. 3 levels\n"
+"> > 2. `print_message`\n"
+"> > 3. 11\n"
+"> > 4. `KeyError`\n"
+"> > 5. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:502
+# blockquote, which can be cascaded
+msgid "> ## Identifying Syntax Errors"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:503
+msgid ">\n"
+"> 1. Read the code below, and (without running it) try to identify what the errors are.\n"
+"> 2. Run the code, and read the error message. Is it a `SyntaxError` or an `IndentationError`?\n"
+"> 3. Fix the error.\n"
+"> 4. Repeat steps 2 and 3, until you have fixed all the errors.\n"
+">\n"
+"> ~~~\n"
+"> def another_function\n"
+">   print('Syntax errors are annoying.')\n"
+">    print('But at least Python tells us about them!')\n"
+">   print('So they are usually not too hard to fix.')\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > `SyntaxError` for missing `():` at end of first line,\n"
+"> `IndentationError` for mismatch between second and third lines.\n"
+"> > A fixed version is:\n"
+"> >\n"
+"> > ~~~\n"
+"> > def another_function():\n"
+"> >     print('Syntax errors are annoying.')\n"
+"> >     print('But at least Python tells us about them!')\n"
+"> >     print('So they are usually not too hard to fix.')\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:532
+# blockquote, which can be cascaded
+msgid "> ## Identifying Variable Name Errors"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:533
+msgid ">\n"
+"> 1. Read the code below, and (without running it) try to identify what the errors are.\n"
+"> 2. Run the code, and read the error message.\n"
+">    What type of `NameError` do you think this is?\n"
+">    In other words, is it a string with no quotes,\n"
+">    a misspelled variable,\n"
+">    or a variable that should have been defined but was not?\n"
+"> 3. Fix the error.\n"
+"> 4. Repeat steps 2 and 3, until you have fixed all the errors.\n"
+">\n"
+"> ~~~\n"
+"> for number in range(10):\n"
+">     # use a if the number is a multiple of 3, otherwise use b\n"
+">     if (Number % 3) == 0:\n"
+">         message = message + a\n"
+">     else:\n"
+">         message = message + 'b'\n"
+"> print(message)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > 3 `NameError`s for `number` being misspelled, for `message` not defined,\n"
+"> > and for `a` not being in quotes.\n"
+"> >\n"
+"> > Fixed version:\n"
+"> >\n"
+"> > ~~~\n"
+"> > message = ''\n"
+"> > for number in range(10):\n"
+"> >     # use a if the number is a multiple of 3, otherwise use b\n"
+"> >     if (number % 3) == 0:\n"
+"> >         message = message + 'a'\n"
+"> >     else:\n"
+"> >         message = message + 'b'\n"
+"> > print(message)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:574
+# blockquote, which can be cascaded
+msgid "> ## Identifying Index Errors"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/09-errors.md:575
+msgid ">\n"
+"> 1. Read the code below, and (without running it) try to identify what the errors are.\n"
+"> 2. Run the code, and read the error message. What type of error is it?\n"
+"> 3. Fix the error.\n"
+">\n"
+"> ~~~\n"
+"> seasons = ['Spring', 'Summer', 'Fall', 'Winter']\n"
+"> print('My favorite season is ', seasons[4])\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > `IndexError`; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.\n"
+"> > A fixed version is:\n"
+"> >\n"
+"> > ~~~\n"
+"> > seasons = ['Spring', 'Summer', 'Fall', 'Winter']\n"
+"> > print('My favorite season is ', seasons[-1])\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+

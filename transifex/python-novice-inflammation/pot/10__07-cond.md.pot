@@ -1,0 +1,657 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/07-cond.md:1
+# Front Matter
+msgid "---\n"
+"title: Making Choices\n"
+"teaching: 30\n"
+"exercises: 0\n"
+"questions:\n"
+"- \"How can my programs do different things based on data values?\"\n"
+"objectives:\n"
+"- \"Write conditional statements including `if`, `elif`, and `else` branches.\"\n"
+"- \"Correctly evaluate expressions containing `and` and `or`.\"\n"
+"keypoints:\n"
+"- \"Use `if condition` to start a conditional statement, `elif condition` to\n"
+"   provide additional tests, and `else` to provide a default.\"\n"
+"- \"The bodies of the branches of conditional statements must be indented.\"\n"
+"- \"Use `==` to test for equality.\"\n"
+"- \"`X and Y` is only true if both `X` and `Y` are true.\"\n"
+"- \"`X or Y` is true if either `X` or `Y`, or both, are true.\"\n"
+"- \"Zero, the empty string, and the empty list are considered false;\n"
+"   all other numbers, strings, and lists are considered true.\"\n"
+"- \"`True` and `False` represent truth values.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:22
+msgid "In our last lesson, we discovered something suspicious was going on\n"
+"in our inflammation data by drawing some plots.\n"
+"How can we use Python to automatically recognize the different features we saw,\n"
+"and take a different action for each? In this lesson, we'll learn how to write code that\n"
+"runs only when certain conditions are true."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:28
+# header
+msgid "## Conditionals"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:30
+msgid "We can ask Python to take different actions, depending on a condition, with an `if` statement:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:32
+# code block
+msgid "~~~\n"
+"num = 37\n"
+"if num > 100:\n"
+"    print('greater')\n"
+"else:\n"
+"    print('not greater')\n"
+"print('done')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:42
+# code block
+msgid "~~~\n"
+"not greater\n"
+"done\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:48
+msgid "The second line of this code uses the keyword `if` to tell Python that we want to make a choice.\n"
+"If the test that follows the `if` statement is true,\n"
+"the body of the `if`\n"
+"(i.e., the set of lines indented underneath it) is executed, and \"greater\" is printed.\n"
+"If the test is false,\n"
+"the body of the `else` is executed instead, and \"not greater\" is printed.\n"
+"Only one or the other is ever executed before continuing on with program execution to print \"done\":"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:56
+msgid "![A flowchart diagram of the if-else construct that tests if variable num is greater than 100](../fig/python-flowchart-conditional.png)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:58
+msgid "Conditional statements don't have to include an `else`.\n"
+"If there isn't one,\n"
+"Python simply does nothing if the test is false:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:62
+# code block
+msgid "~~~\n"
+"num = 53\n"
+"print('before conditional...')\n"
+"if num > 100:\n"
+"    print(num,' is greater than 100')\n"
+"print('...after conditional')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:71
+# code block
+msgid "~~~\n"
+"before conditional...\n"
+"...after conditional\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:77
+msgid "We can also chain several tests together using `elif`,\n"
+"which is short for \"else if\".\n"
+"The following Python code uses `elif` to print the sign of a number."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:81
+# code block
+msgid "~~~\n"
+"num = -3\n"
+"\n"
+"if num > 0:\n"
+"    print(num, 'is positive')\n"
+"elif num == 0:\n"
+"    print(num, 'is zero')\n"
+"else:\n"
+"    print(num, 'is negative')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:93
+# code block
+msgid "~~~\n"
+"-3 is negative\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:98
+msgid "Note that to test for equality we use a double equals sign `==`\n"
+"rather than a single equals sign `=` which is used to assign values."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:101
+# blockquote, which can be cascaded
+msgid "> ## Comparing in Python"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:102
+msgid ">\n"
+"> Along with the `>` and `==` operators we have already used for comparing values in our conditionals, \n"
+"> there are a few more options to know about:\n"
+">\n"
+"> - `>`: greater than\n"
+"> - `<`: less than\n"
+"> - `==`: equal to\n"
+"> - `!=`: does not equal\n"
+"> - `>=`: greater than or equal to\n"
+"> - `<=`: less than or equal to"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:114
+msgid "We can also combine tests using `and` and `or`.\n"
+"`and` is only true if both parts are true:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:117
+# code block
+msgid "~~~\n"
+"if (1 > 0) and (-1 >= 0):\n"
+"    print('both parts are true')\n"
+"else:\n"
+"    print('at least one part is false')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:125
+# code block
+msgid "~~~\n"
+"at least one part is false\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:130
+msgid "while `or` is true if at least one part is true:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:132
+# code block
+msgid "~~~\n"
+"if (1 < 0) or (1 >= 0):\n"
+"    print('at least one test is true')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:138
+# code block
+msgid "~~~\n"
+"at least one test is true\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:143
+# blockquote, which can be cascaded
+msgid "> ## `True` and `False`"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:144
+# blockquote, which can be cascaded
+msgid "> `True` and `False` are special words in Python called `booleans`,"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:145
+# blockquote, which can be cascaded
+msgid "> which represent truth values. A statement such as `1 < 0` returns"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:146
+# blockquote, which can be cascaded
+msgid "> the value `False`, while `-1 < 0` returns the value `True`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:149
+# header
+msgid "## Checking our Data"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:151
+msgid "Now that we've seen how conditionals work,\n"
+"we can use them to check for the suspicious features we saw in our inflammation data.\n"
+"We are about to use functions provided by the `numpy` module again.\n"
+"Therefore, if you're working in a new Python session, make sure to load the\n"
+"module with:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:162
+msgid "From the first couple of plots, we saw that maximum daily inflammation exhibits\n"
+"a strange behavior and raises one unit a day.\n"
+"Wouldn't it be a good idea to detect such behavior and report it as suspicious?\n"
+"Let's do that!\n"
+"However, instead of checking every single day of the study, let's merely check\n"
+"if maximum inflammation in the beginning (day 0) and in the middle (day 20) of\n"
+"the study are equal to the corresponding day numbers."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:170
+# code block
+msgid "~~~\n"
+"max_inflammation_0 = numpy.max(data, axis=0)[0]\n"
+"max_inflammation_20 = numpy.max(data, axis=0)[20]\n"
+"\n"
+"if max_inflammation_0 == 0 and max_inflammation_20 == 20:\n"
+"    print('Suspicious looking maxima!')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:179
+msgid "We also saw a different problem in the third dataset;\n"
+"the minima per day were all zero (looks like a healthy person snuck into our study).\n"
+"We can also check for this with an `elif` condition:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:183
+# code block
+msgid "~~~\n"
+"elif numpy.sum(numpy.min(data, axis=0)) == 0:\n"
+"    print('Minima add up to zero!')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:189
+msgid "And if neither of these conditions are true, we can use `else` to give the all-clear:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:191
+# code block
+msgid "~~~\n"
+"else:\n"
+"    print('Seems OK!')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:197
+msgid "Let's test that out:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:199
+# code block
+msgid "~~~\n"
+"data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\n"
+"\n"
+"max_inflammation_0 = numpy.max(data, axis=0)[0]\n"
+"max_inflammation_20 = numpy.max(data, axis=0)[20]\n"
+"\n"
+"if max_inflammation_0 == 0 and max_inflammation_20 == 20:\n"
+"    print('Suspicious looking maxima!')\n"
+"elif numpy.sum(numpy.min(data, axis=0)) == 0:\n"
+"    print('Minima add up to zero!')\n"
+"else:\n"
+"    print('Seems OK!')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:214
+# code block
+msgid "~~~\n"
+"Suspicious looking maxima!\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:219
+# code block
+msgid "~~~\n"
+"data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')\n"
+"\n"
+"max_inflammation_0 = numpy.max(data, axis=0)[0]\n"
+"max_inflammation_20 = numpy.max(data, axis=0)[20]\n"
+"\n"
+"if max_inflammation_0 == 0 and max_inflammation_20 == 20:\n"
+"    print('Suspicious looking maxima!')\n"
+"elif numpy.sum(numpy.min(data, axis=0)) == 0:\n"
+"    print('Minima add up to zero!')\n"
+"else:\n"
+"    print('Seems OK!')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:234
+# code block
+msgid "~~~\n"
+"Minima add up to zero!\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:239
+msgid "In this way,\n"
+"we have asked Python to do something different depending on the condition of our data.\n"
+"Here we printed messages in all cases,\n"
+"but we could also imagine not using the `else` catch-all\n"
+"so that messages are only printed when something is wrong,\n"
+"freeing us from having to manually examine every plot for features we've seen before."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:246
+# blockquote, which can be cascaded
+msgid "> ## How Many Paths?"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:247
+msgid ">\n"
+"> Consider this code:\n"
+">\n"
+"> ~~~\n"
+"> if 4 > 5:\n"
+">     print('A')\n"
+"> elif 4 == 5:\n"
+">     print('B')\n"
+"> elif 4 < 5:\n"
+">     print('C')\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Which of the following would be printed if you were to run this code?\n"
+"> Why did you pick this answer?\n"
+">\n"
+"> 1.  A\n"
+"> 2.  B\n"
+"> 3.  C\n"
+"> 4.  B and C\n"
+">\n"
+"> > ## Solution\n"
+"> > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,\n"
+"> > but `4 < 5` is true."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:274
+# blockquote, which can be cascaded
+msgid "> ## What Is Truth?"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:275
+msgid ">\n"
+"> `True` and `False` booleans are not the only values in Python that are true and false.\n"
+"> In fact, *any* value can be used in an `if` or `elif`.\n"
+"> After reading and running the code below,\n"
+"> explain what the rule is for which values are considered true and which are considered false.\n"
+">\n"
+"> ~~~\n"
+"> if '':\n"
+">     print('empty string is true')\n"
+"> if 'word':\n"
+">     print('word is true')\n"
+"> if []:\n"
+">     print('empty list is true')\n"
+"> if [1, 2, 3]:\n"
+">     print('non-empty list is true')\n"
+"> if 0:\n"
+">     print('zero is true')\n"
+"> if 1:\n"
+">     print('one is true')\n"
+"> ~~~\n"
+"> {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:298
+# blockquote, which can be cascaded
+msgid "> ## That's Not Not What I Meant"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:299
+msgid ">\n"
+"> Sometimes it is useful to check whether some condition is not true.\n"
+"> The Boolean operator `not` can do this explicitly.\n"
+"> After reading and running the code below,\n"
+"> write some `if` statements that use `not` to test the rule\n"
+"> that you formulated in the previous challenge.\n"
+">\n"
+"> ~~~\n"
+"> if not '':\n"
+">     print('empty string is not true')\n"
+"> if not 'word':\n"
+">     print('word is not true')\n"
+"> if not not True:\n"
+">     print('not not True is true')\n"
+"> ~~~\n"
+"> {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:317
+# blockquote, which can be cascaded
+msgid "> ## Close Enough"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:318
+msgid ">\n"
+"> Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`\n"
+"> and `False` otherwise.\n"
+"> Compare your implementation with your partner's:\n"
+"> do you get the same answer for all possible pairs of numbers?\n"
+">\n"
+"> > ## Hint\n"
+"> > There is a [built-in function `abs`][abs-function] that returns the absolute value of\n"
+"> > a number:\n"
+"> > ~~~\n"
+"> > print(abs(-12))\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> > ~~~\n"
+"> > 12\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:336
+msgid ">\n"
+"> > ## Solution 1\n"
+"> > ~~~\n"
+"> > a = 5\n"
+"> > b = 5.1\n"
+"> >\n"
+"> > if abs(a - b) <= 0.1 * abs(b):\n"
+"> >     print('True')\n"
+"> > else:\n"
+"> >     print('False')\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:349
+msgid ">\n"
+"> > ## Solution 2\n"
+"> > ~~~\n"
+"> > print(abs(a - b) <= 0.1 * abs(b))\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > This works because the Booleans `True` and `False`\n"
+"> > have string representations which can be printed."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:361
+# blockquote, which can be cascaded
+msgid "> ## In-Place Operators"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:362
+msgid ">\n"
+"> Python (and most other languages in the C family) provides\n"
+"> [in-place operators]({{ page.root }}/reference.html#in-place-operators)\n"
+"> that work like this:\n"
+">\n"
+"> ~~~\n"
+"> x = 1  # original value\n"
+"> x += 1 # add one to x, assigning result back to x\n"
+"> x *= 3 # multiply x by 3\n"
+"> print(x)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> 6\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:379
+msgid ">\n"
+"> Write some code that sums the positive and negative numbers in a list separately,\n"
+"> using in-place operators.\n"
+"> Do you think the result is more or less readable\n"
+"> than writing the same without in-place operators?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > positive_sum = 0\n"
+"> > negative_sum = 0\n"
+"> > test_list = [3, 4, 6, 1, -1, -5, 0, 7, -8]\n"
+"> > for num in test_list:\n"
+"> >     if num > 0:\n"
+"> >         positive_sum += num\n"
+"> >     elif num == 0:\n"
+"> >         pass\n"
+"> >     else:\n"
+"> >         negative_sum += num\n"
+"> > print(positive_sum, negative_sum)\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > Here `pass` means \"don't do anything\".\n"
+"> In this particular case, it's not actually needed, since if `num == 0` neither\n"
+"> > sum needs to change, but it illustrates the use of `elif` and `pass`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:407
+# blockquote, which can be cascaded
+msgid "> ## Sorting a List Into Buckets"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:408
+msgid ">\n"
+"> In our `data` folder, large data sets are stored in files whose names start with\n"
+"> \"inflammation-\" and small data sets -- in files whose names start with \"small-\". We\n"
+"> also have some other files that we do not care about at this point. We'd like to break all\n"
+"> these files into three lists called `large_files`, `small_files`, and `other_files`,\n"
+"> respectively.\n"
+">\n"
+"> Add code to the template below to do this. Note that the string method\n"
+"> [`startswith`](https://docs.python.org/3/library/stdtypes.html#str.startswith)\n"
+"> returns `True` if and only if the string it is called on starts with the string\n"
+"> passed as an argument, that is:\n"
+">\n"
+"> ~~~\n"
+"> 'String'.startswith('Str')\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+"> ~~~\n"
+"> True\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:428
+# blockquote, which can be cascaded
+msgid "> But"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:430
+# blockquote, which can be cascaded
+msgid "> 'String'.startswith('str')"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:434
+# blockquote, which can be cascaded
+msgid "> False"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:437
+msgid ">Use the following Python code as your starting point:\n"
+"> ~~~\n"
+"> filenames = ['inflammation-01.csv',\n"
+">          'myscript.py',\n"
+">          'inflammation-02.csv',\n"
+">          'small-01.csv',\n"
+">          'small-02.csv']\n"
+"> large_files = []\n"
+"> small_files = []\n"
+"> other_files = []\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Your solution should:\n"
+">\n"
+"> 1.  loop over the names of the files\n"
+"> 2.  figure out which group each filename belongs in\n"
+"> 3.  append the filename to that list\n"
+">\n"
+"> In the end the three lists should be:\n"
+">\n"
+"> ~~~\n"
+"> large_files = ['inflammation-01.csv', 'inflammation-02.csv']\n"
+"> small_files = ['small-01.csv', 'small-02.csv']\n"
+"> other_files = ['myscript.py']\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > for filename in filenames:\n"
+"> >     if filename.startswith('inflammation-'):\n"
+"> >         large_files.append(filename)\n"
+"> >     elif filename.startswith('small-'):\n"
+"> >         small_files.append(filename)\n"
+"> >     else:\n"
+"> >         other_files.append(filename)\n"
+"> >\n"
+"> > print('large_files:', large_files)\n"
+"> > print('small_files:', small_files)\n"
+"> > print('other_files:', other_files)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:483
+# blockquote, which can be cascaded
+msgid "> ## Counting Vowels"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:484
+msgid ">\n"
+"> 1. Write a loop that counts the number of vowels in a character string.\n"
+"> 2. Test it on a few individual words and full sentences.\n"
+"> 3. Once you are done, compare your solution to your neighbor's.\n"
+">    Did you make the same decisions about how to handle the letter 'y'\n"
+">    (which some people think is a vowel, and some do not)?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > vowels = 'aeiouAEIOU'\n"
+"> > sentence = 'Mary had a little lamb.'\n"
+"> > count = 0\n"
+"> > for char in sentence:\n"
+"> >     if char in vowels:\n"
+"> >         count += 1\n"
+"> >\n"
+"> > print('The number of vowels in this string is ' + str(count))\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/07-cond.md:506
+msgid "[abs-function]: https://docs.python.org/3/library/functions.html#abs"
+msgstr ""
+

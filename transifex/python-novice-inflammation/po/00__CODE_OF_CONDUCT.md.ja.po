@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/CODE_OF_CONDUCT.md:1
+# Front Matter
+msgid "---\n"
+"layout: page\n"
+"title: \"Contributor Code of Conduct\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/CODE_OF_CONDUCT.md:5
+msgid "As contributors and maintainers of this project,\n"
+"we pledge to follow the [Carpentry Code of Conduct][coc]."
+msgstr ""
+
+#: python-novice-inflammation/CODE_OF_CONDUCT.md:8
+msgid "Instances of abusive, harassing, or otherwise unacceptable behavior\n"
+"may be reported by following our [reporting guidelines][coc-reporting]."
+msgstr ""
+
+#: python-novice-inflammation/CODE_OF_CONDUCT.md:11
+#: python-novice-inflammation/_episodes/01-intro.md:225
+#: python-novice-inflammation/_episodes/02-numpy.md:802
+#: python-novice-inflammation/_episodes/03-matplotlib.md:264
+#: python-novice-inflammation/_episodes/04-loop.md:416
+#: python-novice-inflammation/_episodes/05-lists.md:564
+#: python-novice-inflammation/_episodes/06-files.md:194
+#: python-novice-inflammation/_episodes/07-cond.md:508
+#: python-novice-inflammation/_episodes/08-func.md:932
+#: python-novice-inflammation/_episodes/09-errors.md:598
+#: python-novice-inflammation/_episodes/10-defensive.md:542
+#: python-novice-inflammation/_episodes/11-debugging.md:290
+#: python-novice-inflammation/_episodes/12-cmdline.md:1028
+#: python-novice-inflammation/_extras/extra_exercises.md:75
+#: python-novice-inflammation/_extras/figures.md:79
+#: python-novice-inflammation/bin/boilerplate/_episodes/01-introduction.md:14
+#: python-novice-inflammation/bin/boilerplate/_extras/discuss.md:6
+#: python-novice-inflammation/bin/boilerplate/_extras/figures.md:79
+#: python-novice-inflammation/bin/boilerplate/_extras/guide.md:6
+#: python-novice-inflammation/bin/boilerplate/index.md:17
+#: python-novice-inflammation/bin/boilerplate/reference.md:9
+#: python-novice-inflammation/bin/boilerplate/setup.md:7
+#: python-novice-inflammation/index.md:50
+msgid "{% include links.md %}"
+msgstr ""
+

@@ -1,0 +1,779 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/01-intro.md:1
+# Front Matter
+msgid "---\n"
+"title: Python Fundamentals\n"
+"teaching: 20\n"
+"exercises: 10\n"
+"questions:\n"
+"- \"What basic data types can I work with in Python?\"\n"
+"- \"How can I create a new variable in Python?\"\n"
+"- \"Can I change the value associated with a variable after I create it?\"\n"
+"objectives:\n"
+"- \"Assign values to variables.\"\n"
+"keypoints:\n"
+"- \"Basic data types in Python include integers, strings, and floating-point numbers.\"\n"
+"- \"Use `variable = value` to assign a value to a variable in order to record it in memory.\"\n"
+"- \"Variables are created on demand whenever a value is assigned to them.\"\n"
+"- \"Use `print(something)` to display the value of `something`.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:18
+# header
+msgid "## Variables"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:20
+msgid "Any Python interpreter can be used as a calculator:\n"
+"~~~\n"
+"3 + 5 * 4\n"
+"~~~\n"
+"{: .language-python}\n"
+"~~~\n"
+"23\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:28
+#: python-novice-inflammation/_episodes/01-intro.md:87
+#: python-novice-inflammation/_episodes/01-intro.md:98
+#: python-novice-inflammation/_episodes/01-intro.md:110
+#: python-novice-inflammation/_episodes/01-intro.md:121
+#: python-novice-inflammation/_episodes/01-intro.md:135
+#: python-novice-inflammation/_episodes/02-numpy.md:67
+#: python-novice-inflammation/_episodes/02-numpy.md:135
+#: python-novice-inflammation/_episodes/02-numpy.md:150
+#: python-novice-inflammation/_episodes/02-numpy.md:191
+#: python-novice-inflammation/_episodes/02-numpy.md:214
+#: python-novice-inflammation/_episodes/02-numpy.md:224
+#: python-novice-inflammation/_episodes/02-numpy.md:276
+#: python-novice-inflammation/_episodes/02-numpy.md:296
+#: python-novice-inflammation/_episodes/02-numpy.md:317
+#: python-novice-inflammation/_episodes/02-numpy.md:333
+#: python-novice-inflammation/_episodes/02-numpy.md:382
+#: python-novice-inflammation/_episodes/02-numpy.md:415
+#: python-novice-inflammation/_episodes/02-numpy.md:433
+#: python-novice-inflammation/_episodes/02-numpy.md:463
+#: python-novice-inflammation/_episodes/02-numpy.md:476
+#: python-novice-inflammation/_episodes/02-numpy.md:495
+#: python-novice-inflammation/_episodes/04-loop.md:55
+#: python-novice-inflammation/_episodes/04-loop.md:86
+#: python-novice-inflammation/_episodes/04-loop.md:116
+#: python-novice-inflammation/_episodes/04-loop.md:136
+#: python-novice-inflammation/_episodes/04-loop.md:203
+#: python-novice-inflammation/_episodes/04-loop.md:241
+#: python-novice-inflammation/_episodes/04-loop.md:254
+#: python-novice-inflammation/_episodes/05-lists.md:38
+#: python-novice-inflammation/_episodes/05-lists.md:55
+#: python-novice-inflammation/_episodes/05-lists.md:75
+#: python-novice-inflammation/_episodes/05-lists.md:94
+#: python-novice-inflammation/_episodes/05-lists.md:244
+#: python-novice-inflammation/_episodes/05-lists.md:257
+#: python-novice-inflammation/_episodes/05-lists.md:268
+#: python-novice-inflammation/_episodes/05-lists.md:288
+#: python-novice-inflammation/_episodes/05-lists.md:307
+#: python-novice-inflammation/_episodes/05-lists.md:363
+#: python-novice-inflammation/_episodes/05-lists.md:498
+#: python-novice-inflammation/_episodes/05-lists.md:519
+#: python-novice-inflammation/_episodes/06-files.md:40
+#: python-novice-inflammation/_episodes/06-files.md:86
+#: python-novice-inflammation/_episodes/06-files.md:93
+#: python-novice-inflammation/_episodes/06-files.md:100
+#: python-novice-inflammation/_episodes/07-cond.md:46
+#: python-novice-inflammation/_episodes/07-cond.md:75
+#: python-novice-inflammation/_episodes/07-cond.md:96
+#: python-novice-inflammation/_episodes/07-cond.md:128
+#: python-novice-inflammation/_episodes/07-cond.md:141
+#: python-novice-inflammation/_episodes/07-cond.md:217
+#: python-novice-inflammation/_episodes/07-cond.md:237
+#: python-novice-inflammation/_episodes/08-func.md:93
+#: python-novice-inflammation/_episodes/08-func.md:115
+#: python-novice-inflammation/_episodes/08-func.md:136
+#: python-novice-inflammation/_episodes/08-func.md:248
+#: python-novice-inflammation/_episodes/08-func.md:268
+#: python-novice-inflammation/_episodes/08-func.md:287
+#: python-novice-inflammation/_episodes/08-func.md:304
+#: python-novice-inflammation/_episodes/08-func.md:319
+#: python-novice-inflammation/_episodes/08-func.md:366
+#: python-novice-inflammation/_episodes/08-func.md:401
+#: python-novice-inflammation/_episodes/08-func.md:425
+#: python-novice-inflammation/_episodes/08-func.md:483
+#: python-novice-inflammation/_episodes/08-func.md:506
+#: python-novice-inflammation/_episodes/08-func.md:536
+#: python-novice-inflammation/_episodes/08-func.md:553
+#: python-novice-inflammation/_episodes/08-func.md:576
+#: python-novice-inflammation/_episodes/08-func.md:585
+#: python-novice-inflammation/_episodes/09-errors.md:349
+#: python-novice-inflammation/_episodes/10-defensive.md:205
+#: python-novice-inflammation/_episodes/12-cmdline.md:51
+#: python-novice-inflammation/_episodes/12-cmdline.md:106
+#: python-novice-inflammation/_episodes/12-cmdline.md:131
+#: python-novice-inflammation/_episodes/12-cmdline.md:145
+#: python-novice-inflammation/_episodes/12-cmdline.md:279
+#: python-novice-inflammation/_episodes/12-cmdline.md:338
+#: python-novice-inflammation/_episodes/12-cmdline.md:349
+#: python-novice-inflammation/_episodes/12-cmdline.md:360
+#: python-novice-inflammation/_episodes/12-cmdline.md:423
+#: python-novice-inflammation/_episodes/12-cmdline.md:488
+#: python-novice-inflammation/_episodes/12-cmdline.md:586
+#: python-novice-inflammation/_episodes/12-cmdline.md:660
+#: python-novice-inflammation/_extras/additional_material.md:26
+#: python-novice-inflammation/_extras/additional_material.md:41
+#: python-novice-inflammation/_extras/additional_material.md:51
+#: python-novice-inflammation/_extras/additional_material.md:64
+#: python-novice-inflammation/_extras/additional_material.md:74
+#: python-novice-inflammation/_extras/additional_material.md:84
+#: python-novice-inflammation/_extras/additional_material.md:93
+#: python-novice-inflammation/_extras/additional_material.md:106
+#: python-novice-inflammation/_extras/additional_material.md:116
+#: python-novice-inflammation/_extras/discuss.md:109
+#: python-novice-inflammation/_extras/discuss.md:131
+#: python-novice-inflammation/_extras/discuss.md:145
+#: python-novice-inflammation/_extras/discuss.md:221
+#: python-novice-inflammation/_extras/discuss.md:252
+#: python-novice-inflammation/_extras/discuss.md:265
+# SC/DC Template label
+msgid "{: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:30
+msgid "This is great but not very interesting.\n"
+"To do anything useful with data, we need to assign its value to a _variable_.\n"
+"In Python, we can [assign]({{ page.root }}/reference.html#assign) a value to a\n"
+"[variable]({{ page.root }}/reference.html#variable), using the equals sign `=`.\n"
+"For example, to assign value `60` to a variable `weight_kg`, we would execute:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:36
+# code block
+msgid "~~~\n"
+"weight_kg = 60\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:39
+#: python-novice-inflammation/_episodes/01-intro.md:67
+#: python-novice-inflammation/_episodes/01-intro.md:74
+#: python-novice-inflammation/_episodes/01-intro.md:82
+#: python-novice-inflammation/_episodes/01-intro.md:105
+#: python-novice-inflammation/_episodes/01-intro.md:130
+#: python-novice-inflammation/_episodes/02-numpy.md:43
+#: python-novice-inflammation/_episodes/02-numpy.md:56
+#: python-novice-inflammation/_episodes/02-numpy.md:115
+#: python-novice-inflammation/_episodes/02-numpy.md:124
+#: python-novice-inflammation/_episodes/02-numpy.md:145
+#: python-novice-inflammation/_episodes/02-numpy.md:186
+#: python-novice-inflammation/_episodes/02-numpy.md:209
+#: python-novice-inflammation/_episodes/02-numpy.md:219
+#: python-novice-inflammation/_episodes/02-numpy.md:268
+#: python-novice-inflammation/_episodes/02-numpy.md:287
+#: python-novice-inflammation/_episodes/02-numpy.md:328
+#: python-novice-inflammation/_episodes/02-numpy.md:372
+#: python-novice-inflammation/_episodes/02-numpy.md:410
+#: python-novice-inflammation/_episodes/02-numpy.md:428
+#: python-novice-inflammation/_episodes/02-numpy.md:451
+#: python-novice-inflammation/_episodes/02-numpy.md:471
+#: python-novice-inflammation/_episodes/02-numpy.md:485
+#: python-novice-inflammation/_episodes/03-matplotlib.md:28
+#: python-novice-inflammation/_episodes/03-matplotlib.md:40
+#: python-novice-inflammation/_episodes/03-matplotlib.md:53
+#: python-novice-inflammation/_episodes/03-matplotlib.md:61
+#: python-novice-inflammation/_episodes/03-matplotlib.md:109
+#: python-novice-inflammation/_episodes/04-loop.md:33
+#: python-novice-inflammation/_episodes/04-loop.md:47
+#: python-novice-inflammation/_episodes/04-loop.md:79
+#: python-novice-inflammation/_episodes/04-loop.md:108
+#: python-novice-inflammation/_episodes/04-loop.md:126
+#: python-novice-inflammation/_episodes/04-loop.md:146
+#: python-novice-inflammation/_episodes/04-loop.md:198
+#: python-novice-inflammation/_episodes/04-loop.md:233
+#: python-novice-inflammation/_episodes/04-loop.md:249
+#: python-novice-inflammation/_episodes/05-lists.md:33
+#: python-novice-inflammation/_episodes/05-lists.md:48
+#: python-novice-inflammation/_episodes/05-lists.md:67
+#: python-novice-inflammation/_episodes/05-lists.md:88
+#: python-novice-inflammation/_episodes/05-lists.md:102
+#: python-novice-inflammation/_episodes/05-lists.md:239
+#: python-novice-inflammation/_episodes/05-lists.md:251
+#: python-novice-inflammation/_episodes/05-lists.md:263
+#: python-novice-inflammation/_episodes/05-lists.md:282
+#: python-novice-inflammation/_episodes/05-lists.md:301
+#: python-novice-inflammation/_episodes/05-lists.md:355
+#: python-novice-inflammation/_episodes/05-lists.md:492
+#: python-novice-inflammation/_episodes/05-lists.md:512
+#: python-novice-inflammation/_episodes/06-files.md:21
+#: python-novice-inflammation/_episodes/06-files.md:33
+#: python-novice-inflammation/_episodes/06-files.md:81
+#: python-novice-inflammation/_episodes/07-cond.md:40
+#: python-novice-inflammation/_episodes/07-cond.md:69
+#: python-novice-inflammation/_episodes/07-cond.md:91
+#: python-novice-inflammation/_episodes/07-cond.md:123
+#: python-novice-inflammation/_episodes/07-cond.md:136
+#: python-novice-inflammation/_episodes/07-cond.md:160
+#: python-novice-inflammation/_episodes/07-cond.md:177
+#: python-novice-inflammation/_episodes/07-cond.md:187
+#: python-novice-inflammation/_episodes/07-cond.md:195
+#: python-novice-inflammation/_episodes/07-cond.md:212
+#: python-novice-inflammation/_episodes/07-cond.md:232
+#: python-novice-inflammation/_episodes/08-func.md:55
+#: python-novice-inflammation/_episodes/08-func.md:78
+#: python-novice-inflammation/_episodes/08-func.md:110
+#: python-novice-inflammation/_episodes/08-func.md:131
+#: python-novice-inflammation/_episodes/08-func.md:174
+#: python-novice-inflammation/_episodes/08-func.md:191
+#: python-novice-inflammation/_episodes/08-func.md:210
+#: python-novice-inflammation/_episodes/08-func.md:229
+#: python-novice-inflammation/_episodes/08-func.md:242
+#: python-novice-inflammation/_episodes/08-func.md:257
+#: python-novice-inflammation/_episodes/08-func.md:281
+#: python-novice-inflammation/_episodes/08-func.md:299
+#: python-novice-inflammation/_episodes/08-func.md:314
+#: python-novice-inflammation/_episodes/08-func.md:338
+#: python-novice-inflammation/_episodes/08-func.md:350
+#: python-novice-inflammation/_episodes/08-func.md:358
+#: python-novice-inflammation/_episodes/08-func.md:387
+#: python-novice-inflammation/_episodes/08-func.md:414
+#: python-novice-inflammation/_episodes/08-func.md:432
+#: python-novice-inflammation/_episodes/08-func.md:466
+#: python-novice-inflammation/_episodes/08-func.md:477
+#: python-novice-inflammation/_episodes/08-func.md:496
+#: python-novice-inflammation/_episodes/08-func.md:526
+#: python-novice-inflammation/_episodes/08-func.md:547
+#: python-novice-inflammation/_episodes/08-func.md:561
+#: python-novice-inflammation/_episodes/08-func.md:594
+#: python-novice-inflammation/_episodes/08-func.md:633
+#: python-novice-inflammation/_episodes/09-errors.md:57
+#: python-novice-inflammation/_episodes/09-errors.md:156
+#: python-novice-inflammation/_episodes/09-errors.md:181
+#: python-novice-inflammation/_episodes/09-errors.md:235
+#: python-novice-inflammation/_episodes/09-errors.md:261
+#: python-novice-inflammation/_episodes/09-errors.md:282
+#: python-novice-inflammation/_episodes/09-errors.md:309
+#: python-novice-inflammation/_episodes/09-errors.md:342
+#: python-novice-inflammation/_episodes/09-errors.md:381
+#: python-novice-inflammation/_episodes/09-errors.md:416
+#: python-novice-inflammation/_episodes/10-defensive.md:78
+#: python-novice-inflammation/_episodes/10-defensive.md:144
+#: python-novice-inflammation/_episodes/10-defensive.md:151
+#: python-novice-inflammation/_episodes/10-defensive.md:173
+#: python-novice-inflammation/_episodes/10-defensive.md:200
+#: python-novice-inflammation/_episodes/10-defensive.md:213
+#: python-novice-inflammation/_episodes/10-defensive.md:313
+#: python-novice-inflammation/_episodes/10-defensive.md:344
+#: python-novice-inflammation/_episodes/10-defensive.md:360
+#: python-novice-inflammation/_episodes/10-defensive.md:387
+#: python-novice-inflammation/_episodes/10-defensive.md:414
+#: python-novice-inflammation/_episodes/10-defensive.md:433
+#: python-novice-inflammation/_episodes/10-defensive.md:440
+#: python-novice-inflammation/_episodes/12-cmdline.md:89
+#: python-novice-inflammation/_episodes/12-cmdline.md:114
+#: python-novice-inflammation/_episodes/12-cmdline.md:173
+#: python-novice-inflammation/_episodes/12-cmdline.md:208
+#: python-novice-inflammation/_episodes/12-cmdline.md:408
+#: python-novice-inflammation/_episodes/12-cmdline.md:475
+#: python-novice-inflammation/_episodes/12-cmdline.md:542
+#: python-novice-inflammation/_episodes/12-cmdline.md:569
+#: python-novice-inflammation/_episodes/12-cmdline.md:647
+#: python-novice-inflammation/_extras/additional_material.md:18
+#: python-novice-inflammation/_extras/additional_material.md:59
+#: python-novice-inflammation/_extras/additional_material.md:69
+#: python-novice-inflammation/_extras/additional_material.md:79
+#: python-novice-inflammation/_extras/additional_material.md:88
+#: python-novice-inflammation/_extras/additional_material.md:101
+#: python-novice-inflammation/_extras/additional_material.md:111
+#: python-novice-inflammation/_extras/discuss.md:30
+#: python-novice-inflammation/_extras/discuss.md:94
+#: python-novice-inflammation/_extras/discuss.md:126
+#: python-novice-inflammation/_extras/discuss.md:140
+#: python-novice-inflammation/_extras/discuss.md:187
+#: python-novice-inflammation/_extras/discuss.md:202
+#: python-novice-inflammation/_extras/discuss.md:214
+#: python-novice-inflammation/_extras/discuss.md:246
+#: python-novice-inflammation/_extras/discuss.md:260
+#: python-novice-inflammation/_extras/discuss.md:276
+#: python-novice-inflammation/_extras/discuss.md:312
+#: python-novice-inflammation/_extras/discuss.md:325
+#: python-novice-inflammation/_extras/discuss.md:342
+msgid "{: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:41
+msgid "From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to\n"
+"it. In layman's terms, **a variable is a name for a value**."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:44
+msgid "In Python, variable names:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:46
+# unordered list
+msgid " - can include letters, digits, and underscores"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:47
+# unordered list
+msgid " - cannot start with a digit"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:48
+# unordered list
+msgid " - are [case sensitive]({{ page.root }}/reference.html#case-sensitive)."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:50
+msgid "This means that, for example:\n"
+" - `weight0` is a valid variable name, whereas `0weight` is not\n"
+" - `weight` and `Weight` are different variables"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:54
+# header
+msgid "## Types of data"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:55
+msgid "Python knows various types of data. Three common ones are:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:57
+# unordered list
+msgid "* integer numbers"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:58
+# unordered list
+msgid "* floating point numbers, and"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:59
+# unordered list
+msgid "* strings."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:61
+msgid "In the example above, variable `weight_kg` has an integer value of `60`.\n"
+"To create a variable with a floating point value, we can execute:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:64
+# code block
+msgid "~~~\n"
+"weight_kg = 60.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:69
+msgid "And to create a string, we add single or double quotes around some text, for example:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:71
+# code block
+msgid "~~~\n"
+"weight_kg_text = 'weight in kilograms:'\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:76
+# header
+msgid "## Using Variables in Python"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:77
+msgid "To display the value of a variable to the screen in Python, we can use the `print` function:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:79
+# code block
+msgid "~~~\n"
+"print(weight_kg)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:84
+#: python-novice-inflammation/_episodes/01-intro.md:118
+# code block
+msgid "~~~\n"
+"60.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:89
+msgid "We can display multiple things at once using only one `print` command:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:91
+# code block
+msgid "~~~\n"
+"print(weight_kg_text, weight_kg)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:94
+msgid "{: .language-python}\n"
+"~~~\n"
+"weight in kilograms: 60.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:100
+msgid "Moreover, we can do arithmetic with variables right inside the `print` function:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:102
+# code block
+msgid "~~~\n"
+"print('weight in pounds:', 2.2 * weight_kg)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:107
+# code block
+msgid "~~~\n"
+"weight in pounds: 132.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:112
+msgid "The above command, however, did not change the value of `weight_kg`:\n"
+"~~~\n"
+"print(weight_kg)\n"
+"~~~\n"
+"{: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:123
+msgid "To change the value of the `weight_kg` variable, we have to\n"
+"**assign** `weight_kg` a new value using the equals `=` sign:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:126
+# code block
+msgid "~~~\n"
+"weight_kg = 65.0\n"
+"print('weight in kilograms is now:', weight_kg)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:132
+# code block
+msgid "~~~\n"
+"weight in kilograms is now: 65.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:137
+# blockquote, which can be cascaded
+msgid "> ## Variables as Sticky Notes"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:138
+msgid ">\n"
+"> A variable is analogous to a sticky note with a name written on it:\n"
+"> assigning a value to a variable is like putting that sticky note on a particular value.\n"
+">\n"
+"> ![Value of 65.0 with weight_kg label stuck on it](../fig/python-sticky-note-variables-01.svg)\n"
+">\n"
+"> This means that assigning a value to one variable does **not** change\n"
+"> values of other variables.\n"
+"> For example, let's store the subject's weight in pounds in its own variable:\n"
+">\n"
+"> ~~~\n"
+"> # There are 2.2 pounds per kilogram\n"
+"> weight_lb = 2.2 * weight_kg\n"
+"> print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> weight in kilograms: 65.0 and in pounds: 143.0\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:158
+#: python-novice-inflammation/_episodes/01-intro.md:173
+#: python-novice-inflammation/_episodes/02-numpy.md:175
+#: python-novice-inflammation/_episodes/02-numpy.md:354
+#: python-novice-inflammation/_episodes/02-numpy.md:516
+#: python-novice-inflammation/_episodes/02-numpy.md:632
+#: python-novice-inflammation/_episodes/02-numpy.md:706
+#: python-novice-inflammation/_episodes/02-numpy.md:725
+#: python-novice-inflammation/_episodes/04-loop.md:184
+#: python-novice-inflammation/_episodes/04-loop.md:336
+#: python-novice-inflammation/_episodes/04-loop.md:401
+#: python-novice-inflammation/_episodes/05-lists.md:144
+#: python-novice-inflammation/_episodes/05-lists.md:160
+#: python-novice-inflammation/_episodes/05-lists.md:198
+#: python-novice-inflammation/_episodes/05-lists.md:208
+#: python-novice-inflammation/_episodes/05-lists.md:218
+#: python-novice-inflammation/_episodes/05-lists.md:383
+#: python-novice-inflammation/_episodes/05-lists.md:424
+#: python-novice-inflammation/_episodes/05-lists.md:441
+#: python-novice-inflammation/_episodes/05-lists.md:460
+#: python-novice-inflammation/_episodes/07-cond.md:378
+#: python-novice-inflammation/_episodes/07-cond.md:427
+#: python-novice-inflammation/_episodes/07-cond.md:436
+#: python-novice-inflammation/_episodes/08-func.md:666
+#: python-novice-inflammation/_episodes/08-func.md:729
+#: python-novice-inflammation/_episodes/10-defensive.md:504
+#: python-novice-inflammation/_episodes/10-defensive.md:514
+#: python-novice-inflammation/_episodes/11-debugging.md:279
+#: python-novice-inflammation/_episodes/12-cmdline.md:679
+#: python-novice-inflammation/_episodes/12-cmdline.md:689
+#: python-novice-inflammation/_episodes/12-cmdline.md:744
+#: python-novice-inflammation/_episodes/12-cmdline.md:1015
+#: python-novice-inflammation/_episodes/12-cmdline.md:1025
+# SC/DC Template label
+msgid "> {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:159
+msgid ">\n"
+"> ![Value of 65.0 with weight_kg label stuck on it, and value of 143.0 with weight_lb label stuck on it](../fig/python-sticky-note-variables-02.svg)\n"
+">\n"
+"> Let's now change `weight_kg`:\n"
+">\n"
+"> ~~~\n"
+"> weight_kg = 100.0\n"
+"> print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> ~~~\n"
+"> weight in kilograms is now: 100.0 and weight in pounds is still: 143.0\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:174
+msgid ">\n"
+"> ![Value of 100.0 with label weight_kg stuck on it, and value of 143.0 with label weight_lb stuck on it](../fig/python-sticky-note-variables-03.svg)\n"
+">\n"
+"> Since `weight_lb` doesn't \"remember\" where its value comes from,\n"
+"> it is not updated when we change `weight_kg`."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:179
+#: python-novice-inflammation/_episodes/02-numpy.md:103
+#: python-novice-inflammation/_episodes/02-numpy.md:179
+#: python-novice-inflammation/_episodes/02-numpy.md:256
+#: python-novice-inflammation/_episodes/02-numpy.md:359
+#: python-novice-inflammation/_episodes/02-numpy.md:397
+#: python-novice-inflammation/_episodes/04-loop.md:188
+#: python-novice-inflammation/_episodes/05-lists.md:166
+#: python-novice-inflammation/_episodes/05-lists.md:222
+#: python-novice-inflammation/_episodes/05-lists.md:230
+#: python-novice-inflammation/_episodes/07-cond.md:112
+#: python-novice-inflammation/_episodes/07-cond.md:147
+#: python-novice-inflammation/_episodes/09-errors.md:104
+#: python-novice-inflammation/_episodes/09-errors.md:224
+#: python-novice-inflammation/_episodes/11-debugging.md:202
+#: python-novice-inflammation/_episodes/12-cmdline.md:32
+#: python-novice-inflammation/_episodes/12-cmdline.md:307
+#: python-novice-inflammation/_episodes/12-cmdline.md:321
+#: python-novice-inflammation/_episodes/12-cmdline.md:437
+# SC/DC Template label
+msgid "{: .callout}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:182
+# blockquote, which can be cascaded
+msgid "> ## Check Your Understanding"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:183
+msgid ">\n"
+"> What values do the variables `mass` and `age` have after each of the following statements?\n"
+"> Test your answer by executing the lines.\n"
+">\n"
+"> ~~~\n"
+"> mass = 47.5\n"
+"> age = 122\n"
+"> mass = mass * 2.0\n"
+"> age = age - 20\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > `mass` holds a value of 47.5, `age` does not exist\n"
+"> > `mass` still holds a value of 47.5, `age` holds a value of 122\n"
+"> > `mass` now has a value of 95.0, `age`'s value is still 122\n"
+"> > `mass` still has a value of 95.0, `age` now holds 102\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:203
+#: python-novice-inflammation/_episodes/01-intro.md:222
+#: python-novice-inflammation/_episodes/02-numpy.md:529
+#: python-novice-inflammation/_episodes/02-numpy.md:540
+#: python-novice-inflammation/_episodes/02-numpy.md:548
+#: python-novice-inflammation/_episodes/02-numpy.md:573
+#: python-novice-inflammation/_episodes/02-numpy.md:590
+#: python-novice-inflammation/_episodes/02-numpy.md:661
+#: python-novice-inflammation/_episodes/02-numpy.md:682
+#: python-novice-inflammation/_episodes/02-numpy.md:743
+#: python-novice-inflammation/_episodes/02-numpy.md:752
+#: python-novice-inflammation/_episodes/02-numpy.md:799
+#: python-novice-inflammation/_episodes/03-matplotlib.md:137
+#: python-novice-inflammation/_episodes/03-matplotlib.md:158
+#: python-novice-inflammation/_episodes/03-matplotlib.md:169
+#: python-novice-inflammation/_episodes/03-matplotlib.md:210
+#: python-novice-inflammation/_episodes/03-matplotlib.md:224
+#: python-novice-inflammation/_episodes/03-matplotlib.md:261
+#: python-novice-inflammation/_episodes/04-loop.md:292
+#: python-novice-inflammation/_episodes/04-loop.md:319
+#: python-novice-inflammation/_episodes/04-loop.md:349
+#: python-novice-inflammation/_episodes/04-loop.md:368
+#: python-novice-inflammation/_episodes/04-loop.md:413
+#: python-novice-inflammation/_episodes/05-lists.md:333
+#: python-novice-inflammation/_episodes/05-lists.md:400
+#: python-novice-inflammation/_episodes/05-lists.md:479
+#: python-novice-inflammation/_episodes/05-lists.md:559
+#: python-novice-inflammation/_episodes/06-files.md:136
+#: python-novice-inflammation/_episodes/07-cond.md:271
+#: python-novice-inflammation/_episodes/07-cond.md:335
+#: python-novice-inflammation/_episodes/07-cond.md:348
+#: python-novice-inflammation/_episodes/07-cond.md:358
+#: python-novice-inflammation/_episodes/07-cond.md:404
+#: python-novice-inflammation/_episodes/07-cond.md:480
+#: python-novice-inflammation/_episodes/07-cond.md:503
+#: python-novice-inflammation/_episodes/08-func.md:674
+#: python-novice-inflammation/_episodes/08-func.md:709
+#: python-novice-inflammation/_episodes/08-func.md:737
+#: python-novice-inflammation/_episodes/08-func.md:756
+#: python-novice-inflammation/_episodes/08-func.md:781
+#: python-novice-inflammation/_episodes/08-func.md:802
+#: python-novice-inflammation/_episodes/08-func.md:836
+#: python-novice-inflammation/_episodes/08-func.md:885
+#: python-novice-inflammation/_episodes/08-func.md:921
+#: python-novice-inflammation/_episodes/09-errors.md:499
+#: python-novice-inflammation/_episodes/09-errors.md:529
+#: python-novice-inflammation/_episodes/09-errors.md:571
+#: python-novice-inflammation/_episodes/09-errors.md:595
+#: python-novice-inflammation/_episodes/10-defensive.md:488
+#: python-novice-inflammation/_episodes/10-defensive.md:539
+#: python-novice-inflammation/_episodes/11-debugging.md:287
+#: python-novice-inflammation/_episodes/12-cmdline.md:724
+#: python-novice-inflammation/_episodes/12-cmdline.md:764
+#: python-novice-inflammation/_episodes/12-cmdline.md:808
+#: python-novice-inflammation/_episodes/12-cmdline.md:859
+#: python-novice-inflammation/_episodes/12-cmdline.md:905
+#: python-novice-inflammation/_episodes/12-cmdline.md:949
+#: python-novice-inflammation/_episodes/12-cmdline.md:998
+#: python-novice-inflammation/_extras/extra_exercises.md:48
+#: python-novice-inflammation/_extras/extra_exercises.md:72
+#: python-novice-inflammation/setup.md:71
+#: python-novice-inflammation/setup.md:82
+#: python-novice-inflammation/setup.md:91
+#: python-novice-inflammation/setup.md:98
+# SC/DC Template label
+msgid "> {: .solution}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:204
+#: python-novice-inflammation/_episodes/01-intro.md:223
+#: python-novice-inflammation/_episodes/02-numpy.md:574
+#: python-novice-inflammation/_episodes/02-numpy.md:591
+#: python-novice-inflammation/_episodes/02-numpy.md:683
+#: python-novice-inflammation/_episodes/02-numpy.md:800
+#: python-novice-inflammation/_episodes/03-matplotlib.md:170
+#: python-novice-inflammation/_episodes/03-matplotlib.md:211
+#: python-novice-inflammation/_episodes/03-matplotlib.md:225
+#: python-novice-inflammation/_episodes/03-matplotlib.md:262
+#: python-novice-inflammation/_episodes/04-loop.md:293
+#: python-novice-inflammation/_episodes/04-loop.md:320
+#: python-novice-inflammation/_episodes/04-loop.md:350
+#: python-novice-inflammation/_episodes/04-loop.md:369
+#: python-novice-inflammation/_episodes/04-loop.md:414
+#: python-novice-inflammation/_episodes/05-lists.md:334
+#: python-novice-inflammation/_episodes/05-lists.md:401
+#: python-novice-inflammation/_episodes/05-lists.md:480
+#: python-novice-inflammation/_episodes/05-lists.md:560
+#: python-novice-inflammation/_episodes/06-files.md:137
+#: python-novice-inflammation/_episodes/06-files.md:192
+#: python-novice-inflammation/_episodes/07-cond.md:272
+#: python-novice-inflammation/_episodes/07-cond.md:296
+#: python-novice-inflammation/_episodes/07-cond.md:315
+#: python-novice-inflammation/_episodes/07-cond.md:359
+#: python-novice-inflammation/_episodes/07-cond.md:405
+#: python-novice-inflammation/_episodes/07-cond.md:481
+#: python-novice-inflammation/_episodes/07-cond.md:504
+#: python-novice-inflammation/_episodes/08-func.md:675
+#: python-novice-inflammation/_episodes/08-func.md:710
+#: python-novice-inflammation/_episodes/08-func.md:738
+#: python-novice-inflammation/_episodes/08-func.md:757
+#: python-novice-inflammation/_episodes/08-func.md:782
+#: python-novice-inflammation/_episodes/08-func.md:803
+#: python-novice-inflammation/_episodes/08-func.md:837
+#: python-novice-inflammation/_episodes/08-func.md:886
+#: python-novice-inflammation/_episodes/08-func.md:922
+#: python-novice-inflammation/_episodes/08-func.md:930
+#: python-novice-inflammation/_episodes/09-errors.md:500
+#: python-novice-inflammation/_episodes/09-errors.md:530
+#: python-novice-inflammation/_episodes/09-errors.md:572
+#: python-novice-inflammation/_episodes/09-errors.md:596
+#: python-novice-inflammation/_episodes/10-defensive.md:489
+#: python-novice-inflammation/_episodes/10-defensive.md:540
+#: python-novice-inflammation/_episodes/11-debugging.md:247
+#: python-novice-inflammation/_episodes/11-debugging.md:288
+#: python-novice-inflammation/_episodes/12-cmdline.md:725
+#: python-novice-inflammation/_episodes/12-cmdline.md:765
+#: python-novice-inflammation/_episodes/12-cmdline.md:809
+#: python-novice-inflammation/_episodes/12-cmdline.md:860
+#: python-novice-inflammation/_episodes/12-cmdline.md:906
+#: python-novice-inflammation/_episodes/12-cmdline.md:950
+#: python-novice-inflammation/_episodes/12-cmdline.md:999
+#: python-novice-inflammation/_episodes/12-cmdline.md:1026
+#: python-novice-inflammation/_extras/discuss.md:176
+#: python-novice-inflammation/_extras/discuss.md:357
+#: python-novice-inflammation/_extras/discuss.md:362
+#: python-novice-inflammation/_extras/discuss.md:369
+#: python-novice-inflammation/_extras/discuss.md:375
+#: python-novice-inflammation/_extras/discuss.md:381
+#: python-novice-inflammation/_extras/extra_exercises.md:49
+#: python-novice-inflammation/_extras/extra_exercises.md:73
+# SC/DC Template label
+msgid "{: .challenge}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:206
+# blockquote, which can be cascaded
+msgid "> ## Sorting Out References"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/01-intro.md:207
+msgid ">\n"
+"> What does the following program print out?\n"
+">\n"
+"> ~~~\n"
+"> first, second = 'Grace', 'Hopper'\n"
+"> third, fourth = second, first\n"
+"> print(third, fourth)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > Hopper Grace\n"
+"> > ~~~\n"
+"> > {: .output}"
+msgstr ""
+

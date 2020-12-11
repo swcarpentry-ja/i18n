@@ -1,0 +1,472 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/README.md:1
+# header
+msgid "# Programming with Python"
+msgstr ""
+
+#: python-novice-inflammation/README.md:3
+msgid "[![GitHub release][shields_release]][swc_py_releases]\n"
+"[![Create a Slack Account with us][create_slack_svg]][slack_heroku_invite]\n"
+"[![Slack Status][slack_channel_status]][slack_channel_url]"
+msgstr ""
+
+#: python-novice-inflammation/README.md:7
+msgid "An introduction to Python for non-programmers using inflammation data."
+msgstr ""
+
+#: python-novice-inflammation/README.md:9
+# header
+msgid "## About the Lesson"
+msgstr ""
+
+#: python-novice-inflammation/README.md:11
+msgid "This lesson teaches novice programmers to write modular code to perform data analysis\n"
+"using Python. The emphasis, however, is on teaching language-agnostic principles of\n"
+"programming such as automation with loops and encapsulation with functions,\n"
+"see [Best Practices for Scientific Computing][best-practices] and\n"
+"[Good enough practices in scientific computing][good-practices] to learn more."
+msgstr ""
+
+#: python-novice-inflammation/README.md:17
+msgid "The example used in this lesson analyses a set of 12 files with simulated inflammation\n"
+"data collected from a trial for a new treatment for arthritis. Learners are shown\n"
+"how it is better to automate analysis using functions instead of repeating analysis\n"
+"steps manually."
+msgstr ""
+
+#: python-novice-inflammation/README.md:22
+msgid "The rendered version of the lesson is available at:\n"
+"<https://swcarpentry.github.io/python-novice-inflammation/>."
+msgstr ""
+
+#: python-novice-inflammation/README.md:25
+msgid "This lesson is also available in [R][R] and [MATLAB][MATLAB]."
+msgstr ""
+
+#: python-novice-inflammation/README.md:27
+# header
+msgid "## Episodes"
+msgstr ""
+
+#: python-novice-inflammation/README.md:29
+msgid "| # |  Episode | Time | Question(s) |\n"
+"|--:|:---------|:----:|:------------|\n"
+"| 1 | [Python Fundamentals][episode01] | 30 | What basic data types can I work with in Python?<br>How can I create a new variable in Python?<br>Can I change the value associated with a variable after I create it? |\n"
+"| 2 | [Analyzing Patient Data][episode02] | 60 | How can I process tabular data files in Python? |\n"
+"| 3 | [Visualizing Tabular Data][episode03] | 50 | How can I visualize tabular data in Python?<br>How can I group several plots together? |\n"
+"| 4 | [Repeating Actions with Loops][episode04] | 30 | How can I do the same operations on many different values? |\n"
+"| 5 | [Storing Multiple Values in Lists][episode05] | 30 | How can I store many values together? |\n"
+"| 6 | [Analyzing Data from Multiple Files][episode06] | 20 | How can I do the same operations on many different files? |\n"
+"| 7 | [Making Choices][episode07] | 30 | How can my programs do different things based on data values? |\n"
+"| 8 | [Creating Functions][episode08] | 30 | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |\n"
+"| 9 | [Errors and Exceptions][episode09] | 30 | How does Python report errors?<br>How can I handle errors in Python programs? |\n"
+"|10 | [Defensive Programming][episode10] | 30 | How can I make my programs more reliable? |\n"
+"|11 | [Debugging][episode11] | 30 | How can I debug my program? |\n"
+"|12 | [Command-Line Programs][episode12] | 30 | How can I write Python programs that will work like Unix command-line tools? |"
+msgstr ""
+
+#: python-novice-inflammation/README.md:45
+#: python-novice-inflammation/bin/boilerplate/README.md:7
+# header
+msgid "## Contributing"
+msgstr ""
+
+#: python-novice-inflammation/README.md:46
+msgid "[![Travis Build Status][travis_svg]][travis_url]"
+msgstr ""
+
+#: python-novice-inflammation/README.md:48
+msgid "We welcome all contributions to improve the lesson!\n"
+"Maintainers will do their best to help you if you have any questions, concerns,\n"
+"or experience any difficulties along the way."
+msgstr ""
+
+#: python-novice-inflammation/README.md:52
+msgid "We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTRIBUTING.md)\n"
+"and have a look at the [more detailed guidelines][lesson-example] on proper formatting,\n"
+"ways to render the lesson locally, and even how to write new episodes!"
+msgstr ""
+
+#: python-novice-inflammation/README.md:56
+# header
+msgid "## Maintainers"
+msgstr ""
+
+#: python-novice-inflammation/README.md:58
+msgid "Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_belkin],\n"
+"[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva], and [creator][swc_history] of Software Carpentry:\n"
+"[Greg Wilson][greg_wilson]."
+msgstr ""
+
+#: python-novice-inflammation/README.md:62
+#: python-novice-inflammation/bin/boilerplate/README.md:32
+# header
+msgid "## Authors"
+msgstr ""
+
+#: python-novice-inflammation/README.md:63
+msgid "A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)."
+msgstr ""
+
+#: python-novice-inflammation/README.md:65
+# header
+msgid "## License"
+msgstr ""
+
+#: python-novice-inflammation/README.md:66
+msgid "Instructional material from this lesson is made available under the\n"
+"[Creative Commons Attribution][cc-by-human] ([CC BY 4.0][cc-by-legal]) license. Except where\n"
+"otherwise noted, example programs and software included as part of this lesson are made available\n"
+"under the [MIT license][mit-license]. For more information, see [LICENSE.md](LICENSE.md)."
+msgstr ""
+
+#: python-novice-inflammation/README.md:71
+#: python-novice-inflammation/bin/boilerplate/README.md:36
+# header
+msgid "## Citation"
+msgstr ""
+
+#: python-novice-inflammation/README.md:72
+msgid "To cite this lesson, please consult with [CITATION](CITATION)."
+msgstr ""
+
+#: python-novice-inflammation/README.md:74
+# header
+msgid "## About Software Carpentry"
+msgstr ""
+
+#: python-novice-inflammation/README.md:76
+msgid "Software Carpentry is a volunteer project that teaches basic computing skills to researchers since\n"
+"1998. More information about Software Carpentry can be found [here][swc-about]."
+msgstr ""
+
+#: python-novice-inflammation/README.md:79
+# header
+msgid "## About The Carpentries"
+msgstr ""
+
+#: python-novice-inflammation/README.md:81
+msgid "The Carpentries is a fiscally sponsored project of [Community Initiatives][community-initiatives], a\n"
+"registered 501(c)3 non-profit organisation based in California, USA. We are a global community\n"
+"teaching foundational computational and data science skills to researchers in academia, industry and\n"
+"government. More information can be found [here][cp-about]."
+msgstr ""
+
+#: python-novice-inflammation/README.md:86
+msgid "[lesson-example]: https://carpentries.github.io/lesson-example\n"
+"[anne_fouilloux]: https://github.com/annefou\n"
+"[lauren_ko]: https://github.com/ldko\n"
+"[maxim_belkin]: https://github.com/maxim-belkin\n"
+"[mike_trizna]: https://github.com/MikeTrizna\n"
+"[trevor_bekolay]: http://software-carpentry.org/team/#bekolay_trevor\n"
+"[valentina_staneva]: http://software-carpentry.org/team/#staneva_valentina\n"
+"[greg_wilson]: https://github.com/gvwilson\n"
+"[swc_history]: https://software-carpentry.org/scf/history/\n"
+"[best-practices]: http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745\n"
+"[good-practices]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510\n"
+"[R]: https://github.com/swcarpentry/r-novice-inflammation\n"
+"[MATLAB]: https://github.com/swcarpentry/matlab-novice-inflammation\n"
+"[shields_release]: https://img.shields.io/github/release/swcarpentry/python-novice-inflammation.svg\n"
+"[swc_py_releases]: https://github.com/swcarpentry/python-novice-inflammation/releases\n"
+"[create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg\n"
+"[slack_heroku_invite]: https://swc-slack-invite.herokuapp.com\n"
+"[slack_channel_status]: https://img.shields.io/badge/Slack_Channel-swc--py--inflammation-E01563.svg\n"
+"[slack_channel_url]: https://swcarpentry.slack.com/messages/C9Y0L6MF0\n"
+"[travis_svg]: https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages\n"
+"[travis_url]: https://travis-ci.org/swcarpentry/python-novice-inflammation\n"
+"[episode01]: https://swcarpentry.github.io/python-novice-inflammation/01-intro/index.html\n"
+"[episode02]: https://swcarpentry.github.io/python-novice-inflammation/02-numpy/index.html\n"
+"[episode03]: https://swcarpentry.github.io/python-novice-inflammation/03-matplotlib/index.html\n"
+"[episode04]: https://swcarpentry.github.io/python-novice-inflammation/04-loop/index.html\n"
+"[episode05]: https://swcarpentry.github.io/python-novice-inflammation/05-lists/index.html\n"
+"[episode06]: https://swcarpentry.github.io/python-novice-inflammation/06-files/index.html\n"
+"[episode07]: https://swcarpentry.github.io/python-novice-inflammation/07-cond/index.html\n"
+"[episode08]: https://swcarpentry.github.io/python-novice-inflammation/08-func/index.html\n"
+"[episode09]: https://swcarpentry.github.io/python-novice-inflammation/09-errors/index.html\n"
+"[episode10]: https://swcarpentry.github.io/python-novice-inflammation/10-defensive/index.html\n"
+"[episode11]: https://swcarpentry.github.io/python-novice-inflammation/11-debugging/index.html\n"
+"[episode12]: https://swcarpentry.github.io/python-novice-inflammation/12-cmdline/index.html\n"
+"[community-initiatives]: https://communityin.org\n"
+"[cp-about]: https://carpentries.org/about\n"
+"[swc-about]: https://software-carpentry.org/about/\n"
+"[mit-license]: https://opensource.org/licenses/mit-license.html\n"
+"[cc-by-human]: https://creativecommons.org/licenses/by/4.0/\n"
+"[cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:1
+# header
+msgid "# FIXME Lesson title"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:3
+msgid "[![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:5
+msgid "This repository generates the corresponding lesson website from [The Carpentries](https://carpentries.org/) repertoire of lessons. "
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:9
+msgid "We welcome all contributions to improve the lesson! Maintainers will do their best to help you if you have any\n"
+"questions, concerns, or experience any difficulties along the way."
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:12
+msgid "We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTRIBUTING.md) and have a look at\n"
+"the [more detailed guidelines][lesson-example] on proper formatting, ways to render the lesson locally, and even\n"
+"how to write new episodes."
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:16
+msgid "Please see the current list of [issues][FIXME] for ideas for contributing to this\n"
+"repository. For making your contribution, we use the GitHub flow, which is\n"
+"nicely explained in the chapter [Contributing to a Project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) in Pro Git\n"
+"by Scott Chacon.\n"
+"Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg). This indicates that the maintainers will welcome a pull request fixing this issue.  "
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:23
+# header
+msgid "## Maintainer(s)"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:25
+msgid "Current maintainers of this lesson are "
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:27
+#: python-novice-inflammation/bin/boilerplate/README.md:28
+#: python-novice-inflammation/bin/boilerplate/README.md:29
+# unordered list
+msgid "* FIXME"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:34
+msgid "A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:38
+msgid "To cite this lesson, please consult with [CITATION](CITATION)"
+msgstr ""
+
+#: python-novice-inflammation/bin/boilerplate/README.md:40
+msgid "[lesson-example]: https://carpentries.github.io/lesson-example"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:1
+# header
+msgid "## Why SVG?"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:3
+msgid "The SVG format (for \"Scalable Vector Graphics\") has a number of advantages over standard \"raster\"\n"
+"graphics formats such as JPG, PNG, etc. Most importantly, as the name suggests, SVG images scale\n"
+"up or down without loss of visual clarity: they look equally good on a phone, a laptop computer,\n"
+"or a 70-inch screen, and don't blur when scaled up."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:8
+msgid "Additionally, SVG is a text-based format (based on XML, if you care). As text files, SVG images\n"
+"are thus human-readable (a trained eye makes sense of them) and maintainable: easy to manually\n"
+"edit, and efficiently tracked by version control systems (VCSs) such as Git. By contrast, images\n"
+"in raster formats, being binary files, are versioned as whole objects -- the slightest change\n"
+"results in updating the entire file."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:14
+# header
+msgid "## Working with SVG figures"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:16
+msgid "A number of tools can create or modify SVG images -- pick one you like!"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:18
+msgid "Many tools, however, delete comments they don't deem useful, and insert extra information useful\n"
+"to them, but unneeded for us, and unsuited to our highly collaborative lesson development process."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:21
+msgid "Below are some tips on keeping the information we need and removing the information we don't need\n"
+"in SVG files before submitting them to our repository."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:24
+# header
+msgid "### Comments"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:26
+msgid "Before modifying an existing figure, inspect it with a text editor, making note of all comments,\n"
+"which in SVG files are enclosed between `<!--` and `-->`.  Be sure to add them back in (with\n"
+"appropriate changes) after editing the figure, if the tool you use removed them."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:30
+# header
+msgid "### General tips"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:32
+msgid "When using any SVG editor, please make sure to:"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:34
+# unordered list
+msgid "- save the figure as \"plain\" SVG rather than editor-specific SVG."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:35
+# unordered list
+msgid "- not group elements (`<g>`) unless necessary or beneficial"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:36
+# unordered list
+msgid "- not embed other SVG images using `<image>`"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:38
+msgid "After editing the figure, clean it up using the command-line tool\n"
+"[svgcleaner](https://github.com/RazrFalcon/svgcleaner), by running the following in a terminal\n"
+"(replace `SVG_figure` by the name of the SVG figure):"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:42
+# code block
+msgid "```\n"
+"svgcleaner \\\n"
+"  --indent 2 \\\n"
+"  --ungroup-defs no \\\n"
+"  --multipass \\\n"
+"  --coordinates-precision 1 \\\n"
+"  --properties-precision 1 \\\n"
+"  --paths-coordinates-precision 1 \\\n"
+"  SVG_figure.svg SVG_figure_svgcleaner.svg\n"
+"```"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:53
+msgid "Alternatively, you can also use [svgo](https://github.com/svg/svgo) or\n"
+"[scour](https://www.codedread.com/scour/)."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:56
+msgid "**The following steps are optional.**"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:58
+msgid "Open the file produced by `svgcleaner` (`SVG_figure_svgcleaner.svg` in the example above)\n"
+"and follow these steps:"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:61
+# unordered list
+msgid "- Wrap lines to be under 100 characters (or less) if possible. For example, change this:"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:63
+# code block
+msgid "  ```xml\n"
+"  <text x=\"42\" y=\"36\" font-family=\"sans-serif\" font-size=\"19px\" font-weight=\"bold\" text-anchor=\"middle\">65.0</text>\n"
+"  ```"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:66
+msgid "  to this:\n"
+"  ```xml\n"
+"     <text x=\"42\" y=\"36\"\n"
+"           font-family=\"sans-serif\"\n"
+"           font-size=\"19px\"\n"
+"           font-weight=\"bold\"\n"
+"           text-anchor=\"middle\">65.0</text>\n"
+"  ```"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:75
+# unordered list
+msgid "- Comment on the nature of each element, using `<!--` and `-->`, where applicable and when"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:76
+msgid "  feasible. For example:"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:78
+# code block
+msgid "  ```xml\n"
+"   <!-- Text: \"65.0\" -->\n"
+"   <text x=\"42\" y=\"36\"\n"
+"   ...\n"
+"  ```"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:84
+# unordered list
+msgid "- Remove editor-specific styles"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:85
+# unordered list
+msgid "- Make sure that elements' attributes appear before styles"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:86
+# unordered list
+msgid "- Add empty lines between SVG elements"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:87
+# unordered list
+msgid "- Remove `id` properties unless used to control elements (in interactive SVG figures)"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:89
+# header
+msgid "## Fonts"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:91
+# unordered list
+msgid "- Avoid using \"special\" fonts."
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:92
+# unordered list
+msgid "- Consider using: Ubuntu, Ubuntu Mono, sans-serif"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:94
+msgid "The Ubuntu font can be downloaded for free from:\n"
+"  <https://design.ubuntu.com/font/>"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:97
+# header
+msgid "## Not an SVG expert"
+msgstr ""
+
+#: python-novice-inflammation/fig/README.md:99
+msgid "Don't let the above guidelines discourage you. If needed, submit your contribution \"as is\" and\n"
+"mention which steps you skipped. Maintainers will happily help -- make sure they can commit to the\n"
+"branch you use to submit your contribution."
+msgstr ""
+

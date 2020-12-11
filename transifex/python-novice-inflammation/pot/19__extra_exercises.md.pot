@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_extras/extra_exercises.md:1
+# Front Matter
+msgid "---\n"
+"title: \"Additional Exercises\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_extras/extra_exercises.md:4
+msgid "A collection of exercises that have been either removed from\n"
+"or not (yet) added to the main lesson."
+msgstr ""
+
+#: python-novice-inflammation/_extras/extra_exercises.md:8
+# blockquote, which can be cascaded
+msgid "> ## Swapping the contents of variables (5 min)"
+msgstr ""
+
+#: python-novice-inflammation/_extras/extra_exercises.md:9
+msgid ">\n"
+"> Explain what the overall effect of this code is:\n"
+">\n"
+"> ~~~\n"
+"> left = 'L'\n"
+"> right = 'R'\n"
+">\n"
+"> temp = left\n"
+"> left = right\n"
+"> right = temp\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Compare it to:\n"
+">\n"
+"> ~~~\n"
+"> left, right = [right, left]\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Do they always do the same thing?\n"
+"> Which do you find easier to read?\n"
+">\n"
+"> > ## Solution\n"
+"> > Both examples exchange the values of `left` and `right`:\n"
+"> >\n"
+"> > ~~~\n"
+"> > print(left, right)\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> >\n"
+"> > ~~~\n"
+"> > R L\n"
+"> > ~~~\n"
+"> > {: .output}\n"
+"> >\n"
+"> > In the first case we used a temporary variable `temp` to keep the value of `left` before we\n"
+"> > overwrite it with the value of `right`. In the second case, `right` and `left` are packed into a\n"
+"> > list and then unpacked into `left` and `right`."
+msgstr ""
+
+#: python-novice-inflammation/_extras/extra_exercises.md:51
+# blockquote, which can be cascaded
+msgid "> ## Fixing and Testing"
+msgstr ""
+
+#: python-novice-inflammation/_extras/extra_exercises.md:52
+# blockquote, which can be cascaded
+msgid "> From: \"Defensive Programming\""
+msgstr ""
+
+#: python-novice-inflammation/_extras/extra_exercises.md:53
+msgid ">\n"
+"> Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > def range_overlap(ranges):\n"
+"> >     '''Return common overlap among a set of [left, right] ranges.'''\n"
+"> >     if not ranges:\n"
+"> >         # ranges is None or an empty list\n"
+"> >         return None\n"
+"> >     max_left, min_right = ranges[0]\n"
+"> >     for (left, right) in ranges[1:]:\n"
+"> >         max_left = max(max_left, left)\n"
+"> >         min_right = min(min_right, right)\n"
+"> >     if max_left >= min_right:  # no overlap\n"
+"> >         return None\n"
+"> >     return (max_left, min_right)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+

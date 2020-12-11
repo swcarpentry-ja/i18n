@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:1
+# Front Matter
+msgid "---\n"
+"title: Visualizing Tabular Data\n"
+"teaching: 30\n"
+"exercises: 20\n"
+"questions:\n"
+"- \"How can I visualize tabular data in Python?\"\n"
+"- \"How can I group several plots together?\"\n"
+"objectives:\n"
+"- \"Plot simple graphs from data.\"\n"
+"- \"Group several graphs in a single figure.\"\n"
+"keypoints:\n"
+"- \"Use the `pyplot` module from the `matplotlib` library for creating simple visualizations.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:15
+# header
+msgid "## Visualizing data"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:16
+msgid "The mathematician Richard Hamming once said, \"The purpose of computing is insight, not numbers,\" and\n"
+"the best way to develop insight is often to visualize data.  Visualization deserves an entire\n"
+"lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While\n"
+"there is no official plotting library, `matplotlib` is the _de facto_ standard.  First, we will\n"
+"import the `pyplot` module from `matplotlib` and use two of its functions to create and display a\n"
+"[heat map]({{ page.root }}/reference.html#heat-map) of our data:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:23
+# code block
+msgid "~~~\n"
+"import matplotlib.pyplot\n"
+"image = matplotlib.pyplot.imshow(data)\n"
+"matplotlib.pyplot.show()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:30
+msgid "![Heat map representing the `data` variable. Each cell is colored by value along a color gradient from blue to yellow.](../fig/inflammation-01-imshow.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:32
+msgid "Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we\n"
+"can see, inflammation rises and falls over a 40-day period.  Let's take a look at the average inflammation over time:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:35
+# code block
+msgid "~~~\n"
+"ave_inflammation = numpy.mean(data, axis=0)\n"
+"ave_plot = matplotlib.pyplot.plot(ave_inflammation)\n"
+"matplotlib.pyplot.show()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:42
+msgid "![Average Inflammation Over Time](../fig/inflammation-01-average.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:44
+msgid "Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then\n"
+"asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a\n"
+"roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower\n"
+"fall.  Let's have a look at two other statistics:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:49
+# code block
+msgid "~~~\n"
+"max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))\n"
+"matplotlib.pyplot.show()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:55
+msgid "![Maximum Value Along The First Axis](../fig/inflammation-01-maximum.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:57
+# code block
+msgid "~~~\n"
+"min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))\n"
+"matplotlib.pyplot.show()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:63
+msgid "![Minimum Value Along The First Axis](../fig/inflammation-01-minimum.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:65
+msgid "The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither\n"
+"trend seems particularly likely, so either there's a mistake in our calculations or something is\n"
+"wrong with our data.  This insight would have been difficult to reach by examining the numbers\n"
+"themselves without visualization tools."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:70
+# header
+msgid "### Grouping plots"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:71
+msgid "You can group similar plots in a single figure using subplots.\n"
+"This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`\n"
+"creates a space into which we will place all of our plots. The parameter `figsize`\n"
+"tells Python how big to make this space. Each subplot is placed into the figure using\n"
+"its `add_subplot` [method]({{ page.root }}/reference.html#method). The `add_subplot` method takes 3\n"
+"parameters. The first denotes how many total rows of subplots there are, the second parameter\n"
+"refers to the total number of subplot columns, and the final parameter denotes which subplot\n"
+"your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a\n"
+"different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can\n"
+"be titled using the `set_xlabel()` command (or `set_ylabel()`).\n"
+"Here are our three plots side by side:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:83
+# code block
+msgid "~~~\n"
+"import numpy\n"
+"import matplotlib.pyplot\n"
+"\n"
+"data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\n"
+"\n"
+"fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))\n"
+"\n"
+"axes1 = fig.add_subplot(1, 3, 1)\n"
+"axes2 = fig.add_subplot(1, 3, 2)\n"
+"axes3 = fig.add_subplot(1, 3, 3)\n"
+"\n"
+"axes1.set_ylabel('average')\n"
+"axes1.plot(numpy.mean(data, axis=0))\n"
+"\n"
+"axes2.set_ylabel('max')\n"
+"axes2.plot(numpy.max(data, axis=0))\n"
+"\n"
+"axes3.set_ylabel('min')\n"
+"axes3.plot(numpy.min(data, axis=0))\n"
+"\n"
+"fig.tight_layout()\n"
+"\n"
+"matplotlib.pyplot.savefig('inflammation.png')\n"
+"matplotlib.pyplot.show()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:111
+msgid "![The Previous Plots as Subplots](../fig/inflammation-01-group-plot.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:113
+msgid "The [call]({{ page.root }}/reference.html#function-call) to `loadtxt` reads our data,\n"
+"and the rest of the program tells the plotting library\n"
+"how large we want the figure to be,\n"
+"that we're creating three subplots,\n"
+"what to draw for each one,\n"
+"and that we want a tight layout.\n"
+"(If we leave out that call to `fig.tight_layout()`,\n"
+"the graphs will actually be squeezed together more closely.)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:122
+msgid "The call to `savefig` stores the plot as a graphics file. This can be\n"
+"a convenient way to store your plots for use in other documents, web\n"
+"pages etc. The graphics format is automatically determined by\n"
+"Matplotlib from the file name ending we specify; here PNG from\n"
+"'inflammation.png'. Matplotlib supports many different graphics\n"
+"formats, including SVG, PDF, and JPEG."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:130
+# blockquote, which can be cascaded
+msgid "> ## Plot Scaling"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:131
+msgid ">\n"
+"> Why do all of our plots stop just short of the upper end of our graph?\n"
+">\n"
+"> > ## Solution\n"
+"> > Because matplotlib normally sets x and y axes limits to the min and max of our data\n"
+"> > (depending on data range)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:138
+msgid ">\n"
+"> If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes',\n"
+"> for example:\n"
+">\n"
+"> ~~~\n"
+"> axes3.set_ylim(0,6)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Update your plotting code to automatically set a more appropriate scale.\n"
+"> (Hint: you can make use of the `max` and `min` methods to help.)\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > # One method\n"
+"> > axes3.set_ylabel('min')\n"
+"> > axes3.plot(numpy.min(data, axis=0))\n"
+"> > axes3.set_ylim(0,6)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:159
+msgid ">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > # A more automated approach\n"
+"> > min_data = numpy.min(data, axis=0)\n"
+"> > axes3.set_ylabel('min')\n"
+"> > axes3.plot(min_data)\n"
+"> > axes3.set_ylim(numpy.min(min_data), numpy.max(min_data) * 1.1)\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:172
+# blockquote, which can be cascaded
+msgid "> ## Drawing Straight Lines"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:173
+msgid ">\n"
+"> In the center and right subplots above, we expect all lines to look like step functions because\n"
+"> non-integer value are not realistic for the minimum and maximum values. However, you can see\n"
+"> that the lines are not always vertical or horizontal, and in particular the step function\n"
+"> in the subplot on the right looks slanted. Why is this?\n"
+">\n"
+"> > ## Solution\n"
+"> > Because matplotlib interpolates (draws a straight line) between the points.\n"
+"> > One way to do avoid this is to use the Matplotlib `drawstyle` option:\n"
+"> >\n"
+"> > ~~~\n"
+"> > import numpy\n"
+"> > import matplotlib.pyplot\n"
+"> >\n"
+"> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\n"
+"> >\n"
+"> > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))\n"
+"> >\n"
+"> > axes1 = fig.add_subplot(1, 3, 1)\n"
+"> > axes2 = fig.add_subplot(1, 3, 2)\n"
+"> > axes3 = fig.add_subplot(1, 3, 3)\n"
+"> >\n"
+"> > axes1.set_ylabel('average')\n"
+"> > axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')\n"
+"> >\n"
+"> > axes2.set_ylabel('max')\n"
+"> > axes2.plot(numpy.max(data, axis=0), drawstyle='steps-mid')\n"
+"> >\n"
+"> > axes3.set_ylabel('min')\n"
+"> > axes3.plot(numpy.min(data, axis=0), drawstyle='steps-mid')\n"
+"> >\n"
+"> > fig.tight_layout()\n"
+"> >\n"
+"> > matplotlib.pyplot.show()\n"
+"> > ~~~\n"
+"> > {: .language-python}\n"
+"> ![Plot with step lines](../fig/inflammation-01-line-styles.svg)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:213
+# blockquote, which can be cascaded
+msgid "> ## Make Your Own Plot"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:214
+msgid ">\n"
+"> Create a plot showing the standard deviation (`numpy.std`)\n"
+"> of the inflammation data for each day across all patients.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))\n"
+"> > matplotlib.pyplot.show()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:227
+# blockquote, which can be cascaded
+msgid "> ## Moving Plots Around"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/03-matplotlib.md:228
+msgid ">\n"
+"> Modify the program to display the three plots on top of one another\n"
+"> instead of side by side.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > import numpy\n"
+"> > import matplotlib.pyplot\n"
+"> >\n"
+"> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\n"
+"> >\n"
+"> > # change figsize (swap width and height)\n"
+"> > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))\n"
+"> >\n"
+"> > # change add_subplot (swap first two parameters)\n"
+"> > axes1 = fig.add_subplot(3, 1, 1)\n"
+"> > axes2 = fig.add_subplot(3, 1, 2)\n"
+"> > axes3 = fig.add_subplot(3, 1, 3)\n"
+"> >\n"
+"> > axes1.set_ylabel('average')\n"
+"> > axes1.plot(numpy.mean(data, axis=0))\n"
+"> >\n"
+"> > axes2.set_ylabel('max')\n"
+"> > axes2.plot(numpy.max(data, axis=0))\n"
+"> >\n"
+"> > axes3.set_ylabel('min')\n"
+"> > axes3.plot(numpy.min(data, axis=0))\n"
+"> >\n"
+"> > fig.tight_layout()\n"
+"> >\n"
+"> > matplotlib.pyplot.show()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+

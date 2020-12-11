@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/06-files.md:1
+# Front Matter
+msgid "---\n"
+"title: Analyzing Data from Multiple Files\n"
+"teaching: 20\n"
+"exercises: 0\n"
+"questions:\n"
+"- \"How can I do the same operations on many different files?\"\n"
+"objectives:\n"
+"- \"Use a library function to get a list of filenames that match a wildcard pattern.\"\n"
+"- \"Write a `for` loop to process multiple files.\"\n"
+"keypoints:\n"
+"- \"Use `glob.glob(pattern)` to create a list of files whose names match a pattern.\"\n"
+"- \"Use `*` in a pattern to match zero or more characters, and `?` to match any single character.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:15
+msgid "We now have almost everything we need to process all our data files.\n"
+"The only thing that's missing is a library with a rather unpleasant name:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:18
+# code block
+msgid "~~~\n"
+"import glob\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:23
+msgid "The `glob` library contains a function, also called `glob`,\n"
+"that finds files and directories whose names match a pattern.\n"
+"We provide those patterns as strings:\n"
+"the character `*` matches zero or more characters,\n"
+"while `?` matches any one character.\n"
+"We can use this to get the names of all the CSV files in the current directory:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:30
+# code block
+msgid "~~~\n"
+"print(glob.glob('inflammation*.csv'))\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:35
+# code block
+msgid "~~~\n"
+"['inflammation-05.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'inflammation-08.csv',\n"
+"'inflammation-03.csv', 'inflammation-06.csv', 'inflammation-09.csv', 'inflammation-07.csv',\n"
+"'inflammation-10.csv', 'inflammation-02.csv', 'inflammation-04.csv', 'inflammation-01.csv']\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:42
+msgid "As these examples show,\n"
+"`glob.glob`'s result is a list of file and directory paths in arbitrary order.\n"
+"This means we can loop over it\n"
+"to do something with each filename in turn.\n"
+"In our case,\n"
+"the \"something\" we want to do is generate a set of plots for each file in our inflammation dataset.\n"
+"If we want to start by analyzing just the first three files in alphabetical order, we can use the\n"
+"`sorted` built-in function to generate a new sorted list from the `glob.glob` output:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:51
+# code block
+msgid "~~~\n"
+"import glob\n"
+"import numpy\n"
+"import matplotlib.pyplot\n"
+"\n"
+"filenames = sorted(glob.glob('inflammation*.csv'))\n"
+"filenames = filenames[0:3]\n"
+"for filename in filenames:\n"
+"    print(filename)\n"
+"\n"
+"    data = numpy.loadtxt(fname=filename, delimiter=',')\n"
+"\n"
+"    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))\n"
+"\n"
+"    axes1 = fig.add_subplot(1, 3, 1)\n"
+"    axes2 = fig.add_subplot(1, 3, 2)\n"
+"    axes3 = fig.add_subplot(1, 3, 3)\n"
+"\n"
+"    axes1.set_ylabel('average')\n"
+"    axes1.plot(numpy.mean(data, axis=0))\n"
+"\n"
+"    axes2.set_ylabel('max')\n"
+"    axes2.plot(numpy.max(data, axis=0))\n"
+"\n"
+"    axes3.set_ylabel('min')\n"
+"    axes3.plot(numpy.min(data, axis=0))\n"
+"\n"
+"    fig.tight_layout()\n"
+"    matplotlib.pyplot.show()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:83
+# code block
+msgid "~~~\n"
+"inflammation-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:88
+msgid "![Analysis of inflammation-01.csv](../fig/03-loop_49_1.png)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:90
+# code block
+msgid "~~~\n"
+"inflammation-02.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:95
+msgid "![Analysis of inflammation-02.csv](../fig/03-loop_49_3.png)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:97
+# code block
+msgid "~~~\n"
+"inflammation-03.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:102
+msgid "![Analysis of inflammation-03.csv](../fig/03-loop_49_5.png)"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:104
+msgid "Sure enough,\n"
+"the maxima of the first two data sets show exactly the same ramp as the first,\n"
+"and their minima show the same staircase structure;\n"
+"a different situation has been revealed in the third dataset,\n"
+"where the maxima are a bit less regular, but the minima are consistently zero."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:110
+# blockquote, which can be cascaded
+msgid "> ## Plotting Differences"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:111
+msgid ">\n"
+"> Plot the difference between the average inflammations reported in the first and second datasets\n"
+"> (stored in `inflammation-01.csv` and `inflammation-02.csv`, correspondingly),\n"
+"> i.e., the difference between the leftmost plots of the first two figures.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > import glob\n"
+"> > import numpy\n"
+"> > import matplotlib.pyplot\n"
+"> >\n"
+"> > filenames = sorted(glob.glob('inflammation*.csv'))\n"
+"> >\n"
+"> > data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')\n"
+"> > data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')\n"
+"> >\n"
+"> > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))\n"
+"> >\n"
+"> > matplotlib.pyplot.ylabel('Difference in average')\n"
+"> > matplotlib.pyplot.plot(numpy.mean(data0, axis=0) - numpy.mean(data1, axis=0))\n"
+"> >\n"
+"> > fig.tight_layout()\n"
+"> > matplotlib.pyplot.show()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:139
+# blockquote, which can be cascaded
+msgid "> ## Generate Composite Statistics"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:140
+msgid ">\n"
+"> Use each of the files once to generate a dataset containing values averaged over all patients:\n"
+">\n"
+"> ~~~\n"
+"> filenames = glob.glob('inflammation*.csv')\n"
+"> composite_data = numpy.zeros((60,40))\n"
+"> for filename in filenames:\n"
+">     # sum each new file's data into composite_data as it's read\n"
+">     #\n"
+"> # and then divide the composite_data by number of samples\n"
+"> composite_data = composite_data / len(filenames)\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> Then use pyplot to generate average, max, and min for all patients.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > import glob\n"
+"> > import numpy\n"
+"> > import matplotlib.pyplot\n"
+"> >\n"
+"> > filenames = glob.glob('inflammation*.csv')\n"
+"> > composite_data = numpy.zeros((60,40))\n"
+"> >\n"
+"> > for filename in filenames:\n"
+"> >     data = numpy.loadtxt(fname = filename, delimiter=',')\n"
+"> >     composite_data = composite_data + data\n"
+"> >\n"
+"> > composite_data = composite_data / len(filenames)\n"
+"> >\n"
+"> > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))\n"
+"> >\n"
+"> > axes1 = fig.add_subplot(1, 3, 1)\n"
+"> > axes2 = fig.add_subplot(1, 3, 2)\n"
+"> > axes3 = fig.add_subplot(1, 3, 3)\n"
+"> >\n"
+"> > axes1.set_ylabel('average')\n"
+"> > axes1.plot(numpy.mean(composite_data, axis=0))\n"
+"> >\n"
+"> > axes2.set_ylabel('max')\n"
+"> > axes2.plot(numpy.max(composite_data, axis=0))\n"
+"> >\n"
+"> > axes3.set_ylabel('min')\n"
+"> > axes3.plot(numpy.min(composite_data, axis=0))\n"
+"> >\n"
+"> > fig.tight_layout()\n"
+"> >\n"
+"> > matplotlib.pyplot.show()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/06-files.md:191
+# SC/DC Template label
+msgid ">{: .solution}"
+msgstr ""
+

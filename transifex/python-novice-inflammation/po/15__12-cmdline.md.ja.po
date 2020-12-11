@@ -1,0 +1,1306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18n\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2020-12-11 17:59:01+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:1
+# Front Matter
+msgid "---\n"
+"title: Command-Line Programs\n"
+"teaching: 30\n"
+"exercises: 0\n"
+"questions:\n"
+"- \"How can I write Python programs that will work like Unix command-line tools?\"\n"
+"objectives:\n"
+"- \"Use the values of command-line arguments in a program.\"\n"
+"- \"Handle flags and files separately in a command-line program.\"\n"
+"- \"Read data from standard input in a program so that it can be used in a pipeline.\"\n"
+"keypoints:\n"
+"- \"The `sys` library connects a Python program to the system it is running on.\"\n"
+"- \"The list `sys.argv` contains the command-line arguments that a program was run with.\"\n"
+"- \"Avoid silent failures.\"\n"
+"- \"The pseudo-file `sys.stdin` connects to a program's standard input.\"\n"
+"---"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:18
+msgid "The Jupyter Notebook and other interactive tools are great for prototyping code and exploring data,\n"
+"but sooner or later we will want to use our program in a pipeline\n"
+"or run it in a shell script to process thousands of data files.\n"
+"In order to do that,\n"
+"we need to make our programs work like other Unix command-line tools.\n"
+"For example,\n"
+"we may want a program that reads a dataset\n"
+"and prints the average inflammation per patient."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:27
+# blockquote, which can be cascaded
+msgid "> ## Switching to Shell Commands"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:28
+msgid ">\n"
+"> In this lesson we are switching from typing commands in a Python interpreter to typing\n"
+"> commands in a shell terminal window (such as bash). When you see a `$` in front of a\n"
+"> command that tells you to run that command in the shell rather than the Python interpreter."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:34
+msgid "This program does exactly what we want - it prints the average inflammation per patient\n"
+"for a given file."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:37
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_04.py --mean inflammation-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:40
+#: python-novice-inflammation/_episodes/12-cmdline.md:58
+#: python-novice-inflammation/_episodes/12-cmdline.md:65
+#: python-novice-inflammation/_episodes/12-cmdline.md:100
+#: python-novice-inflammation/_episodes/12-cmdline.md:126
+#: python-novice-inflammation/_episodes/12-cmdline.md:140
+#: python-novice-inflammation/_episodes/12-cmdline.md:159
+#: python-novice-inflammation/_episodes/12-cmdline.md:183
+#: python-novice-inflammation/_episodes/12-cmdline.md:192
+#: python-novice-inflammation/_episodes/12-cmdline.md:215
+#: python-novice-inflammation/_episodes/12-cmdline.md:333
+#: python-novice-inflammation/_episodes/12-cmdline.md:343
+#: python-novice-inflammation/_episodes/12-cmdline.md:354
+#: python-novice-inflammation/_episodes/12-cmdline.md:392
+#: python-novice-inflammation/_episodes/12-cmdline.md:415
+#: python-novice-inflammation/_episodes/12-cmdline.md:448
+#: python-novice-inflammation/_episodes/12-cmdline.md:482
+#: python-novice-inflammation/_episodes/12-cmdline.md:511
+#: python-novice-inflammation/_episodes/12-cmdline.md:558
+#: python-novice-inflammation/_episodes/12-cmdline.md:581
+#: python-novice-inflammation/_episodes/12-cmdline.md:593
+#: python-novice-inflammation/_episodes/12-cmdline.md:613
+#: python-novice-inflammation/_episodes/12-cmdline.md:654
+msgid "{: .language-bash}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:42
+# code block
+msgid "~~~\n"
+"5.45\n"
+"5.425\n"
+"6.1\n"
+"...\n"
+"6.4\n"
+"7.05\n"
+"5.9\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:53
+msgid "We might also want to look at the minimum of the first four lines"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:55
+# code block
+msgid "~~~\n"
+"$ head -4 inflammation-01.csv | python ../code/readings_06.py --min\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:60
+msgid "or the maximum inflammations in several files one after another:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:62
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_04.py --max inflammation-*.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:67
+msgid "Our scripts should do the following:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:69
+# ordered list
+msgid "1. If no filename is given on the command line, read data from"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:70
+msgid "[standard input]({{ page.root }}/reference.html#standard-input).\n"
+"2. If one or more filenames are given, read data from them and report statistics for each file\n"
+"separately.\n"
+"3. Use the `--min`, `--mean`, or `--max` flag to determine what statistic to print."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:75
+msgid "To make this work,\n"
+"we need to know how to handle command-line arguments in a program,\n"
+"and understand how to handle standard input.\n"
+"We'll tackle these questions in turn below."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:80
+# header
+msgid "## Command-Line Arguments"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:82
+msgid "Using the text editor of your choice,\n"
+"save the following in a text file called `sys_version.py`:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:85
+# code block
+msgid "~~~\n"
+"import sys\n"
+"print('version is', sys.version)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:91
+msgid "The first line imports a library called `sys`,\n"
+"which is short for \"system\".\n"
+"It defines values such as `sys.version`,\n"
+"which describes which version of Python we are running.\n"
+"We can run this script from the command line like this:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:97
+# code block
+msgid "~~~\n"
+"$ python sys_version.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:102
+# code block
+msgid "~~~\n"
+"version is 3.4.3+ (default, Jul 28 2015, 13:17:50)\n"
+"[GCC 4.9.3]\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:108
+msgid "Create another file called `argv_list.py` and save the following text to it."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:110
+# code block
+msgid "~~~\n"
+"import sys\n"
+"print('sys.argv is', sys.argv)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:116
+msgid "The strange name `argv` stands for \"argument values\".\n"
+"Whenever Python runs a program,\n"
+"it takes all of the values given on the command line\n"
+"and puts them in the list `sys.argv`\n"
+"so that the program can determine what they were.\n"
+"If we run this program with no arguments:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:123
+# code block
+msgid "~~~\n"
+"$ python argv_list.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:128
+# code block
+msgid "~~~\n"
+"sys.argv is ['argv_list.py']\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:133
+msgid "the only thing in the list is the full path to our script,\n"
+"which is always `sys.argv[0]`.\n"
+"If we run it with a few arguments, however:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:137
+# code block
+msgid "~~~\n"
+"$ python argv_list.py first second third\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:142
+# code block
+msgid "~~~\n"
+"sys.argv is ['argv_list.py', 'first', 'second', 'third']\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:147
+msgid "then Python adds each of those arguments to that magic list."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:149
+msgid "With this in hand, let's build a version of `readings.py` that always prints\n"
+"the per-patient mean of a single data file.\n"
+"The first step is to write a function that outlines our implementation,\n"
+"and a placeholder for the function that does the actual work.\n"
+"By convention this function is usually called `main`,\n"
+"though we can call it whatever we want:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:156
+# code block
+msgid "~~~\n"
+"$ cat ../code/readings_01.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:161
+# code block
+msgid "~~~\n"
+"import sys\n"
+"import numpy\n"
+"\n"
+"\n"
+"def main():\n"
+"    script = sys.argv[0]\n"
+"    filename = sys.argv[1]\n"
+"    data = numpy.loadtxt(filename, delimiter=',')\n"
+"    for row_mean in numpy.mean(data, axis=1):\n"
+"        print(row_mean)\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:175
+msgid "This function gets the name of the script from `sys.argv[0]`,\n"
+"because that's where it's always put,\n"
+"and the name of the file to process from `sys.argv[1]`.\n"
+"Here's a simple test:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:180
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_01.py inflammation-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:185
+msgid "There is no output because we have defined a function,\n"
+"but haven't actually called it.\n"
+"Let's add a call to `main`:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:189
+# code block
+msgid "~~~\n"
+"$ cat ../code/readings_02.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:194
+# code block
+msgid "~~~\n"
+"import sys\n"
+"import numpy\n"
+"\n"
+"def main():\n"
+"    script = sys.argv[0]\n"
+"    filename = sys.argv[1]\n"
+"    data = numpy.loadtxt(filename, delimiter=',')\n"
+"    for row_mean in numpy.mean(data, axis=1):\n"
+"        print(row_mean)\n"
+"\n"
+"if __name__ == '__main__':\n"
+"   main()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:210
+msgid "and run that:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:212
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_02.py inflammation-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:217
+# code block
+msgid "~~~\n"
+"5.45\n"
+"5.425\n"
+"6.1\n"
+"5.9\n"
+"5.55\n"
+"6.225\n"
+"5.975\n"
+"6.65\n"
+"6.625\n"
+"6.525\n"
+"6.775\n"
+"5.8\n"
+"6.225\n"
+"5.75\n"
+"5.225\n"
+"6.3\n"
+"6.55\n"
+"5.7\n"
+"5.85\n"
+"6.55\n"
+"5.775\n"
+"5.825\n"
+"6.175\n"
+"6.1\n"
+"5.8\n"
+"6.425\n"
+"6.05\n"
+"6.025\n"
+"6.175\n"
+"6.55\n"
+"6.175\n"
+"6.35\n"
+"6.725\n"
+"6.125\n"
+"7.075\n"
+"5.725\n"
+"5.925\n"
+"6.15\n"
+"6.075\n"
+"5.75\n"
+"5.975\n"
+"5.725\n"
+"6.3\n"
+"5.9\n"
+"6.75\n"
+"5.925\n"
+"7.225\n"
+"6.15\n"
+"5.95\n"
+"6.275\n"
+"5.7\n"
+"6.1\n"
+"6.825\n"
+"5.975\n"
+"6.725\n"
+"5.7\n"
+"6.25\n"
+"6.4\n"
+"7.05\n"
+"5.9\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:281
+# blockquote, which can be cascaded
+msgid "> ## Running Versus Importing"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:282
+msgid ">\n"
+"> Running a Python script in bash is very similar to\n"
+"> importing that file in Python.\n"
+"> The biggest difference is that we don't expect anything\n"
+"> to happen when we import a file,\n"
+"> whereas when running a script, we expect to see some\n"
+"> output printed to the console.\n"
+">\n"
+"> In order for a Python script to work as expected\n"
+"> when imported or when run as a script,\n"
+"> we typically put the part of the script\n"
+"> that produces output in the following if statement:\n"
+">\n"
+"> ~~~\n"
+"> if __name__ == '__main__':\n"
+">     main()  # Or whatever function produces output\n"
+"> ~~~\n"
+"> {: .language-python}\n"
+">\n"
+"> When you import a Python file, `__name__` is the name\n"
+"> of that file (e.g., when importing `readings.py`,\n"
+"> `__name__` is `'readings'`). However, when running a\n"
+"> script in bash, `__name__` is always set to `'__main__'`\n"
+"> in that script so that you can determine if the file\n"
+"> is being imported or run as a script."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:309
+#: python-novice-inflammation/_episodes/12-cmdline.md:425
+# blockquote, which can be cascaded
+msgid "> ## The Right Way to Do It"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:310
+msgid ">\n"
+"> If our programs can take complex parameters or multiple filenames,\n"
+"> we shouldn't handle `sys.argv` directly.\n"
+"> Instead,\n"
+"> we should use Python's `argparse` library,\n"
+"> which handles common cases in a systematic way,\n"
+"> and also makes it easy for us to provide sensible error messages for our users.\n"
+"> We will not cover this module in this lesson\n"
+"> but you can go to Tshepang Lekhonkhobe's\n"
+"> [Argparse tutorial](http://docs.python.org/3/howto/argparse.html)\n"
+"> that is part of Python's Official Documentation."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:323
+# header
+msgid "## Handling Multiple Files"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:325
+msgid "The next step is to teach our program how to handle multiple files.\n"
+"Since 60 lines of output per file is a lot to page through,\n"
+"we'll start by using three smaller files,\n"
+"each of which has three days of data for two patients:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:330
+# code block
+msgid "~~~\n"
+"$ ls small-*.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:335
+# code block
+msgid "~~~\n"
+"small-01.csv small-02.csv small-03.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:340
+# code block
+msgid "~~~\n"
+"$ cat small-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:345
+# code block
+msgid "~~~\n"
+"0,0,1\n"
+"0,1,2\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:351
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_02.py small-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:356
+#: python-novice-inflammation/_episodes/12-cmdline.md:656
+# code block
+msgid "~~~\n"
+"0.333333333333\n"
+"1.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:362
+msgid "Using small data files as input also allows us to check our results more easily:\n"
+"here,\n"
+"for example,\n"
+"we can see that our program is calculating the mean correctly for each line,\n"
+"whereas we were really taking it on faith before.\n"
+"This is yet another rule of programming:\n"
+"*test the simple things first*."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:370
+msgid "We want our program to process each file separately,\n"
+"so we need a loop that executes once for each filename.\n"
+"If we specify the files on the command line,\n"
+"the filenames will be in `sys.argv`,\n"
+"but we need to be careful:\n"
+"`sys.argv[0]` will always be the name of our script,\n"
+"rather than the name of a file.\n"
+"We also need to handle an unknown number of filenames,\n"
+"since our program could be run for any number of files."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:380
+msgid "The solution to both problems is to loop over the contents of `sys.argv[1:]`.\n"
+"The '1' tells Python to start the slice at location 1,\n"
+"so the program's name isn't included;\n"
+"since we've left off the upper bound,\n"
+"the slice runs to the end of the list,\n"
+"and includes all the filenames.\n"
+"Here's our changed program\n"
+"`readings_03.py`:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:389
+# code block
+msgid "~~~\n"
+"$ cat ../code/readings_03.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:394
+# code block
+msgid "~~~\n"
+"import sys\n"
+"import numpy\n"
+"\n"
+"def main():\n"
+"    script = sys.argv[0]\n"
+"    for filename in sys.argv[1:]:\n"
+"        data = numpy.loadtxt(filename, delimiter=',')\n"
+"        for row_mean in numpy.mean(data, axis=1):\n"
+"            print(row_mean)\n"
+"\n"
+"if __name__ == '__main__':\n"
+"   main()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:410
+msgid "and here it is in action:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:412
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_03.py small-01.csv small-02.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:417
+# code block
+msgid "~~~\n"
+"0.333333333333\n"
+"1.0\n"
+"13.6666666667\n"
+"11.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:426
+msgid ">\n"
+"> At this point,\n"
+"> we have created three versions of our script called `readings_01.py`,\n"
+"> `readings_02.py`, and `readings_03.py`.\n"
+"> We wouldn't do this in real life:\n"
+"> instead,\n"
+"> we would have one file called `readings.py` that we committed to version control\n"
+"> every time we got an enhancement working.\n"
+"> For teaching,\n"
+"> though,\n"
+"> we need all the successive versions side by side."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:439
+# header
+msgid "## Handling Command-Line Flags"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:441
+msgid "The next step is to teach our program to pay attention to the `--min`, `--mean`, and `--max` flags.\n"
+"These always appear before the names of the files,\n"
+"so we could do this:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:445
+# code block
+msgid "~~~\n"
+"$ cat ../code/readings_04.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:450
+# code block
+msgid "~~~\n"
+"import sys\n"
+"import numpy\n"
+"\n"
+"def main():\n"
+"    script = sys.argv[0]\n"
+"    action = sys.argv[1]\n"
+"    filenames = sys.argv[2:]\n"
+"\n"
+"    for filename in filenames:\n"
+"        data = numpy.loadtxt(filename, delimiter=',')\n"
+"\n"
+"        if action == '--min':\n"
+"            values = numpy.min(data, axis=1)\n"
+"        elif action == '--mean':\n"
+"            values = numpy.mean(data, axis=1)\n"
+"        elif action == '--max':\n"
+"            values = numpy.max(data, axis=1)\n"
+"\n"
+"        for val in values:\n"
+"            print(val)\n"
+"\n"
+"if __name__ == '__main__':\n"
+"   main()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:477
+msgid "This works:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:479
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_04.py --max small-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:484
+# code block
+msgid "~~~\n"
+"1.0\n"
+"2.0\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:490
+msgid "but there are several things wrong with it:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:492
+# ordered list
+msgid "1.  `main` is too large to read comfortably."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:494
+# ordered list
+msgid "2. If we do not specify at least two additional arguments on the"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:495
+msgid "   command-line, one for the **flag** and one for the **filename**, but only\n"
+"   one, the program will not throw an exception but will run. It assumes that the file\n"
+"   list is empty, as `sys.argv[1]` will be considered the `action`, even if it\n"
+"   is a filename. [Silent failures]({{ page.root }}/reference.html#silence-failure)  like this\n"
+"   are always hard to debug."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:501
+# ordered list
+msgid "3. The program should check if the submitted `action` is one of the three recognized flags."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:503
+msgid "This version pulls the processing of each file out of the loop into a function of its own.\n"
+"It also checks that `action` is one of the allowed flags\n"
+"before doing any processing,\n"
+"so that the program fails fast:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:508
+# code block
+msgid "~~~\n"
+"$ cat ../code/readings_05.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:513
+# code block
+msgid "~~~\n"
+"import sys\n"
+"import numpy\n"
+"\n"
+"def main():\n"
+"    script = sys.argv[0]\n"
+"    action = sys.argv[1]\n"
+"    filenames = sys.argv[2:]\n"
+"    assert action in ['--min', '--mean', '--max'], \\\n"
+"           'Action is not one of --min, --mean, or --max: ' + action\n"
+"    for filename in filenames:\n"
+"        process(filename, action)\n"
+"\n"
+"def process(filename, action):\n"
+"    data = numpy.loadtxt(filename, delimiter=',')\n"
+"\n"
+"    if action == '--min':\n"
+"        values = numpy.min(data, axis=1)\n"
+"    elif action == '--mean':\n"
+"        values = numpy.mean(data, axis=1)\n"
+"    elif action == '--max':\n"
+"        values = numpy.max(data, axis=1)\n"
+"\n"
+"    for val in values:\n"
+"        print(val)\n"
+"\n"
+"if __name__ == '__main__':\n"
+"   main()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:544
+msgid "This is four lines longer than its predecessor,\n"
+"but broken into more digestible chunks of 8 and 12 lines."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:547
+# header
+msgid "## Handling Standard Input"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:549
+msgid "The next thing our program has to do is read data from standard input if no filenames are given\n"
+"so that we can put it in a pipeline,\n"
+"redirect input to it,\n"
+"and so on.\n"
+"Let's experiment in another script called `count_stdin.py`:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:555
+# code block
+msgid "~~~\n"
+"$ cat ../code/count_stdin.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:560
+# code block
+msgid "~~~\n"
+"import sys\n"
+"\n"
+"count = 0\n"
+"for line in sys.stdin:\n"
+"    count += 1\n"
+"\n"
+"print(count, 'lines in standard input')\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:571
+msgid "This little program reads lines from a special \"file\" called `sys.stdin`,\n"
+"which is automatically connected to the program's standard input.\n"
+"We don't have to open it --- Python and the operating system\n"
+"take care of that when the program starts up ---\n"
+"but we can do almost anything with it that we could do to a regular file.\n"
+"Let's try running it as if it were a regular command-line program:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:578
+# code block
+msgid "~~~\n"
+"$ python ../code/count_stdin.py < small-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:583
+# code block
+msgid "~~~\n"
+"2 lines in standard input\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:588
+msgid "A common mistake is to try to run something that reads from standard input like this:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:590
+# code block
+msgid "~~~\n"
+"$ python ../code/count_stdin.py small-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:595
+msgid "i.e., to forget the `<` character that redirects the file to standard input.\n"
+"In this case,\n"
+"there's nothing in standard input,\n"
+"so the program waits at the start of the loop for someone to type something on the keyboard.\n"
+"Since there's no way for us to do this,\n"
+"our program is stuck,\n"
+"and we have to halt it using the `Interrupt` option from the `Kernel` menu in the Notebook."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:603
+msgid "We now need to rewrite the program so that it loads data from `sys.stdin`\n"
+"if no filenames are provided.\n"
+"Luckily,\n"
+"`numpy.loadtxt` can handle either a filename or an open file as its first parameter,\n"
+"so we don't actually need to change `process`.\n"
+"Only `main` changes:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:610
+# code block
+msgid "~~~\n"
+"$ cat ../code/readings_06.py\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:615
+# code block
+msgid "~~~\n"
+"import sys\n"
+"import numpy\n"
+"\n"
+"def main():\n"
+"    script = sys.argv[0]\n"
+"    action = sys.argv[1]\n"
+"    filenames = sys.argv[2:]\n"
+"    assert action in ['--min', '--mean', '--max'], \\\n"
+"           'Action is not one of --min, --mean, or --max: ' + action\n"
+"    if len(filenames) == 0:\n"
+"        process(sys.stdin, action)\n"
+"    else:\n"
+"        for filename in filenames:\n"
+"            process(filename, action)\n"
+"\n"
+"def process(filename, action):\n"
+"    data = numpy.loadtxt(filename, delimiter=',')\n"
+"\n"
+"    if action == '--min':\n"
+"        values = numpy.min(data, axis=1)\n"
+"    elif action == '--mean':\n"
+"        values = numpy.mean(data, axis=1)\n"
+"    elif action == '--max':\n"
+"        values = numpy.max(data, axis=1)\n"
+"\n"
+"    for val in values:\n"
+"        print(val)\n"
+"\n"
+"if __name__ == '__main__':\n"
+"   main()\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:649
+msgid "Let's try it out:"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:651
+# code block
+msgid "~~~\n"
+"$ python ../code/readings_06.py --mean < small-01.csv\n"
+"~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:662
+msgid "That's better.\n"
+"In fact,\n"
+"that's done:\n"
+"the program now does everything we set out to do."
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:667
+# blockquote, which can be cascaded
+msgid "> ## Arithmetic on the Command Line"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:668
+msgid ">\n"
+"> Write a command-line program that does addition and subtraction:\n"
+">\n"
+"> ~~~\n"
+"> $ python arith.py add 1 2\n"
+"> ~~~\n"
+"> {: .language-bash}\n"
+">\n"
+"> ~~~\n"
+"> 3\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:680
+msgid ">\n"
+"> ~~~\n"
+"> $ python arith.py subtract 3 4\n"
+"> ~~~\n"
+"> {: .language-bash}\n"
+">\n"
+"> ~~~\n"
+"> -1\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:690
+msgid ">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > import sys\n"
+"> >\n"
+"> > def main():\n"
+"> >     assert len(sys.argv) == 4, 'Need exactly 3 arguments'\n"
+"> >\n"
+"> >     operator = sys.argv[1]\n"
+"> >     assert operator in ['add', 'subtract', 'multiply', 'divide'], \\\n"
+"> >         'Operator is not one of add, subtract, multiply, or divide: bailing out'\n"
+"> >     try:\n"
+"> >         operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])\n"
+"> >     except ValueError:\n"
+"> >         print('cannot convert input to a number: bailing out')\n"
+"> >         return\n"
+"> >\n"
+"> >     do_arithmetic(operand1, operator, operand2)\n"
+"> >\n"
+"> > def do_arithmetic(operand1, operator, operand2):\n"
+"> >\n"
+"> >     if operator == 'add':\n"
+"> >         value = operand1 + operand2\n"
+"> >     elif operator == 'subtract':\n"
+"> >         value = operand1 - operand2\n"
+"> >     elif operator == 'multiply':\n"
+"> >         value = operand1 * operand2\n"
+"> >     elif operator == 'divide':\n"
+"> >         value = operand1 / operand2\n"
+"> >     print(value)\n"
+"> >\n"
+"> > main()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:727
+# blockquote, which can be cascaded
+msgid "> ## Finding Particular Files"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:728
+msgid ">\n"
+"> Using the `glob` module introduced [earlier]({{ page.root }}/04-files/),\n"
+"> write a simple version of `ls` that shows files in the current directory\n"
+"> with a particular suffix.\n"
+"> A call to this script should look like this:\n"
+">\n"
+"> ~~~\n"
+"> $ python my_ls.py py\n"
+"> ~~~\n"
+"> {: .language-bash}\n"
+">\n"
+"> ~~~\n"
+"> left.py\n"
+"> right.py\n"
+"> zero.py\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:745
+msgid ">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > import sys\n"
+"> > import glob\n"
+"> >\n"
+"> > def main():\n"
+"> >     \"\"\"prints names of all files with sys.argv as suffix\"\"\"\n"
+"> >     assert len(sys.argv) >= 2, 'Argument list cannot be empty'\n"
+"> >     suffix = sys.argv[1] # NB: behaviour is not as you'd expect if sys.argv[1] is *\n"
+"> >     glob_input = '*.' + suffix # construct the input\n"
+"> >     glob_output = sorted(glob.glob(glob_input)) # call the glob function\n"
+"> >     for item in glob_output: # print the output\n"
+"> >         print(item)\n"
+"> >     return\n"
+"> >\n"
+"> > main()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:767
+# blockquote, which can be cascaded
+msgid "> ## Changing Flags"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:768
+msgid ">\n"
+"> Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x`\n"
+"> instead of `--min`, `--mean`, and `--max` respectively.\n"
+"> Is the code easier to read?\n"
+"> Is the program easier to understand?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > # this is code/readings_07.py\n"
+"> > import sys\n"
+"> > import numpy\n"
+"> >\n"
+"> > def main():\n"
+"> >     script = sys.argv[0]\n"
+"> >     action = sys.argv[1]\n"
+"> >     filenames = sys.argv[2:]\n"
+"> >     assert action in ['-n', '-m', '-x'], \\\n"
+"> >            'Action is not one of -n, -m, or -x: ' + action\n"
+"> >     if len(filenames) == 0:\n"
+"> >         process(sys.stdin, action)\n"
+"> >     else:\n"
+"> >         for filename in filenames:\n"
+"> >             process(filename, action)\n"
+"> >\n"
+"> > def process(filename, action):\n"
+"> >     data = numpy.loadtxt(filename, delimiter=',')\n"
+"> >\n"
+"> >     if action == '-n':\n"
+"> >         values = numpy.min(data, axis=1)\n"
+"> >     elif action == '-m':\n"
+"> >         values = numpy.mean(data, axis=1)\n"
+"> >     elif action == '-x':\n"
+"> >         values = numpy.max(data, axis=1)\n"
+"> >\n"
+"> >     for val in values:\n"
+"> >         print(val)\n"
+"> >\n"
+"> > main()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:811
+# blockquote, which can be cascaded
+msgid "> ## Adding a Help Message"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:812
+msgid ">\n"
+"> Separately,\n"
+"> modify `readings.py` so that if no parameters are given\n"
+"> (i.e., no action is specified and no filenames are given),\n"
+"> it prints a message explaining how it should be used.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > # this is code/readings_08.py\n"
+"> > import sys\n"
+"> > import numpy\n"
+"> >\n"
+"> > def main():\n"
+"> >     script = sys.argv[0]\n"
+"> >     if len(sys.argv) == 1: # no arguments, so print help message\n"
+"> >         print(\"\"\"Usage: python readings_08.py action filenames\n"
+"> >               action must be one of --min --mean --max\n"
+"> >               if filenames is blank, input is taken from stdin;\n"
+"> >               otherwise, each filename in the list of arguments is processed in turn\"\"\")\n"
+"> >         return\n"
+"> >\n"
+"> >     action = sys.argv[1]\n"
+"> >     filenames = sys.argv[2:]\n"
+"> >     assert action in ['--min', '--mean', '--max'], \\\n"
+"> >            'Action is not one of --min, --mean, or --max: ' + action\n"
+"> >     if len(filenames) == 0:\n"
+"> >         process(sys.stdin, action)\n"
+"> >     else:\n"
+"> >         for filename in filenames:\n"
+"> >             process(filename, action)\n"
+"> >\n"
+"> > def process(filename, action):\n"
+"> >     data = numpy.loadtxt(filename, delimiter=',')\n"
+"> >\n"
+"> >     if action == '--min':\n"
+"> >         values = numpy.min(data, axis=1)\n"
+"> >     elif action == '--mean':\n"
+"> >         values = numpy.mean(data, axis=1)\n"
+"> >     elif action == '--max':\n"
+"> >         values = numpy.max(data, axis=1)\n"
+"> >\n"
+"> >     for val in values:\n"
+"> >         print(val)\n"
+"> >\n"
+"> > main()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:862
+# blockquote, which can be cascaded
+msgid "> ## Adding a Default Action"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:863
+msgid ">\n"
+"> Separately,\n"
+"> modify `readings.py` so that if no action is given\n"
+"> it displays the means of the data.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > # this is code/readings_09.py\n"
+"> > import sys\n"
+"> > import numpy\n"
+"> >\n"
+"> > def main():\n"
+"> >     script = sys.argv[0]\n"
+"> >     action = sys.argv[1]\n"
+"> >     if action not in ['--min', '--mean', '--max']: # if no action given\n"
+"> >         action = '--mean'    # set a default action, that being mean\n"
+"> >         filenames = sys.argv[1:] # start the filenames one place earlier in the argv list\n"
+"> >     else:\n"
+"> >         filenames = sys.argv[2:]\n"
+"> >\n"
+"> >     if len(filenames) == 0:\n"
+"> >         process(sys.stdin, action)\n"
+"> >     else:\n"
+"> >         for filename in filenames:\n"
+"> >             process(filename, action)\n"
+"> >\n"
+"> > def process(filename, action):\n"
+"> >     data = numpy.loadtxt(filename, delimiter=',')\n"
+"> >\n"
+"> >     if action == '--min':\n"
+"> >         values = numpy.min(data, axis=1)\n"
+"> >     elif action == '--mean':\n"
+"> >         values = numpy.mean(data, axis=1)\n"
+"> >     elif action == '--max':\n"
+"> >         values = numpy.max(data, axis=1)\n"
+"> >\n"
+"> >     for val in values:\n"
+"> >         print(val)\n"
+"> >\n"
+"> > main()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:908
+# blockquote, which can be cascaded
+msgid "> ## A File-Checker"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:909
+msgid ">\n"
+"> Write a program called `check.py` that takes the names of one or more\n"
+"> inflammation data files as arguments\n"
+"> and checks that all the files have the same number of rows and columns.\n"
+"> What is the best way to test your program?\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > import sys\n"
+"> > import numpy\n"
+"> >\n"
+"> > def main():\n"
+"> >     script = sys.argv[0]\n"
+"> >     filenames = sys.argv[1:]\n"
+"> >     if len(filenames) <=1: #nothing to check\n"
+"> >         print('Only 1 file specified on input')\n"
+"> >     else:\n"
+"> >         nrow0, ncol0 = row_col_count(filenames[0])\n"
+"> >         print('First file %s: %d rows and %d columns' % (filenames[0], nrow0, ncol0))\n"
+"> >         for filename in filenames[1:]:\n"
+"> >             nrow, ncol = row_col_count(filename)\n"
+"> >             if nrow != nrow0 or ncol != ncol0:\n"
+"> >                 print('File %s does not check: %d rows and %d columns' % (filename, nrow, ncol))\n"
+"> >             else:\n"
+"> >                 print('File %s checks' % filename)\n"
+"> >         return\n"
+"> >\n"
+"> > def row_col_count(filename):\n"
+"> >     try:\n"
+"> >         nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape\n"
+"> >     except ValueError:\n"
+"> >         # 'ValueError' error is raised when numpy encounters lines that\n"
+"> >         # have different number of data elements in them than the rest of the lines,\n"
+"> >         # or when lines have non-numeric elements\n"
+"> >         nrow, ncol = (0, 0)\n"
+"> >     return nrow, ncol\n"
+"> >\n"
+"> > main()\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:952
+# blockquote, which can be cascaded
+msgid "> ## Counting Lines"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:953
+msgid ">\n"
+"> Write a program called `line_count.py` that works like the Unix `wc` command:\n"
+">\n"
+"> *   If no filenames are given, it reports the number of lines in standard input.\n"
+"> *   If one or more filenames are given, it reports the number of lines in each,\n"
+">     followed by the total number of lines.\n"
+">\n"
+"> > ## Solution\n"
+"> > ~~~\n"
+"> > import sys\n"
+"> >\n"
+"> > def main():\n"
+"> >     \"\"\"print each input filename and the number of lines in it,\n"
+"> >        and print the sum of the number of lines\"\"\"\n"
+"> >     filenames = sys.argv[1:]\n"
+"> >     sum_nlines = 0 #initialize counting variable\n"
+"> >\n"
+"> >     if len(filenames) == 0: # no filenames, just stdin\n"
+"> >         sum_nlines = count_file_like(sys.stdin)\n"
+"> >         print('stdin: %d' % sum_nlines)\n"
+"> >     else:\n"
+"> >         for filename in filenames:\n"
+"> >             nlines = count_file(filename)\n"
+"> >             print('%s %d' % (filename, nlines))\n"
+"> >             sum_nlines += nlines\n"
+"> >         print('total: %d' % sum_nlines)\n"
+"> >\n"
+"> > def count_file(filename):\n"
+"> >     \"\"\"count the number of lines in a file\"\"\"\n"
+"> >     f = open(filename,'r')\n"
+"> >     nlines = len(f.readlines())\n"
+"> >     f.close()\n"
+"> >     return(nlines)\n"
+"> >\n"
+"> > def count_file_like(file_like):\n"
+"> >     \"\"\"count the number of lines in a file-like object (eg stdin)\"\"\"\n"
+"> >     n = 0\n"
+"> >     for line in file_like:\n"
+"> >         n = n+1\n"
+"> >     return n\n"
+"> >\n"
+"> > main()\n"
+"> >\n"
+"> > ~~~\n"
+"> > {: .language-python}"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:1001
+# blockquote, which can be cascaded
+msgid "> ## Generate an Error Message"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:1002
+msgid ">\n"
+"> Write a program called `check_arguments.py` that prints usage\n"
+"> then exits the program if no arguments are provided.\n"
+"> (Hint: You can use `sys.exit()` to exit the program.)\n"
+">\n"
+"> ~~~\n"
+"> $ python check_arguments.py\n"
+"> ~~~\n"
+"> {: .language-bash}\n"
+">\n"
+"> ~~~\n"
+"> usage: python check_argument.py filename.txt\n"
+"> ~~~"
+msgstr ""
+
+#: python-novice-inflammation/_episodes/12-cmdline.md:1016
+msgid ">\n"
+"> ~~~\n"
+"> $ python check_arguments.py filename.txt\n"
+"> ~~~\n"
+"> {: .language-bash}\n"
+">\n"
+"> ~~~\n"
+"> Thanks for specifying arguments!\n"
+"> ~~~"
+msgstr ""
+
