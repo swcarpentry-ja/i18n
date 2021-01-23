@@ -5982,7 +5982,7 @@ msgstr ""
 # blockquote, which can be cascaded
 #: git-novice/_episodes/08-collab.md:20
 msgid "> ## Practicing By Yourself"
-msgstr "> ## Practicing By Yourself"
+msgstr "> ## 一人で練習する"
 
 #: git-novice/_episodes/08-collab.md:21
 msgid ""
@@ -5995,12 +5995,11 @@ msgid ""
 "you."
 msgstr ""
 ">\n"
-"> If you're working through this lesson on your own, you can carry on by "
-"opening\n"
-"> a second terminal window.\n"
-"> This window will represent your partner, working on another computer. You\n"
-"> won't need to give anyone access on GitHub, because both 'partners' are "
-"you."
+"> このレッスンを一人で行っている場合は、 "
+"2番目のターミナルウィンドウを開いて続行できます。\n"
+"> このウィンドウは、別のコンピューターで作業しているパートナーに相当します。\n"
+"> どちらの「パートナー」もあなたであるため、"
+"GitHubへのアクセスを誰にも許可する必要はありません。"
 
 #: git-novice/_episodes/08-collab.md:28
 msgid ""
@@ -6008,9 +6007,9 @@ msgid ""
 "On GitHub, click the settings button on the right,\n"
 "then select Collaborators, and enter your partner's username."
 msgstr ""
-"The Owner needs to give the Collaborator access.\n"
-"On GitHub, click the settings button on the right,\n"
-"then select Collaborators, and enter your partner's username."
+"所有者はコラボレーターにアクセス権を与える必要があります。\n"
+"GitHubで、右側の設定ボタンをクリックし、\n"
+"コラボレーターを選択して、パートナーのユーザー名を入力します。"
 
 #: git-novice/_episodes/08-collab.md:32
 msgid "![Adding Collaborators on GitHub](../fig/github-add-collaborators.png)"
@@ -6023,10 +6022,10 @@ msgid ""
 "notifications).\n"
 "Once there she can accept access to the Owner's repo."
 msgstr ""
-"To accept access to the Owner's repo, the Collaborator\n"
-"needs to go to [https://github.com/notifications](https://github.com/"
-"notifications).\n"
-"Once there she can accept access to the Owner's repo."
+"オーナーのリポジトリへのアクセスを受け入れるには、コラボレーターは\n"
+"[https://github.com/notifications](https://github.com/"
+"notifications) にアクセスする必要があります。\n"
+"すると、コラボレーターはオーナーのリポジトリへのアクセスを受け入れることができます。"
 
 #: git-novice/_episodes/08-collab.md:38
 msgid ""
@@ -6035,10 +6034,10 @@ msgid ""
 " machine. This is called \"cloning a repo\". To clone the Owner's repo into\n"
 "her `Desktop` folder, the Collaborator enters:"
 msgstr ""
-"Next, the Collaborator needs to download a copy of the Owner's repository to "
-"her\n"
-" machine. This is called \"cloning a repo\". To clone the Owner's repo into\n"
-"her `Desktop` folder, the Collaborator enters:"
+"次に、コラボレーターはオーナーのリポジトリのコピーを自分のマシンにダウンロードする必要があります。\n"
+"これは \"リポジトリのクローンの作成\" と呼ばれます。オーナーのリポジトリを\n"
+"コラボレーターの `デスクトップ` フォルダに複製するには、"
+"コラボレーターは次のように入力します:"
 
 # code block
 #: git-novice/_episodes/08-collab.md:42
@@ -6053,7 +6052,7 @@ msgstr ""
 
 #: git-novice/_episodes/08-collab.md:47
 msgid "Replace 'vlad' with the Owner's username."
-msgstr "Replace 「nobita」 with the Owner's username."
+msgstr "「vlad」はオーナーのユーザー名に置き換えてください。"
 
 #: git-novice/_episodes/08-collab.md:49
 msgid "![After Creating Clone of Repository](../fig/github-collaboration.svg)"
@@ -6065,9 +6064,8 @@ msgid ""
 "repository,\n"
 "exactly the same way as we've been doing before:"
 msgstr ""
-"The Collaborator can now make a change in her clone of the Owner's "
-"repository,\n"
-"exactly the same way as we've been doing before:"
+"これでコラボレーターは、これまでとまったく同じ方法で、\n"
+"オーナーのリポジトリのクローンに変更を加えることができます:"
 
 # code block
 #: git-novice/_episodes/08-collab.md:54
@@ -6123,7 +6121,7 @@ msgstr ""
 
 #: git-novice/_episodes/08-collab.md:78
 msgid "Then push the change to the *Owner's repository* on GitHub:"
-msgstr "Then push the change to the *Owner's repository* on GitHub:"
+msgstr "次に、変更をGitHubの *オーナーのリポジトリ* にプッシュします:"
 
 # code block
 #: git-novice/_episodes/08-collab.md:85
@@ -6154,9 +6152,10 @@ msgid ""
 "name by default when we clone a repository.  (This is why `origin` was a\n"
 "sensible choice earlier when we were setting up remotes by hand.)"
 msgstr ""
-"Note that we didn't have to create a remote called `origin`: Git uses this\n"
-"name by default when we clone a repository.  (This is why `origin` was a\n"
-"sensible choice earlier when we were setting up remotes by hand.)"
+"`origin`と呼ばれるリモートを作成する必要がなかったことに注意してください: \n"
+"リポジトリのクローンを作成するとき、Gitはデフォルトでこの名前を使用します。\n"
+"(これが、私たちが先程手動でリモートをセットアップしていたときに、\n"
+"`origin`が賢明な選択であった理由です。)"
 
 #: git-novice/_episodes/08-collab.md:100
 msgid ""
