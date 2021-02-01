@@ -1,4 +1,4 @@
-# Japanese translation of the Software Carpentry Programming with Python Lesson
+﻿# Japanese translation of the Software Carpentry Programming with Python Lesson
 # Copyright (C) 2021 Software Carpentry Foundation; Japanese Translation Team
 # This file is distributed under the same license as the PACKAGE package.
 # Software-Carpentry Japanese-Team <tomkellygenetics@gmail.com>, 2019, 2020, 2021.
@@ -94,8 +94,8 @@ msgid ""
 "bug reports,\n"
 "and reviews of proposed changes are all welcome."
 msgstr ""
-"[Software Carpentry][swc-site] and [Data Carpentry][dc-site] are open source "
-"projects,\n"
+"[The Carpentries][c-site] ([Software Carpentry][swc-site], [Data Carpentry]"
+"[dc-site], and [Library Carpentry][lc-site]) are open source projects,\n"
 "and we welcome contributions of all kinds:\n"
 "new lessons,\n"
 "fixes to existing material,\n"
@@ -1072,7 +1072,7 @@ msgstr ""
 # header
 #: python-novice-inflammation/_episodes/01-intro.md:18
 msgid "## Variables"
-msgstr "## Variables"
+msgstr "## 変数"
 
 #: python-novice-inflammation/_episodes/01-intro.md:20
 msgid ""
@@ -1085,7 +1085,7 @@ msgid ""
 "23\n"
 "~~~"
 msgstr ""
-"Any Python interpreter can be used as a calculator:\n"
+"パイソンのインタープリターは計算に使用出来ます:\n"
 "~~~\n"
 "3 + 5 * 4\n"
 "~~~\n"
@@ -1209,13 +1209,12 @@ msgid ""
 "For example, to assign value `60` to a variable `weight_kg`, we would "
 "execute:"
 msgstr ""
-"This is great but not very interesting.\n"
-"To do anything useful with data, we need to assign its value to a "
-"_variable_.\n"
-"In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a\n"
-"[variable]({{ page.root }}/reference/#variable), using the equals sign `=`.\n"
-"For example, to assign value `60` to a variable `weight_kg`, we would "
-"execute:"
+"素晴らしいけれどさほど面白くありませんね。\n"
+"もう少しデータに役立つようなことをするには、値を変数に設定する"
+"必要があります。\n"
+"パイソンでは、 [assign]({{ page.root }}/reference/#assign) 値を設定するのに \n"
+"[variable]({{ page.root }}/reference/#variable), イコール `=` を使います。\n"
+"例えば、値 `60` を変数 `weight_kg` に設定するには以下のコマンドを実行します: "
 
 # code block
 #: python-novice-inflammation/_episodes/01-intro.md:36
@@ -1381,29 +1380,29 @@ msgid ""
 "we assigned to\n"
 "it. In layman's terms, **a variable is a name for a value**."
 msgstr ""
-"From now on, whenever we use `weight_kg`, Python will substitute the value "
-"we assigned to\n"
-"it. In essence, **a variable is just a name for a value**."
+"これから `weight_kg` を使用する時、パイソンは私たちが設定した値と"
+"置き換えます。\n"
+"つまり、**変数は値の名前に過ぎない**ということです。"
 
 #: python-novice-inflammation/_episodes/01-intro.md:44
 msgid "In Python, variable names:"
-msgstr "In Python, variable names:"
+msgstr "パイソンにおいて変数名は :"
 
 # unordered list
 #: python-novice-inflammation/_episodes/01-intro.md:46
 msgid " - can include letters, digits, and underscores"
-msgstr " - can include letters, digits, and underscores"
+msgstr " - 文字、数字、そしてアンダーバーが使用できます。"
 
 # unordered list
 #: python-novice-inflammation/_episodes/01-intro.md:47
 msgid " - cannot start with a digit"
-msgstr " - cannot start with a digit"
+msgstr " - 数字を最初の文字に使用することは出来ません。"
 
 # unordered list
 #: python-novice-inflammation/_episodes/01-intro.md:48
 #, fuzzy
 msgid " - are [case sensitive]({{ page.root }}/reference.html#case-sensitive)."
-msgstr " - are [case sensitive]({{ page.root }}/reference/#case-sensitive)."
+msgstr " - are [大文字と小文字を区別します]({{ page.root }}/reference/#case-sensitive)."
 
 #: python-novice-inflammation/_episodes/01-intro.md:50
 msgid ""
@@ -1411,41 +1410,41 @@ msgid ""
 " - `weight0` is a valid variable name, whereas `0weight` is not\n"
 " - `weight` and `Weight` are different variables"
 msgstr ""
-"This means that, for example:\n"
-" - `weight0` is a valid variable name, whereas `0weight` is not\n"
-" - `weight` and `Weight` are different variables"
+"これらを簡単に例で表すと :\n"
+" - `weight0` は有効な変数名ですが、`0weight` はダメです。\n"
+" - `weight` と `Weight` は異なる変数になります。"
 
 # header
 #: python-novice-inflammation/_episodes/01-intro.md:54
 msgid "## Types of data"
-msgstr "## Types of data"
+msgstr "## データのタイプ"
 
 #: python-novice-inflammation/_episodes/01-intro.md:55
 msgid "Python knows various types of data. Three common ones are:"
-msgstr "Python knows various types of data. Three common ones are:"
+msgstr "パイソンには様々なデータタイプがあります。最も一般的な 3 つは :"
 
 # unordered list
 #: python-novice-inflammation/_episodes/01-intro.md:57
 msgid "* integer numbers"
-msgstr "* integer numbers"
+msgstr "* 整数"
 
 # unordered list
 #: python-novice-inflammation/_episodes/01-intro.md:58
 msgid "* floating point numbers, and"
-msgstr "* floating point numbers, and"
+msgstr "* 浮動小数点数、そして"
 
 # unordered list
 #: python-novice-inflammation/_episodes/01-intro.md:59
 msgid "* strings."
-msgstr "* strings."
+msgstr "* 文字列です。"
 
 #: python-novice-inflammation/_episodes/01-intro.md:61
 msgid ""
 "In the example above, variable `weight_kg` has an integer value of `60`.\n"
 "To create a variable with a floating point value, we can execute:"
 msgstr ""
-"In the example above, variable `weight_kg` has an integer value of `60`.\n"
-"To create a variable with a floating point value, we can execute:"
+"上記の例で、変数 `weight_kg` には整数値 `60`が設定されています。\n"
+"浮動小数点を持つ値を設定したいときは、以下を実行します:"
 
 # code block
 #: python-novice-inflammation/_episodes/01-intro.md:64
@@ -1464,8 +1463,8 @@ msgid ""
 "And to create a string, we add single or double quotes around some text, for "
 "example:"
 msgstr ""
-"And to create a string we simply have to add single or double quotes around "
-"some text, for example:"
+"そして文字列を生成する時は、文字列をシングルクォーテーションマーク (') もしくはダブルクォーテーションマーク (") で囲みます。"
+"例えば:"
 
 # code block
 #: python-novice-inflammation/_episodes/01-intro.md:71
@@ -1481,15 +1480,15 @@ msgstr ""
 # header
 #: python-novice-inflammation/_episodes/01-intro.md:76
 msgid "## Using Variables in Python"
-msgstr "## Using Variables in Python"
+msgstr "## パイソンでの変数の使用法"
 
 #: python-novice-inflammation/_episodes/01-intro.md:77
 msgid ""
 "To display the value of a variable to the screen in Python, we can use the "
 "`print` function:"
 msgstr ""
-"To display the value of a variable to the screen in Python, we can use the "
-"`print` function:"
+"パイソンで変数に設定された値をスクリーンに表示させるには、以下のように"
+"`print` 関数を使用します:"
 
 # code block
 #: python-novice-inflammation/_episodes/01-intro.md:79
@@ -1516,7 +1515,7 @@ msgstr ""
 
 #: python-novice-inflammation/_episodes/01-intro.md:89
 msgid "We can display multiple things at once using only one `print` command:"
-msgstr "We can display multiple things at once using only one `print` command:"
+msgstr "1 つの `print` コマンドで、複数のアイテムを表示させることができます:"
 
 # code block
 #: python-novice-inflammation/_episodes/01-intro.md:91
@@ -1547,8 +1546,7 @@ msgid ""
 "Moreover, we can do arithmetic with variables right inside the `print` "
 "function:"
 msgstr ""
-"Moreover, we can do arithmetics with variables right inside the `print` "
-"function:"
+"更に, `print` 関数内で変数による計算が出来ます:"
 
 # code block
 #: python-novice-inflammation/_episodes/01-intro.md:102
@@ -1580,7 +1578,7 @@ msgid ""
 "~~~\n"
 "{: .language-python}"
 msgstr ""
-"The above command, however, did not change the value of `weight_kg`:\n"
+"しかし、上記のコマンドは `weight_kg` の値を変更してはいません:\n"
 "~~~\n"
 "print(weight_kg)\n"
 "~~~\n"
@@ -1591,8 +1589,8 @@ msgid ""
 "To change the value of the `weight_kg` variable, we have to\n"
 "**assign** `weight_kg` a new value using the equals `=` sign:"
 msgstr ""
-"To change the value of the `weight_kg` variable, we have to\n"
-"**assign** `weight_kg` a new value using the equals `=` sign:"
+"変数 `weight_kg` の値を変更するには、`=` を使用して新しい値を\n"
+"**設定** する必要があります:"
 
 # code block
 #: python-novice-inflammation/_episodes/01-intro.md:126
@@ -1651,16 +1649,13 @@ msgid ""
 "> ~~~"
 msgstr ""
 ">\n"
-"> A variable is analogous to a sticky note with a name written on it:\n"
-"> assigning a value to a variable is like putting that sticky note on a "
-"particular value.\n"
+"> 変数は、名前が書かれたポストイットに例えることが出来ます:\n"
+"> 値を変数に設定することは、そのポストイットを特定の値に貼りつけることと同様です。\n"
 ">\n"
 "> ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)\n"
 ">\n"
-"> This means that assigning a value to one variable does **not** change the "
-"values of other variables.\n"
-"> For example, let's store the subject's weight in pounds in its own "
-"variable:\n"
+"> つまり、値をあるひとつの変数に設定することは他の変数の値を変えることには**なりません**。\n"
+"> 例えば、とある物体の重量をポンドで独自の変数に設定してみましょう:\n"
 ">\n"
 "> ~~~\n"
 "> # There are 2.2 pounds per kilogram\n"
@@ -1734,7 +1729,7 @@ msgstr ""
 ">\n"
 "> ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)\n"
 ">\n"
-"> Let's now change `weight_kg`:\n"
+"> `さぁ、weight_kg` を変更しましょう:\n"
 ">\n"
 "> ~~~\n"
 "> weight_kg = 100.0\n"
@@ -1744,7 +1739,7 @@ msgstr ""
 "> {: .language-python}\n"
 ">\n"
 "> ~~~\n"
-"> weight in kilograms is now: 100.0 and weight in pounds is still: 143.0\n"
+"> "weight in kilograms is now: 100.0 and weight in pounds is still: 143.0\n"
 "> ~~~"
 
 #: python-novice-inflammation/_episodes/01-intro.md:175
@@ -1761,8 +1756,8 @@ msgstr ""
 ">\n"
 "> ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)\n"
 ">\n"
-"> Since `weight_lb` doesn't remember where its value came from,\n"
-"> it isn't automatically updated when `weight_kg` changes."
+"> `weight_lb` は値がどこから来たかを覚えていないので、\n"
+"> `weight_kg` が変更されても値は自動的にアップデートされないのです。changes."
 
 # SC/DC Template label
 #: python-novice-inflammation/_episodes/01-intro.md:181
@@ -1790,7 +1785,7 @@ msgstr "{: .callout}"
 # blockquote, which can be cascaded
 #: python-novice-inflammation/_episodes/01-intro.md:184
 msgid "> ## Check Your Understanding"
-msgstr "> ## Check Your Understanding"
+msgstr "> ## 理解度チェック"
 
 #: python-novice-inflammation/_episodes/01-intro.md:185
 msgid ""
@@ -1954,7 +1949,7 @@ msgstr "{: .challenge}"
 # blockquote, which can be cascaded
 #: python-novice-inflammation/_episodes/01-intro.md:208
 msgid "> ## Sorting Out References"
-msgstr "> ## Sorting Out References"
+msgstr "> ## リファレンスのソート"
 
 #: python-novice-inflammation/_episodes/01-intro.md:209
 msgid ""
@@ -1975,7 +1970,7 @@ msgid ""
 "> > {: .output}"
 msgstr ""
 ">\n"
-"> What does the following program print out?\n"
+"> 以下のプログラムは何をプリントアウトするでしょうか？\n"
 ">\n"
 "> ~~~\n"
 "> first, second = 'Grace', 'Hopper'\n"
@@ -1984,7 +1979,7 @@ msgstr ""
 "> ~~~\n"
 "> {: .language-python}\n"
 ">\n"
-"> > ## Solution\n"
+"> > ## 解答\n"
 "> > ~~~\n"
 "> > Hopper Grace\n"
 "> > ~~~\n"
