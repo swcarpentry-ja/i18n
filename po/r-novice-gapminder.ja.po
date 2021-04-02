@@ -22218,17 +22218,17 @@ msgid ""
 msgstr ""
 "---\n"
 "layout: page\n"
-"title: Setup\n"
+"title: セットアップ\n"
 "root: .\n"
 "---"
 
 #: r-novice-gapminder/setup.md:7
 msgid "This lesson assumes you have the R, RStudio software installed on your computer."
-msgstr "This lesson assumes you have the R, RStudio software installed on your computer."
+msgstr "このレッスンは R言語と RStudioの統合開発環境(IDE)をもうインストールしたと決め込みます。"
 
 #: r-novice-gapminder/setup.md:9
 msgid "R can be downloaded [here](https://cran.r-project.org/mirrors.html)."
-msgstr "R can be downloaded [here](https://cran.r-project.org/mirrors.html)."
+msgstr "[こちら](https://cran.r-project.org/mirrors.html)で R言語をダウンロード出来ます。"
 
 #: r-novice-gapminder/setup.md:11
 msgid ""
