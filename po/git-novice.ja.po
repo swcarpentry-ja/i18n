@@ -10926,7 +10926,9 @@ msgid ""
 msgstr ""
 "---\n"
 "layout: lesson\n"
-"root: .\n"
+"title: \"Gitでバージョン管理\""
+"root: /ja/\n"
+"permalink: /ja/\n"
 "---"
 
 #: git-novice/index.md:6

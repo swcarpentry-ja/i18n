@@ -13295,7 +13295,9 @@ msgid ""
 msgstr ""
 "---\n"
 "layout: lesson\n"
-"root: .\n"
+"title: \"Unixシェル\""
+"root: /ja/\n"
+"permalink: /ja/\n"
 "---"
 
 #: shell-novice/index.md:6
